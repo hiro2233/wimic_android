@@ -84,19 +84,19 @@ public class Settings {
     public static final Boolean DEFAULT_PTT_TOGGLE = false;
 
     public static final String PREF_INPUT_RATE = "input_quality";
-    public static final String DEFAULT_RATE = "48000";
+    public static final String DEFAULT_RATE = "8000";
 
     public static final String PREF_INPUT_QUALITY = "input_bitrate";
-    public static final int DEFAULT_INPUT_QUALITY = 40000;
+    public static final int DEFAULT_INPUT_QUALITY = 8000;
 
     public static final String PREF_AMPLITUDE_BOOST = "inputVolume";
     public static final Integer DEFAULT_AMPLITUDE_BOOST = 100;
 
     public static final String PREF_CHAT_NOTIFY = "chatNotify";
-    public static final Boolean DEFAULT_CHAT_NOTIFY = true;
+    public static final Boolean DEFAULT_CHAT_NOTIFY = false;
 
     public static final String PREF_USE_TTS = "useTts";
-    public static final Boolean DEFAULT_USE_TTS = true;
+    public static final Boolean DEFAULT_USE_TTS = false;
 
     public static final String PREF_SHORT_TTS_MESSAGES = "shortTtsMessages";
     public static final boolean DEFAULT_SHORT_TTS_MESSAGES = false;
@@ -164,7 +164,7 @@ public class Settings {
     public static final boolean DEFAULT_PREPROCESSOR_ENABLED = true;
 
     public static final String PREF_STAY_AWAKE = "stay_awake";
-    public static final boolean DEFAULT_STAY_AWAKE = false;
+    public static final boolean DEFAULT_STAY_AWAKE = true;
 
     public static final String PREF_SHOW_USER_COUNT = "show_user_count";
     public static final boolean DEFAULT_SHOW_USER_COUNT = false;
