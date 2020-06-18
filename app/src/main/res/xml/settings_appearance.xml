@@ -27,7 +27,7 @@
         android:summary="@string/themeSum"
         android:title="@string/theme" />
 
-    <se.lublin.mumla.preference.SeekBarDialogPreference
+    <bo.htakey.wimic.preference.SeekBarDialogPreference
         android:key="pttButtonHeight"
         android:title="@string/pttButtonHeight"
         android:summary="@string/pttButtonHeightSum"

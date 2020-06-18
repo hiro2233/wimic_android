@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package se.lublin.mumla.channel;
+package bo.htakey.wimic.channel;
 
 import android.content.Context;
 import android.content.DialogInterface;
@@ -41,10 +41,10 @@ import se.lublin.humla.model.Server;
 import se.lublin.humla.model.WhisperTargetChannel;
 import se.lublin.humla.net.Permissions;
 import se.lublin.humla.util.VoiceTargetMode;
-import se.lublin.mumla.Constants;
-import se.lublin.mumla.R;
-import se.lublin.mumla.channel.comment.ChannelDescriptionFragment;
-import se.lublin.mumla.db.MumlaDatabase;
+import bo.htakey.wimic.Constants;
+import bo.htakey.wimic.R;
+import bo.htakey.wimic.channel.comment.ChannelDescriptionFragment;
+import bo.htakey.wimic.db.MumlaDatabase;
 
 /**
  * Created by andrew on 22/11/15.

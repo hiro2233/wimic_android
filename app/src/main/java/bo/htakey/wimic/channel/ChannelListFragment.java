@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package se.lublin.mumla.channel;
+package bo.htakey.wimic.channel;
 
 import android.app.Activity;
 import android.app.SearchManager;
@@ -51,10 +51,10 @@ import se.lublin.humla.model.IUser;
 import se.lublin.humla.util.HumlaException;
 import se.lublin.humla.util.HumlaObserver;
 import se.lublin.humla.util.IHumlaObserver;
-import se.lublin.mumla.R;
-import se.lublin.mumla.Settings;
-import se.lublin.mumla.db.DatabaseProvider;
-import se.lublin.mumla.util.HumlaServiceFragment;
+import bo.htakey.wimic.R;
+import bo.htakey.wimic.Settings;
+import bo.htakey.wimic.db.DatabaseProvider;
+import bo.htakey.wimic.util.HumlaServiceFragment;
 
 public class ChannelListFragment extends HumlaServiceFragment implements OnChannelClickListener, OnUserClickListener, SharedPreferences.OnSharedPreferenceChangeListener {
 

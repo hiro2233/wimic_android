@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package se.lublin.mumla.preference;
+package bo.htakey.wimic.preference;
 
 import android.annotation.TargetApi;
 import android.app.AlertDialog.Builder;
@@ -33,7 +33,7 @@ import android.view.ViewGroup.LayoutParams;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import se.lublin.mumla.R;
+import bo.htakey.wimic.R;
 
 public class KeySelectDialogPreference extends DialogPreference implements OnKeyListener {
 

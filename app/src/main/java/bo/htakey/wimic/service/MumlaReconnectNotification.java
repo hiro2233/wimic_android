@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package se.lublin.mumla.service;
+package bo.htakey.wimic.service;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -29,7 +29,7 @@ import android.os.Build;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
-import se.lublin.mumla.R;
+import bo.htakey.wimic.R;
 
 /**
  * A notification indicating auto-reconnect is in progress, or if auto-reconnect is disabled,

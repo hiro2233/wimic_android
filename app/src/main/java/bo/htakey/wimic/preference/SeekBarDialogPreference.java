@@ -23,7 +23,7 @@
  * I added some extra functionality like a multiplier + better persistence.
  * - Andrew Comminos
  */
-package se.lublin.mumla.preference;
+package bo.htakey.wimic.preference;
 
 import android.content.Context;
 import android.preference.DialogPreference;

@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package se.lublin.mumla.channel;
+package bo.htakey.wimic.channel;
 
 import android.app.SearchManager;
 import android.content.ComponentName;
@@ -37,9 +37,9 @@ import se.lublin.humla.IHumlaService;
 import se.lublin.humla.IHumlaSession;
 import se.lublin.humla.model.IChannel;
 import se.lublin.humla.model.IUser;
-import se.lublin.mumla.Constants;
-import se.lublin.mumla.R;
-import se.lublin.mumla.service.MumlaService;
+import bo.htakey.wimic.Constants;
+import bo.htakey.wimic.R;
+import bo.htakey.wimic.service.MumlaService;
 
 public class ChannelSearchProvider extends ContentProvider {
 

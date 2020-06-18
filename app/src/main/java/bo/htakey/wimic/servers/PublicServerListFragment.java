@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package se.lublin.mumla.servers;
+package bo.htakey.wimic.servers;
 
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
@@ -60,11 +60,11 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 import se.lublin.humla.model.Server;
-import se.lublin.mumla.R;
-import se.lublin.mumla.Settings;
-import se.lublin.mumla.db.DatabaseProvider;
-import se.lublin.mumla.db.MumlaDatabase;
-import se.lublin.mumla.db.PublicServer;
+import bo.htakey.wimic.R;
+import bo.htakey.wimic.Settings;
+import bo.htakey.wimic.db.DatabaseProvider;
+import bo.htakey.wimic.db.MumlaDatabase;
+import bo.htakey.wimic.db.PublicServer;
 
 /**
  * Displays a list of public servers that can be connected to, sorted, and favourited.

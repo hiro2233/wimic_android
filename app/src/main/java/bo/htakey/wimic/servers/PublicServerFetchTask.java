@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package se.lublin.mumla.servers;
+package bo.htakey.wimic.servers;
 
 import android.os.AsyncTask;
 import android.util.Xml;
@@ -32,7 +32,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-import se.lublin.mumla.db.PublicServer;
+import bo.htakey.wimic.db.PublicServer;
 
 /**
  * Created by andrew on 05/05/14.

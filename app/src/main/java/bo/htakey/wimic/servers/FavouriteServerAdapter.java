@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package se.lublin.mumla.servers;
+package bo.htakey.wimic.servers;
 
 import android.content.Context;
 import android.view.MenuItem;
@@ -23,7 +23,7 @@ import android.view.MenuItem;
 import java.util.List;
 
 import se.lublin.humla.model.Server;
-import se.lublin.mumla.R;
+import bo.htakey.wimic.R;
 
 /**
  * Created by andrew on 11/05/14.

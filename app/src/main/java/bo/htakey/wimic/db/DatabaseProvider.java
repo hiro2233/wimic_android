@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package se.lublin.mumla.db;
+package bo.htakey.wimic.db;
 
 /**
  * Created by andrew on 15/08/13.

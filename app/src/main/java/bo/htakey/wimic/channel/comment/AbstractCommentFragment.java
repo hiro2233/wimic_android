@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package se.lublin.mumla.channel.comment;
+package bo.htakey.wimic.channel.comment;
 
 import android.app.Activity;
 import android.app.Dialog;
@@ -31,8 +31,8 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.DialogFragment;
 
 import se.lublin.humla.IHumlaService;
-import se.lublin.mumla.R;
-import se.lublin.mumla.util.HumlaServiceProvider;
+import bo.htakey.wimic.R;
+import bo.htakey.wimic.util.HumlaServiceProvider;
 
 /**
  * Fragment to change your comment using basic WYSIWYG tools.
@@ -133,7 +133,7 @@ public abstract class AbstractCommentFragment extends DialogFragment {
 
     /**
      * Requests a comment from the service. Will not be called if we already have a comment provided.
-     * This method is expected to set a callback that will call {@link se.lublin.mumla.channel.comment.AbstractCommentFragment#loadComment(String comment)}.
+     * This method is expected to set a callback that will call {@link bo.htakey.wimic.channel.comment.AbstractCommentFragment#loadComment(String comment)}.
      * @param service The bound Humla service to use for remote calls.
      */
     public abstract void requestComment(IHumlaService service);

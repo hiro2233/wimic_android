@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package se.lublin.mumla.preference;
+package bo.htakey.wimic.preference;
 
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
@@ -39,9 +39,9 @@ import java.util.List;
 import java.util.TimeZone;
 
 import info.guardianproject.netcipher.proxy.OrbotHelper;
-import se.lublin.mumla.BuildConfig;
-import se.lublin.mumla.R;
-import se.lublin.mumla.Settings;
+import bo.htakey.wimic.BuildConfig;
+import bo.htakey.wimic.R;
+import bo.htakey.wimic.Settings;
 
 /**
  * This entire class is a mess.
@@ -49,11 +49,11 @@ import se.lublin.mumla.Settings;
  */
 public class Preferences extends PreferenceActivity {
 
-    public static final String ACTION_PREFS_GENERAL = "se.lublin.mumla.app.PREFS_GENERAL";
-    public static final String ACTION_PREFS_AUTHENTICATION = "se.lublin.mumla.app.PREFS_AUTHENTICATION";
-    public static final String ACTION_PREFS_AUDIO = "se.lublin.mumla.app.PREFS_AUDIO";
-    public static final String ACTION_PREFS_APPEARANCE = "se.lublin.mumla.app.PREFS_APPEARANCE";
-    public static final String ACTION_PREFS_ABOUT = "se.lublin.mumla.app.PREFS_ABOUT";
+    public static final String ACTION_PREFS_GENERAL = "bo.htakey.wimic.app.PREFS_GENERAL";
+    public static final String ACTION_PREFS_AUTHENTICATION = "bo.htakey.wimic.app.PREFS_AUTHENTICATION";
+    public static final String ACTION_PREFS_AUDIO = "bo.htakey.wimic.app.PREFS_AUDIO";
+    public static final String ACTION_PREFS_APPEARANCE = "bo.htakey.wimic.app.PREFS_APPEARANCE";
+    public static final String ACTION_PREFS_ABOUT = "bo.htakey.wimic.app.PREFS_ABOUT";
 
     //private static final String USE_TOR_KEY = "useTor";
     private static final String VERSION_KEY = "version";

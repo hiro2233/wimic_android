@@ -15,9 +15,9 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package se.lublin.mumla.util;
+package bo.htakey.wimic.util;
 
-import se.lublin.mumla.service.IMumlaService;
+import bo.htakey.wimic.service.IMumlaService;
 
 /**
  * Created by andrew on 03/08/13.

@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package se.lublin.mumla.servers;
+package bo.htakey.wimic.servers;
 
 import android.app.Activity;
 import android.app.Dialog;
@@ -31,8 +31,8 @@ import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 
 import se.lublin.humla.model.Server;
-import se.lublin.mumla.R;
-import se.lublin.mumla.Settings;
+import bo.htakey.wimic.R;
+import bo.htakey.wimic.Settings;
 
 public class ServerEditFragment extends DialogFragment {
     private static final String ARGUMENT_SERVER = "server";

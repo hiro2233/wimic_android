@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package se.lublin.mumla.channel.comment;
+package bo.htakey.wimic.channel.comment;
 
 import se.lublin.humla.IHumlaService;
 import se.lublin.humla.model.IChannel;

@@ -32,7 +32,7 @@
         android:summary="@string/handsetModeSum"
         android:defaultValue="false"/>
 
-    <se.lublin.mumla.preference.SeekBarDialogPreference
+    <bo.htakey.wimic.preference.SeekBarDialogPreference
         android:title="@string/audioInputVolume"
         android:summary="@string/audioInputVolumeSum"
         android:key="inputVolume"
@@ -42,7 +42,7 @@
 
     <PreferenceCategory android:title="@string/voiceActivitySettings"
         android:key="vad_settings">
-        <se.lublin.mumla.preference.SeekBarDialogPreference
+        <bo.htakey.wimic.preference.SeekBarDialogPreference
             max="100"
             multiplier="0.1"
             android:defaultValue="70"
@@ -52,7 +52,7 @@
     </PreferenceCategory>
     <PreferenceCategory android:title="@string/pttSettings"
         android:key="ptt_settings">
-        <se.lublin.mumla.preference.KeySelectDialogPreference
+        <bo.htakey.wimic.preference.KeySelectDialogPreference
             android:key="talkKey"
             android:summary="@string/pttKeySum"
             android:title="@string/pttKey" />
@@ -97,7 +97,7 @@
             android:summary="@string/audioSampleRateSum"
             android:title="@string/audioSampleRate" />
 
-        <se.lublin.mumla.preference.SeekBarDialogPreference
+        <bo.htakey.wimic.preference.SeekBarDialogPreference
             max="96"
             min="8"
             multiplier="1000"

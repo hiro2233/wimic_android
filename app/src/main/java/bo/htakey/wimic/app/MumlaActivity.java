@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package se.lublin.mumla.app;
+package bo.htakey.wimic.app;
 
 import android.Manifest;
 import android.app.ProgressDialog;
@@ -80,29 +80,29 @@ import se.lublin.humla.protobuf.Mumble;
 import se.lublin.humla.util.HumlaException;
 import se.lublin.humla.util.HumlaObserver;
 import se.lublin.humla.util.MumbleURLParser;
-import se.lublin.mumla.BuildConfig;
-import se.lublin.mumla.R;
-import se.lublin.mumla.Settings;
-import se.lublin.mumla.channel.AccessTokenFragment;
-import se.lublin.mumla.channel.ChannelFragment;
-import se.lublin.mumla.channel.ServerInfoFragment;
-import se.lublin.mumla.db.DatabaseCertificate;
-import se.lublin.mumla.db.DatabaseProvider;
-import se.lublin.mumla.db.MumlaDatabase;
-import se.lublin.mumla.db.MumlaSQLiteDatabase;
-import se.lublin.mumla.db.PublicServer;
-import se.lublin.mumla.preference.MumlaCertificateGenerateTask;
-import se.lublin.mumla.preference.Preferences;
-import se.lublin.mumla.servers.FavouriteServerListFragment;
-import se.lublin.mumla.servers.PublicServerListFragment;
-import se.lublin.mumla.servers.ServerEditFragment;
-import se.lublin.mumla.service.IMumlaService;
-import se.lublin.mumla.service.MumlaService;
-import se.lublin.mumla.util.HumlaServiceFragment;
-import se.lublin.mumla.util.HumlaServiceProvider;
-import se.lublin.mumla.util.MumlaTrustStore;
+import bo.htakey.wimic.BuildConfig;
+import bo.htakey.wimic.R;
+import bo.htakey.wimic.Settings;
+import bo.htakey.wimic.channel.AccessTokenFragment;
+import bo.htakey.wimic.channel.ChannelFragment;
+import bo.htakey.wimic.channel.ServerInfoFragment;
+import bo.htakey.wimic.db.DatabaseCertificate;
+import bo.htakey.wimic.db.DatabaseProvider;
+import bo.htakey.wimic.db.MumlaDatabase;
+import bo.htakey.wimic.db.MumlaSQLiteDatabase;
+import bo.htakey.wimic.db.PublicServer;
+import bo.htakey.wimic.preference.MumlaCertificateGenerateTask;
+import bo.htakey.wimic.preference.Preferences;
+import bo.htakey.wimic.servers.FavouriteServerListFragment;
+import bo.htakey.wimic.servers.PublicServerListFragment;
+import bo.htakey.wimic.servers.ServerEditFragment;
+import bo.htakey.wimic.service.IMumlaService;
+import bo.htakey.wimic.service.MumlaService;
+import bo.htakey.wimic.util.HumlaServiceFragment;
+import bo.htakey.wimic.util.HumlaServiceProvider;
+import bo.htakey.wimic.util.MumlaTrustStore;
 
-import static se.lublin.mumla.Constants.TAG;
+import static bo.htakey.wimic.Constants.TAG;
 
 public class MumlaActivity extends AppCompatActivity implements ListView.OnItemClickListener,
         FavouriteServerListFragment.ServerConnectHandler, HumlaServiceProvider, DatabaseProvider,

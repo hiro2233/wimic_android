@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package se.lublin.mumla.app;
+package bo.htakey.wimic.app;
 
 import android.content.Context;
 import android.content.Intent;
@@ -28,11 +28,11 @@ import java.util.ArrayList;
 
 import se.lublin.humla.HumlaService;
 import se.lublin.humla.model.Server;
-import se.lublin.mumla.R;
-import se.lublin.mumla.Settings;
-import se.lublin.mumla.db.MumlaDatabase;
-import se.lublin.mumla.service.MumlaService;
-import se.lublin.mumla.util.MumlaTrustStore;
+import bo.htakey.wimic.R;
+import bo.htakey.wimic.Settings;
+import bo.htakey.wimic.db.MumlaDatabase;
+import bo.htakey.wimic.service.MumlaService;
+import bo.htakey.wimic.util.MumlaTrustStore;
 
 /**
  * Constructs an intent for connection to a MumlaService and executes it.

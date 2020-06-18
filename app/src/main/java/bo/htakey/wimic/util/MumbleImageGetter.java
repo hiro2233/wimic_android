@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package se.lublin.mumla.util;
+package bo.htakey.wimic.util;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -37,8 +37,8 @@ import java.net.URLDecoder;
 import java.util.HashMap;
 import java.util.Map;
 
-import se.lublin.mumla.Constants;
-import se.lublin.mumla.Settings;
+import bo.htakey.wimic.Constants;
+import bo.htakey.wimic.Settings;
 
 /**
  * Implementation of ImageGetter designed for Mumble MOTDs and messages.

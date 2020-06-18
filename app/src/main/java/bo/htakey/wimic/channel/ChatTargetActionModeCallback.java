@@ -15,14 +15,14 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package se.lublin.mumla.channel;
+package bo.htakey.wimic.channel;
 
 import android.view.Menu;
 import android.view.MenuItem;
 
 import androidx.appcompat.view.ActionMode;
 
-import se.lublin.mumla.R;
+import bo.htakey.wimic.R;
 
 /**
  * A callback that sets the active chat target when activated, and resets when destroyed (usually

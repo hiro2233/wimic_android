@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package se.lublin.mumla.service.ipc;
+package bo.htakey.wimic.service.ipc;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -28,7 +28,7 @@ import se.lublin.humla.IHumlaSession;
  * Created by andrew on 08/08/14.
  */
 public class TalkBroadcastReceiver extends BroadcastReceiver {
-    public static final String BROADCAST_TALK = "se.lublin.mumla.action.TALK";
+    public static final String BROADCAST_TALK = "bo.htakey.wimic.action.TALK";
     public static final String EXTRA_TALK_STATUS = "status";
     public static final String TALK_STATUS_ON = "on";
     public static final String TALK_STATUS_OFF = "off";

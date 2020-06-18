@@ -31,7 +31,7 @@
         android:layout_height="32dp"
         android:layout_margin="8dp">
 
-        <!--<se.lublin.mumla.view.CircleImageView-->
+        <!--<bo.htakey.wimic.view.CircleImageView-->
         <!--android:id="@+id/user_row_avatar"-->
         <!--android:layout_width="match_parent"-->
         <!--android:layout_height="match_parent"-->

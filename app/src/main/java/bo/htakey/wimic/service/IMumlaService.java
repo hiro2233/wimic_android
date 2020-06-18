@@ -1,4 +1,4 @@
-package se.lublin.mumla.service;
+package bo.htakey.wimic.service;
 
 import java.util.List;
 

@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package se.lublin.mumla.service;
+package bo.htakey.wimic.service;
 
 import android.content.BroadcastReceiver;
 import android.content.Intent;
@@ -48,10 +48,10 @@ import se.lublin.humla.model.IUser;
 import se.lublin.humla.model.TalkState;
 import se.lublin.humla.util.HumlaException;
 import se.lublin.humla.util.HumlaObserver;
-import se.lublin.mumla.R;
-import se.lublin.mumla.Settings;
-import se.lublin.mumla.service.ipc.TalkBroadcastReceiver;
-import se.lublin.mumla.util.HtmlUtils;
+import bo.htakey.wimic.R;
+import bo.htakey.wimic.Settings;
+import bo.htakey.wimic.service.ipc.TalkBroadcastReceiver;
+import bo.htakey.wimic.util.HtmlUtils;
 
 /**
  * An extension of the Humla service with some added Mumla-exclusive non-standard Mumble features.
