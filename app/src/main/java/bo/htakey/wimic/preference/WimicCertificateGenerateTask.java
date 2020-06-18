@@ -30,16 +30,16 @@ import java.util.Locale;
 import bo.htakey.rimic.net.RimicCertificateGenerator;
 import bo.htakey.wimic.R;
 import bo.htakey.wimic.db.DatabaseCertificate;
-import bo.htakey.wimic.db.MumlaDatabase;
-import bo.htakey.wimic.db.MumlaSQLiteDatabase;
+import bo.htakey.wimic.db.WimicDatabase;
+import bo.htakey.wimic.db.WimicSQLiteDatabase;
 
-public class MumlaCertificateGenerateTask extends AsyncTask<Void, Void, DatabaseCertificate> {
+public class WimicCertificateGenerateTask extends AsyncTask<Void, Void, DatabaseCertificate> {
     private static final String DATE_FORMAT = "yyyy-MM-dd-HH-mm-ss";
 
     private Context context;
     private ProgressDialog loadingDialog;
 
-    public MumlaCertificateGenerateTask(Context context) {
+    public WimicCertificateGenerateTask(Context context) {
         this.context = context;
     }
 
@@ -62,7 +62,7 @@ public class MumlaCertificateGenerateTask extends AsyncTask<Void, Void, Database
             SimpleDateFormat dateFormat = new SimpleDateFormat(DATE_FORMAT, Locale.getDefault());
             String fileName = context.getString(R.string.certificate_export_format, dateFormat.format(new Date()));
 
-            MumlaDatabase database = new MumlaSQLiteDatabase(context);
+            WimicDatabase database = new WimicSQLiteDatabase(context);
             DatabaseCertificate dc = database.addCertificate(fileName, baos.toByteArray());
             database.close();
             return dc;

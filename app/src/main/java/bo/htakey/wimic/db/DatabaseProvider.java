@@ -21,5 +21,5 @@ package bo.htakey.wimic.db;
  * Created by andrew on 15/08/13.
  */
 public interface DatabaseProvider {
-    public MumlaDatabase getDatabase();
+    public WimicDatabase getDatabase();
 }

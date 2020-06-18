@@ -83,7 +83,7 @@
     <string name="server_match_not_found">Couldn\'t find server</string>
     <string name="server_match_expand_country">Couldn\'t find any optimal servers in your country. Search worldwide?</string>
     <string name="server_match_info">Name: %1$s\nHost: %2$s:%3$d\nUsers: %4$d / %5$d\nVersion: %6$s \nCountry: %7$s \nLatency: %8$d ms</string>
-    <string name="server_match_description">Mumla can automatically find you an empty server, optimizing for location, version, and latency.</string>
+    <string name="server_match_description">Wimic can automatically find you an empty server, optimizing for location, version, and latency.</string>
 
     <!-- Common -->
     <string name="channels">Channels</string>
@@ -151,9 +151,9 @@
     <string name="offline">Offline</string>
     <string name="clearChat">Clear Chat</string>
     <string name="connected">Connected</string>
-    <string name="mumlaConnected">WiMic connected</string>
-    <string name="mumlaConnecting">WiMic connecting</string>
-    <string name="mumlaDisconnected">WiMic disconnected</string>
+    <string name="wimicConnected">WiMic connected</string>
+    <string name="wimicConnecting">WiMic connecting</string>
+    <string name="wimicDisconnected">WiMic disconnected</string>
     <string name="lostConnection">Lost connection to the server.</string>
     <string name="resume">Resume</string>
     <string name="channel">Channel</string>

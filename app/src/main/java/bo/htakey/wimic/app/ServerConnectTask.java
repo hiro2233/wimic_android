@@ -30,20 +30,20 @@ import bo.htakey.rimic.RimicService;
 import bo.htakey.rimic.model.Server;
 import bo.htakey.wimic.R;
 import bo.htakey.wimic.Settings;
-import bo.htakey.wimic.db.MumlaDatabase;
-import bo.htakey.wimic.service.MumlaService;
-import bo.htakey.wimic.util.MumlaTrustStore;
+import bo.htakey.wimic.db.WimicDatabase;
+import bo.htakey.wimic.service.WimicService;
+import bo.htakey.wimic.util.WimicTrustStore;
 
 /**
- * Constructs an intent for connection to a MumlaService and executes it.
+ * Constructs an intent for connection to a WimicService and executes it.
  * Created by andrew on 20/08/14.
  */
 public class ServerConnectTask extends AsyncTask<Server, Void, Intent> {
     private Context mContext;
-    private MumlaDatabase mDatabase;
+    private WimicDatabase mDatabase;
     private Settings mSettings;
 
-    public ServerConnectTask(Context context, MumlaDatabase database) {
+    public ServerConnectTask(Context context, WimicDatabase database) {
         mContext = context;
         mDatabase = database;
         mSettings = Settings.getInstance(context);
@@ -68,14 +68,14 @@ public class ServerConnectTask extends AsyncTask<Server, Void, Intent> {
             e.printStackTrace();
         }
 
-        Intent connectIntent = new Intent(mContext, MumlaService.class);
+        Intent connectIntent = new Intent(mContext, WimicService.class);
         connectIntent.putExtra(RimicService.EXTRAS_SERVER, server);
         connectIntent.putExtra(RimicService.EXTRAS_CLIENT_NAME, mContext.getString(R.string.app_name)+" "+applicationVersion);
         connectIntent.putExtra(RimicService.EXTRAS_TRANSMIT_MODE, inputMethod);
         connectIntent.putExtra(RimicService.EXTRAS_DETECTION_THRESHOLD, mSettings.getDetectionThreshold());
         connectIntent.putExtra(RimicService.EXTRAS_AMPLITUDE_BOOST, mSettings.getAmplitudeBoostMultiplier());
         connectIntent.putExtra(RimicService.EXTRAS_AUTO_RECONNECT, mSettings.isAutoReconnectEnabled());
-        connectIntent.putExtra(RimicService.EXTRAS_AUTO_RECONNECT_DELAY, MumlaService.RECONNECT_DELAY);
+        connectIntent.putExtra(RimicService.EXTRAS_AUTO_RECONNECT_DELAY, WimicService.RECONNECT_DELAY);
         connectIntent.putExtra(RimicService.EXTRAS_USE_OPUS, !mSettings.isOpusDisabled());
         connectIntent.putExtra(RimicService.EXTRAS_INPUT_RATE, mSettings.getInputSampleRate());
         connectIntent.putExtra(RimicService.EXTRAS_INPUT_QUALITY, mSettings.getInputQuality());
@@ -85,9 +85,9 @@ public class ServerConnectTask extends AsyncTask<Server, Void, Intent> {
         connectIntent.putExtra(RimicService.EXTRAS_AUDIO_SOURCE, audioSource);
         connectIntent.putExtra(RimicService.EXTRAS_AUDIO_STREAM, audioStream);
         connectIntent.putExtra(RimicService.EXTRAS_FRAMES_PER_PACKET, mSettings.getFramesPerPacket());
-        connectIntent.putExtra(RimicService.EXTRAS_TRUST_STORE, MumlaTrustStore.getTrustStorePath(mContext));
-        connectIntent.putExtra(RimicService.EXTRAS_TRUST_STORE_PASSWORD, MumlaTrustStore.getTrustStorePassword());
-        connectIntent.putExtra(RimicService.EXTRAS_TRUST_STORE_FORMAT, MumlaTrustStore.getTrustStoreFormat());
+        connectIntent.putExtra(RimicService.EXTRAS_TRUST_STORE, WimicTrustStore.getTrustStorePath(mContext));
+        connectIntent.putExtra(RimicService.EXTRAS_TRUST_STORE_PASSWORD, WimicTrustStore.getTrustStorePassword());
+        connectIntent.putExtra(RimicService.EXTRAS_TRUST_STORE_FORMAT, WimicTrustStore.getTrustStoreFormat());
         connectIntent.putExtra(RimicService.EXTRAS_HALF_DUPLEX, mSettings.isHalfDuplex());
         connectIntent.putExtra(RimicService.EXTRAS_ENABLE_PREPROCESSOR, mSettings.isPreprocessorEnabled());
         if (server.isSaved()) {

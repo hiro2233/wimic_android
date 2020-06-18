@@ -65,7 +65,7 @@
     <string name="server_match_not_found">Не удалось найти сервер</string>
     <string name="server_match_expand_country">Не удалось найти оптимальный сервер в вашей стране. Искать во всем мире?</string>
     <string name="server_match_info">Имя: %1$s\nАдрес: %2$s:%3$d\nПользователей: %4$d / %5$d\nВерсия: %6$s \nСтрана: %7$s \nЗадержка: %8$d ms</string>
-    <string name="server_match_description">Mumla может автоматически найти пустой сервер, основываясь на местоположении, версии, и задержке.</string>
+    <string name="server_match_description">Wimic может автоматически найти пустой сервер, основываясь на местоположении, версии, и задержке.</string>
 
     <!-- Common -->
     <string name="channels">Каналы</string>
@@ -133,9 +133,9 @@
     <string name="offline">Оффлайн</string>
     <string name="clearChat">Очистить чат</string>
     <string name="connected">Подключено</string>
-    <string name="mumlaConnected">WiMic подключен</string>
-    <string name="mumlaConnecting">WiMic подключается</string>
-    <string name="mumlaDisconnected">WiMic отключен</string>
+    <string name="wimicConnected">WiMic подключен</string>
+    <string name="wimicConnecting">WiMic подключается</string>
+    <string name="wimicDisconnected">WiMic отключен</string>
     <string name="lostConnection">Потеряно подключение к серверу.</string>
     <string name="resume">Продолжить</string>
     <string name="channel">Канал</string>

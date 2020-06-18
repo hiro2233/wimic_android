@@ -88,23 +88,23 @@ import bo.htakey.wimic.channel.ChannelFragment;
 import bo.htakey.wimic.channel.ServerInfoFragment;
 import bo.htakey.wimic.db.DatabaseCertificate;
 import bo.htakey.wimic.db.DatabaseProvider;
-import bo.htakey.wimic.db.MumlaDatabase;
-import bo.htakey.wimic.db.MumlaSQLiteDatabase;
+import bo.htakey.wimic.db.WimicDatabase;
+import bo.htakey.wimic.db.WimicSQLiteDatabase;
 import bo.htakey.wimic.db.PublicServer;
-import bo.htakey.wimic.preference.MumlaCertificateGenerateTask;
+import bo.htakey.wimic.preference.WimicCertificateGenerateTask;
 import bo.htakey.wimic.preference.Preferences;
 import bo.htakey.wimic.servers.FavouriteServerListFragment;
 import bo.htakey.wimic.servers.PublicServerListFragment;
 import bo.htakey.wimic.servers.ServerEditFragment;
-import bo.htakey.wimic.service.IMumlaService;
-import bo.htakey.wimic.service.MumlaService;
+import bo.htakey.wimic.service.IWimicService;
+import bo.htakey.wimic.service.WimicService;
 import bo.htakey.wimic.util.RimicServiceFragment;
 import bo.htakey.wimic.util.RimicServiceProvider;
-import bo.htakey.wimic.util.MumlaTrustStore;
+import bo.htakey.wimic.util.WimicTrustStore;
 
 import static bo.htakey.wimic.Constants.TAG;
 
-public class MumlaActivity extends AppCompatActivity implements ListView.OnItemClickListener,
+public class WimicActivity extends AppCompatActivity implements ListView.OnItemClickListener,
         FavouriteServerListFragment.ServerConnectHandler, RimicServiceProvider, DatabaseProvider,
         SharedPreferences.OnSharedPreferenceChangeListener, DrawerAdapter.DrawerDataProvider,
         ServerEditFragment.ServerEditListener {
@@ -113,8 +113,8 @@ public class MumlaActivity extends AppCompatActivity implements ListView.OnItemC
      */
     public static final String EXTRA_DRAWER_FRAGMENT = "drawer_fragment";
 
-    private IMumlaService mService;
-    private MumlaDatabase mDatabase;
+    private IWimicService mService;
+    private WimicDatabase mDatabase;
     private Settings mSettings;
 
     private ActionBarDrawerToggle mDrawerToggle;
@@ -135,7 +135,7 @@ public class MumlaActivity extends AppCompatActivity implements ListView.OnItemC
     private ServiceConnection mConnection = new ServiceConnection() {
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
-            mService = ((MumlaService.MumlaBinder) service).getService();
+            mService = ((WimicService.WimicBinder) service).getService();
             mService.setSuppressNotifications(true);
             mService.registerObserver(mObserver);
             mService.clearChatNotifications(); // Clear chat notifications on resume.
@@ -200,7 +200,7 @@ public class MumlaActivity extends AppCompatActivity implements ListView.OnItemC
             try {
                 final X509Certificate x509 = chain[0];
 
-                AlertDialog.Builder adb = new AlertDialog.Builder(MumlaActivity.this);
+                AlertDialog.Builder adb = new AlertDialog.Builder(WimicActivity.this);
                 adb.setTitle(R.string.untrusted_certificate);
                 View layout = getLayoutInflater().inflate(R.layout.certificate_info, null);
                 TextView text = layout.findViewById(R.id.certificate_info_text);
@@ -229,14 +229,14 @@ public class MumlaActivity extends AppCompatActivity implements ListView.OnItemC
                         // Try to add to trust store
                         try {
                             String alias = lastServer.getHost();
-                            KeyStore trustStore = MumlaTrustStore.getTrustStore(MumlaActivity.this);
+                            KeyStore trustStore = WimicTrustStore.getTrustStore(WimicActivity.this);
                             trustStore.setCertificateEntry(alias, x509);
-                            MumlaTrustStore.saveTrustStore(MumlaActivity.this, trustStore);
-                            Toast.makeText(MumlaActivity.this, R.string.trust_added, Toast.LENGTH_LONG).show();
+                            WimicTrustStore.saveTrustStore(WimicActivity.this, trustStore);
+                            Toast.makeText(WimicActivity.this, R.string.trust_added, Toast.LENGTH_LONG).show();
                             connectToServer(lastServer);
                         } catch (Exception e) {
                             e.printStackTrace();
-                            Toast.makeText(MumlaActivity.this, R.string.trust_add_failed, Toast.LENGTH_LONG).show();
+                            Toast.makeText(WimicActivity.this, R.string.trust_add_failed, Toast.LENGTH_LONG).show();
                         }
                     }
                 });
@@ -249,7 +249,7 @@ public class MumlaActivity extends AppCompatActivity implements ListView.OnItemC
 
         @Override
         public void onPermissionDenied(String reason) {
-            AlertDialog.Builder adb = new AlertDialog.Builder(MumlaActivity.this);
+            AlertDialog.Builder adb = new AlertDialog.Builder(WimicActivity.this);
             adb.setTitle(R.string.perm_denied);
             adb.setMessage(reason);
             adb.show();
@@ -269,7 +269,7 @@ public class MumlaActivity extends AppCompatActivity implements ListView.OnItemC
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         preferences.registerOnSharedPreferenceChangeListener(this);
 
-        mDatabase = new MumlaSQLiteDatabase(this); // TODO add support for cloud storage
+        mDatabase = new WimicSQLiteDatabase(this); // TODO add support for cloud storage
         mDatabase.open();
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -334,7 +334,7 @@ public class MumlaActivity extends AppCompatActivity implements ListView.OnItemC
 
                 // Open a dialog prompting the user to connect to the Mumble server.
                 DialogFragment fragment = ServerEditFragment.createServerEditDialog(
-                        MumlaActivity.this, server, ServerEditFragment.Action.CONNECT_ACTION, true);
+                        WimicActivity.this, server, ServerEditFragment.Action.CONNECT_ACTION, true);
                 fragment.show(getSupportFragmentManager(), "url_edit");
             } catch (MalformedURLException e) {
                 Toast.makeText(this, getString(R.string.mumble_url_parse_failed), Toast.LENGTH_LONG).show();
@@ -357,7 +357,7 @@ public class MumlaActivity extends AppCompatActivity implements ListView.OnItemC
     @Override
     protected void onResume() {
         super.onResume();
-        Intent connectIntent = new Intent(this, MumlaService.class);
+        Intent connectIntent = new Intent(this, WimicService.class);
         bindService(connectIntent, mConnection, 0);
     }
 
@@ -410,7 +410,7 @@ public class MumlaActivity extends AppCompatActivity implements ListView.OnItemC
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.mumla, menu);
+        getMenuInflater().inflate(R.menu.wimic, menu);
         return true;
     }
 
@@ -486,7 +486,7 @@ public class MumlaActivity extends AppCompatActivity implements ListView.OnItemC
         adb.setPositiveButton(R.string.generate, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                MumlaCertificateGenerateTask generateTask = new MumlaCertificateGenerateTask(MumlaActivity.this) {
+                WimicCertificateGenerateTask generateTask = new WimicCertificateGenerateTask(WimicActivity.this) {
                     @Override
                     protected void onPostExecute(DatabaseCertificate result) {
                         super.onPostExecute(result);
@@ -551,10 +551,10 @@ public class MumlaActivity extends AppCompatActivity implements ListView.OnItemC
     public void connectToServer(final Server server) {
         mServerPendingPerm = null;
 
-        if (ContextCompat.checkSelfPermission(MumlaActivity.this,
+        if (ContextCompat.checkSelfPermission(WimicActivity.this,
                 Manifest.permission.RECORD_AUDIO)
                 != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(MumlaActivity.this,
+            ActivityCompat.requestPermissions(WimicActivity.this,
                     new String[]{Manifest.permission.RECORD_AUDIO},
                     PERMISSIONS_REQUEST_RECORD_AUDIO);
             mServerPendingPerm = server;
@@ -587,14 +587,14 @@ public class MumlaActivity extends AppCompatActivity implements ListView.OnItemC
         if (mSettings.isTorEnabled()) {
             if (!OrbotHelper.isOrbotInstalled(this)) {
                 mSettings.disableTor();
-                AlertDialog.Builder adb = new AlertDialog.Builder(MumlaActivity.this);
+                AlertDialog.Builder adb = new AlertDialog.Builder(WimicActivity.this);
                 adb.setMessage(R.string.orbot_not_installed);
                 adb.setPositiveButton(android.R.string.ok, null);
                 adb.show();
                 return;
             } else {
                 if (!isPortOpen(RimicConnection.TOR_HOST, RimicConnection.TOR_PORT, 2000)) {
-                    AlertDialog.Builder adb = new AlertDialog.Builder(MumlaActivity.this);
+                    AlertDialog.Builder adb = new AlertDialog.Builder(WimicActivity.this);
                     adb.setMessage(getString(R.string.orbot_tor_failed, RimicConnection.TOR_PORT));
                     adb.setPositiveButton(android.R.string.ok, null);
                     adb.show();
@@ -645,7 +645,7 @@ public class MumlaActivity extends AppCompatActivity implements ListView.OnItemC
                     Log.w(TAG, "No pending server after record audio permission was granted");
                 }
             } else {
-                Toast.makeText(MumlaActivity.this, getString(R.string.grant_perm_microphone),
+                Toast.makeText(WimicActivity.this, getString(R.string.grant_perm_microphone),
                         Toast.LENGTH_LONG).show();
             }
         }
@@ -709,7 +709,7 @@ public class MumlaActivity extends AppCompatActivity implements ListView.OnItemC
                     @Override
                     public void onCancel(DialogInterface dialog) {
                         mService.disconnect();
-                        Toast.makeText(MumlaActivity.this, R.string.cancelled,
+                        Toast.makeText(WimicActivity.this, R.string.cancelled,
                                 Toast.LENGTH_SHORT).show();
                     }
                 });
@@ -727,7 +727,7 @@ public class MumlaActivity extends AppCompatActivity implements ListView.OnItemC
                         break;
                     }
                     RimicException error = getService().getConnectionError();
-                    AlertDialog.Builder ab = new AlertDialog.Builder(MumlaActivity.this);
+                    AlertDialog.Builder ab = new AlertDialog.Builder(WimicActivity.this);
                     ab.setTitle(getString(R.string.connectionRefused) + (mSettings.isTorEnabled() ? " (Tor)" : ""));
                     if (mService.isReconnecting()) {
                         ab.setMessage(error.getMessage() + "\n\n"
@@ -796,12 +796,12 @@ public class MumlaActivity extends AppCompatActivity implements ListView.OnItemC
      */
 
     @Override
-    public IMumlaService getService() {
+    public IWimicService getService() {
         return mService;
     }
 
     @Override
-    public MumlaDatabase getDatabase() {
+    public WimicDatabase getDatabase() {
         return mDatabase;
     }
 

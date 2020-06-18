@@ -17,13 +17,13 @@
 
 package bo.htakey.wimic.util;
 
-import bo.htakey.wimic.service.IMumlaService;
+import bo.htakey.wimic.service.IWimicService;
 
 /**
  * Created by andrew on 03/08/13.
  */
 public interface RimicServiceProvider {
-    IMumlaService getService();
+    IWimicService getService();
     void addServiceFragment(RimicServiceFragment fragment);
     void removeServiceFragment(RimicServiceFragment fragment);
 }

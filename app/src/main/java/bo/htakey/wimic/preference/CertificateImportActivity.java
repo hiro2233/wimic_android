@@ -43,8 +43,8 @@ import java.security.cert.CertificateException;
 import java.util.UUID;
 
 import bo.htakey.wimic.R;
-import bo.htakey.wimic.db.MumlaDatabase;
-import bo.htakey.wimic.db.MumlaSQLiteDatabase;
+import bo.htakey.wimic.db.WimicDatabase;
+import bo.htakey.wimic.db.WimicSQLiteDatabase;
 
 /**
  * Created by andrew on 11/01/16.
@@ -144,7 +144,7 @@ public class CertificateImportActivity extends AppCompatActivity {
             return;
         }
 
-        MumlaDatabase database = new MumlaSQLiteDatabase(this);
+        WimicDatabase database = new WimicSQLiteDatabase(this);
         database.addCertificate(fileName, output.toByteArray());
         database.close();
 

@@ -21,7 +21,7 @@
     <string name="about">À propos</string>
     <string name="aboutSum">Mentions et remerciements</string>
     <string name="acknowledgements">Remerciements</string>
-    <string name="acknowledgementsSum">Découvrez qui a contribué à Mumla</string>
+    <string name="acknowledgementsSum">Découvrez qui a contribué à Wimic</string>
     <string name="licenses">Licences</string>
     <string name="authentication">Authentification</string>
     <string name="authenticationSum">Gérer et créer des certificats</string>
@@ -56,7 +56,7 @@
     <string name="chatNotificationsSum">Afficher une notification lorsqu\'un utilisateur poste dans le chat.</string>
     <string name="defaultUsername">Nom d\'utilisateur par défaut</string>
     <string name="defaultUsernameSum">Le nom d\'utilisateur par défaut pour la connexion à des serveurs.</string>
-    <string name="defaultUsernameDefault">Utilisateur_Mumla</string>
+    <string name="defaultUsernameDefault">Utilisateur_Wimic</string>
     <string name="certificateGenerate">Générer un certificat</string>
     <string name="certificateGenerateSum">Générer un nouveau certificat WiMic auto-signé. Recommendé pour les débutants.</string>
     <string name="pttSettings">Paramètres de \"appuyer pour parler\"</string>

@@ -64,7 +64,7 @@
     <string name="server_match_not_found">サーバーが見つかりませんでした</string>
     <string name="server_match_expand_country">あなたの国で最適なサーバーを見つけることができませんでした。ワールドワイドに検索を展開しますか?</string>
     <string name="server_match_info">名前: %1$s\nホスト: %2$s:%3$d\nユーザー: %4$d / %5$d\nバージョン: %6$s \n国: %7$s \n遅延時間: %8$d ms</string>
-    <string name="server_match_description">Mumla は、サーバの場所、バージョン、および遅延時間に基づいて最適な空のサーバーを自動的に見つけることができます。</string>
+    <string name="server_match_description">Wimic は、サーバの場所、バージョン、および遅延時間に基づいて最適な空のサーバーを自動的に見つけることができます。</string>
 
     <!--Common-->
     <string name="channels">チャンネル</string>
@@ -132,9 +132,9 @@
     <string name="offline">オフライン</string>
     <string name="clearChat">チャットをクリア</string>
     <string name="connected">接続されました</string>
-    <string name="mumlaConnected">WiMic に接続されました</string>
-    <string name="mumlaConnecting">WiMic 接続中</string>
-    <string name="mumlaDisconnected">WiMic から切断されました</string>
+    <string name="wimicConnected">WiMic に接続されました</string>
+    <string name="wimicConnecting">WiMic 接続中</string>
+    <string name="wimicDisconnected">WiMic から切断されました</string>
     <string name="lostConnection">サーバーへの接続が失われました。</string>
     <string name="resume">再開</string>
     <string name="channel">チャンネル</string>
@@ -162,7 +162,7 @@
     <string name="country">国</string>
     <string name="share">共有</string>
     <string name="description">説明</string>
-    <string name="shareMessage">Mumla で、この Mumble サーバーに参加してください! %s</string>
+    <string name="shareMessage">Wimic で、この Mumble サーバーに参加してください! %s</string>
     <string name="noServerInfo">Ping して、情報を取得</string>
     <string name="status_notify_muted_and_deafened">ミュートおよび防音しました。</string>
     <string name="status_notify_muted">ミュートしました。</string>

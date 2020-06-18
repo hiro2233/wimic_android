@@ -64,7 +64,7 @@
     <string name="server_match_not_found">Impossible de trouver le serveur</string>
     <string name="server_match_expand_country">Impossible de trouver aucun serveur optimal dans votre pays. Étendre la recherche au monde entier ?</string>
     <string name="server_match_info">Nom: %1$s\nHôte: %2$s:%3$d\nUtilisateur: %4$d / %5$d\nVersion:%6$s \nPays: %7$s \nLatence: %8$d ms</string>
-    <string name="server_match_description">Mumla peut vous trouver automatiquement un serveur vide, en optimisant en se basant sur la position du serveur, sa version, et sa latence.</string>
+    <string name="server_match_description">Wimic peut vous trouver automatiquement un serveur vide, en optimisant en se basant sur la position du serveur, sa version, et sa latence.</string>
 
     <!--Common-->
     <string name="channels">Canaux</string>
@@ -132,9 +132,9 @@
     <string name="offline">Hors ligne</string>
     <string name="clearChat">Vider le chat</string>
     <string name="connected">Connecté</string>
-    <string name="mumlaConnected">WiMic connecté</string>
-    <string name="mumlaConnecting">WiMic en connexion</string>
-    <string name="mumlaDisconnected">WiMic déconnecté</string>
+    <string name="wimicConnected">WiMic connecté</string>
+    <string name="wimicConnecting">WiMic en connexion</string>
+    <string name="wimicDisconnected">WiMic déconnecté</string>
     <string name="lostConnection">Connexion au serveur perdu.</string>
     <string name="resume">Reprendre</string>
     <string name="channel">Salon</string>
@@ -162,7 +162,7 @@
     <string name="country">Pays</string>
     <string name="share">Partager</string>
     <string name="description">Description</string>
-    <string name="shareMessage">Rejoindre ce serveur Mumble avec Mumla ! %s</string>
+    <string name="shareMessage">Rejoindre ce serveur Mumble avec Wimic ! %s</string>
     <string name="noServerInfo">Pinguer pour récupérer des infos</string>
     <string name="status_notify_muted_and_deafened">Muet et sourd.</string>
     <string name="status_notify_muted">Muet.</string>

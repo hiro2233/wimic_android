@@ -41,8 +41,8 @@ import java.util.List;
 import bo.htakey.wimic.Constants;
 import bo.htakey.wimic.R;
 import bo.htakey.wimic.db.DatabaseCertificate;
-import bo.htakey.wimic.db.MumlaDatabase;
-import bo.htakey.wimic.db.MumlaSQLiteDatabase;
+import bo.htakey.wimic.db.WimicDatabase;
+import bo.htakey.wimic.db.WimicSQLiteDatabase;
 
 /**
  * Created by andrew on 12/01/16.
@@ -51,9 +51,9 @@ public class CertificateExportActivity extends AppCompatActivity implements Dial
     /**
      * The name of the directory to export to on external storage.
      */
-    private static final String EXTERNAL_STORAGE_DIR = "Mumla";
+    private static final String EXTERNAL_STORAGE_DIR = "Wimic";
 
-    private MumlaDatabase mDatabase;
+    private WimicDatabase mDatabase;
     private List<DatabaseCertificate> mCertificates;
 
     private static final int PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE = 2;
@@ -62,7 +62,7 @@ public class CertificateExportActivity extends AppCompatActivity implements Dial
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mDatabase = new MumlaSQLiteDatabase(this);
+        mDatabase = new WimicSQLiteDatabase(this);
         mCertificates = mDatabase.getCertificates();
 
         CharSequence[] labels = new CharSequence[mCertificates.size()];
@@ -112,12 +112,12 @@ public class CertificateExportActivity extends AppCompatActivity implements Dial
         }
 
         File storageDirectory = Environment.getExternalStorageDirectory();
-        File mumlaDirectory = new File(storageDirectory, EXTERNAL_STORAGE_DIR);
-        if (!mumlaDirectory.exists() && !mumlaDirectory.mkdir()) {
+        File wimicDirectory = new File(storageDirectory, EXTERNAL_STORAGE_DIR);
+        if (!wimicDirectory.exists() && !wimicDirectory.mkdir()) {
             showErrorDialog(R.string.externalStorageUnavailable);
             return;
         }
-        File outputFile = new File(mumlaDirectory, certificate.getName());
+        File outputFile = new File(wimicDirectory, certificate.getName());
         try {
             FileOutputStream fos = new FileOutputStream(outputFile);
             BufferedOutputStream bos = new BufferedOutputStream(fos);

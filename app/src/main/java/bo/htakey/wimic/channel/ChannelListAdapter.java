@@ -51,9 +51,9 @@ import bo.htakey.rimic.model.Server;
 import bo.htakey.rimic.model.TalkState;
 import bo.htakey.wimic.Constants;
 import bo.htakey.wimic.R;
-import bo.htakey.wimic.db.MumlaDatabase;
+import bo.htakey.wimic.db.WimicDatabase;
 import bo.htakey.wimic.drawable.CircleDrawable;
-import bo.htakey.wimic.service.MumlaService;
+import bo.htakey.wimic.service.WimicService;
 
 /**
  * Created by andrew on 31/07/13.
@@ -65,7 +65,7 @@ public class ChannelListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
 
     private Context mContext;
     private IRimicService mService;
-    private MumlaDatabase mDatabase;
+    private WimicDatabase mDatabase;
     private List<Integer> mRootChannels;
     private List<Node> mNodes;
     /**
@@ -78,7 +78,7 @@ public class ChannelListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     private boolean mShowChannelUserCount;
     private final FragmentManager mFragmentManager;
 
-    public ChannelListAdapter(Context context, IRimicService service, MumlaDatabase database,
+    public ChannelListAdapter(Context context, IRimicService service, WimicDatabase database,
                               FragmentManager fragmentManager, boolean showPinnedOnly,
                               boolean showChannelUserCount) throws RemoteException {
         setHasStableIds(true);
@@ -247,7 +247,7 @@ public class ChannelListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
             uvh.mMoreButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    UserMenu menu = new UserMenu(mContext, user, (MumlaService) mService,
+                    UserMenu menu = new UserMenu(mContext, user, (WimicService) mService,
                             mFragmentManager, ChannelListAdapter.this);
                     menu.showPopup(v);
                 }

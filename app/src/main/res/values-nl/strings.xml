@@ -64,7 +64,7 @@
     <string name="server_match_not_found">Server niet gevonden</string>
     <string name="server_match_expand_country">Kon geen optimale servers in uw land vinden. Zoekopdracht wereldwijd uitbreiden?</string>
     <string name="server_match_info">Naam: %1$s\nHost: %2$s:%3$d\nGebruikers: %4$d / %5$d\nVersie: %6$s \nLand: %7$s \nLatency: %8$d ms</string>
-    <string name="server_match_description">Mumla kan automatisch een lege server zoeken, geoptimaliseerd aan de hand van locatie, versie en latency.</string>
+    <string name="server_match_description">Wimic kan automatisch een lege server zoeken, geoptimaliseerd aan de hand van locatie, versie en latency.</string>
 
     <!--Common-->
     <string name="channels">Kanalen</string>
@@ -132,9 +132,9 @@
     <string name="offline">Offline</string>
     <string name="clearChat">Chat Legen</string>
     <string name="connected">Verbonden</string>
-    <string name="mumlaConnected">WiMic Verbonden</string>
-    <string name="mumlaConnecting">WiMic Verbindt</string>
-    <string name="mumlaDisconnected">WiMic Verbinding Verbroken</string>
+    <string name="wimicConnected">WiMic Verbonden</string>
+    <string name="wimicConnecting">WiMic Verbindt</string>
+    <string name="wimicDisconnected">WiMic Verbinding Verbroken</string>
     <string name="lostConnection">Verbinding met de server verloren.</string>
     <string name="resume">Hervatten</string>
     <string name="channel">Kanaal</string>

@@ -18,5 +18,5 @@
 package bo.htakey.wimic;
 
 public class Constants {
-    public static final String TAG = "Mumla";
+    public static final String TAG = "Wimic";
 }

@@ -31,21 +31,21 @@ import android.widget.Toast;
 import bo.htakey.wimic.R;
 
 /**
- * A hot corner in an area of the screen specified by {@link MumlaHotCorner#getGravity()}.
+ * A hot corner in an area of the screen specified by {@link WimicHotCorner#getGravity()}.
  * Created by andrew on 07/06/14.
  */
-public class MumlaHotCorner implements View.OnTouchListener {
+public class WimicHotCorner implements View.OnTouchListener {
     private WindowManager mWindowManager;
     private Context mContext;
     private View mView;
     private boolean mShown;
     private int mHighlightColour;
-    private MumlaHotCornerListener mListener;
+    private WimicHotCornerListener mListener;
     private WindowManager.LayoutParams mParams;
 
-    public MumlaHotCorner(Context context, int gravity, MumlaHotCornerListener listener) {
+    public WimicHotCorner(Context context, int gravity, WimicHotCornerListener listener) {
         if(listener == null) {
-            throw new NullPointerException("A MumlaHotCornerListener must be assigned.");
+            throw new NullPointerException("A WimicHotCornerListener must be assigned.");
         }
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         mWindowManager = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
@@ -124,7 +124,7 @@ public class MumlaHotCorner implements View.OnTouchListener {
         return mParams.gravity;
     }
 
-    public static interface MumlaHotCornerListener {
+    public static interface WimicHotCornerListener {
         public void onHotCornerDown();
         public void onHotCornerUp();
     }

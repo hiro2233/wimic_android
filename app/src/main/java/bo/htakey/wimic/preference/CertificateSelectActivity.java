@@ -30,8 +30,8 @@ import java.util.List;
 import bo.htakey.wimic.R;
 import bo.htakey.wimic.Settings;
 import bo.htakey.wimic.db.DatabaseCertificate;
-import bo.htakey.wimic.db.MumlaDatabase;
-import bo.htakey.wimic.db.MumlaSQLiteDatabase;
+import bo.htakey.wimic.db.WimicDatabase;
+import bo.htakey.wimic.db.WimicSQLiteDatabase;
 
 /**
  * Created by andrew on 11/01/16.
@@ -46,7 +46,7 @@ public class CertificateSelectActivity extends AppCompatActivity implements Dial
         Settings settings = Settings.getInstance(this);
         mCertificates = new ArrayList<>();
         mCertificates.add(new NoCertificateItem(getString(R.string.no_certificate), settings));
-        MumlaDatabase database = new MumlaSQLiteDatabase(this);
+        WimicDatabase database = new WimicSQLiteDatabase(this);
         for (DatabaseCertificate certificate : database.getCertificates()) {
             mCertificates.add(new CertificateItem(certificate, settings));
         }

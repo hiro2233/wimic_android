@@ -30,7 +30,7 @@ import java.util.List;
 import bo.htakey.rimic.model.Server;
 import bo.htakey.wimic.Constants;
 
-public class MumlaSQLiteDatabase extends SQLiteOpenHelper implements MumlaDatabase {
+public class WimicSQLiteDatabase extends SQLiteOpenHelper implements WimicDatabase {
     public static final String DATABASE_NAME = "mumble.db";
 
     public static final String TABLE_SERVER = "server";
@@ -115,11 +115,11 @@ public class MumlaSQLiteDatabase extends SQLiteOpenHelper implements MumlaDataba
     public static final Integer PRE_CERTIFICATES_DB_VERSION = 7;
     public static final Integer CURRENT_DB_VERSION = 8;
 
-    public MumlaSQLiteDatabase(Context context) {
+    public WimicSQLiteDatabase(Context context) {
         super(context, DATABASE_NAME, null, CURRENT_DB_VERSION);
     }
 
-    public MumlaSQLiteDatabase(Context context, String name) {
+    public WimicSQLiteDatabase(Context context, String name) {
         super(context, name, null, CURRENT_DB_VERSION);
     }
 

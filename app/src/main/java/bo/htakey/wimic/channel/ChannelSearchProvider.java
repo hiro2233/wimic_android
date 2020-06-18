@@ -39,7 +39,7 @@ import bo.htakey.rimic.model.IChannel;
 import bo.htakey.rimic.model.IUser;
 import bo.htakey.wimic.Constants;
 import bo.htakey.wimic.R;
-import bo.htakey.wimic.service.MumlaService;
+import bo.htakey.wimic.service.WimicService;
 
 public class ChannelSearchProvider extends ContentProvider {
 
@@ -52,7 +52,7 @@ public class ChannelSearchProvider extends ContentProvider {
     private ServiceConnection mConn = new ServiceConnection() {
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
-            mService = ((MumlaService.MumlaBinder) service).getService();
+            mService = ((WimicService.WimicBinder) service).getService();
             synchronized (mServiceLock) {
                 mServiceLock.notify();
             }
@@ -94,7 +94,7 @@ public class ChannelSearchProvider extends ContentProvider {
 
         // Try to connect to the service. Wait for conn to establish.
         if(mService == null) {
-            Intent serviceIntent = new Intent(getContext(), MumlaService.class);
+            Intent serviceIntent = new Intent(getContext(), WimicService.class);
             getContext().bindService(serviceIntent, mConn, 0);
 
             synchronized (mServiceLock) {

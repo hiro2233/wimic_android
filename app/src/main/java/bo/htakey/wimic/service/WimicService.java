@@ -54,24 +54,24 @@ import bo.htakey.wimic.service.ipc.TalkBroadcastReceiver;
 import bo.htakey.wimic.util.HtmlUtils;
 
 /**
- * An extension of the Rimic service with some added Mumla-exclusive non-standard Mumble features.
+ * An extension of the Rimic service with some added Wimic-exclusive non-standard Mumble features.
  * Created by andrew on 28/07/13.
  */
-public class MumlaService extends RimicService implements
+public class WimicService extends RimicService implements
         SharedPreferences.OnSharedPreferenceChangeListener,
-        MumlaConnectionNotification.OnActionListener,
-        MumlaReconnectNotification.OnActionListener, IMumlaService {
+        WimicConnectionNotification.OnActionListener,
+        WimicReconnectNotification.OnActionListener, IWimicService {
     /** Undocumented constant that permits a proximity-sensing wake lock. */
     public static final int PROXIMITY_SCREEN_OFF_WAKE_LOCK = 32;
     public static final int TTS_THRESHOLD = 250; // Maximum number of characters to read
     public static final int RECONNECT_DELAY = 10000;
 
     private Settings mSettings;
-    private MumlaConnectionNotification mNotification;
-    private MumlaMessageNotification mMessageNotification;
-    private MumlaReconnectNotification mReconnectNotification;
+    private WimicConnectionNotification mNotification;
+    private WimicMessageNotification mMessageNotification;
+    private WimicReconnectNotification mReconnectNotification;
     /** Channel view overlay. */
-    private MumlaOverlay mChannelOverlay;
+    private WimicOverlay mChannelOverlay;
     /** Proximity lock for handset mode. */
     private PowerManager.WakeLock mProximityLock;
     /** Play sound when push to talk key is pressed */
@@ -96,8 +96,8 @@ public class MumlaService extends RimicService implements
     };
 
     /** The view representing the hot corner. */
-    private MumlaHotCorner mHotCorner;
-    private MumlaHotCorner.MumlaHotCornerListener mHotCornerListener = new MumlaHotCorner.MumlaHotCornerListener() {
+    private WimicHotCorner mHotCorner;
+    private WimicHotCorner.WimicHotCornerListener mHotCornerListener = new WimicHotCorner.WimicHotCornerListener() {
         @Override
         public void onHotCornerDown() {
             onTalkKeyDown();
@@ -121,10 +121,10 @@ public class MumlaService extends RimicService implements
             }
 
             final String tor = mSettings.isTorEnabled() ? " (Tor)" : "";
-            mNotification = MumlaConnectionNotification.create(MumlaService.this,
-                    getString(R.string.mumlaConnecting) + tor,
+            mNotification = WimicConnectionNotification.create(WimicService.this,
+                    getString(R.string.wimicConnecting) + tor,
                     getString(R.string.connecting) + tor,
-                    MumlaService.this);
+                    WimicService.this);
             mNotification.show();
 
             mErrorShown = false;
@@ -134,7 +134,7 @@ public class MumlaService extends RimicService implements
         public void onConnected() {
             if (mNotification != null) {
                 final String tor = mSettings.isTorEnabled() ? " (Tor)" : "";
-                mNotification.setCustomTicker(getString(R.string.mumlaConnected) + tor);
+                mNotification.setCustomTicker(getString(R.string.wimicConnected) + tor);
                 mNotification.setCustomContentText(getString(R.string.connected) + tor);
                 mNotification.setActionsShown(true);
                 mNotification.show();
@@ -149,9 +149,9 @@ public class MumlaService extends RimicService implements
             }
             if (e != null && !mSuppressNotifications) {
                 mReconnectNotification =
-                        MumlaReconnectNotification.show(MumlaService.this,
+                        WimicReconnectNotification.show(WimicService.this,
                                 e.getMessage() + (mSettings.isTorEnabled() ? " (Tor)" : ""),
-                                isReconnecting(), MumlaService.this);
+                                isReconnecting(), WimicService.this);
             }
         }
 
@@ -282,14 +282,14 @@ public class MumlaService extends RimicService implements
 
         // Manually set theme to style overlay views
         // XML <application> theme does NOT do this!
-        setTheme(R.style.Theme_Mumla);
+        setTheme(R.style.Theme_Wimic);
 
         mMessageLog = new ArrayList<>();
-        mMessageNotification = new MumlaMessageNotification(MumlaService.this);
+        mMessageNotification = new WimicMessageNotification(WimicService.this);
 
         // Instantiate overlay view
-        mChannelOverlay = new MumlaOverlay(this);
-        mHotCorner = new MumlaHotCorner(this, mSettings.getHotCornerGravity(), mHotCornerListener);
+        mChannelOverlay = new WimicOverlay(this);
+        mHotCorner = new WimicHotCorner(this, mSettings.getHotCornerGravity(), mHotCornerListener);
 
         // Set up TTS
         if(mSettings.isTextToSpeechEnabled())
@@ -300,7 +300,7 @@ public class MumlaService extends RimicService implements
 
     @Override
     public IBinder onBind(Intent intent) {
-        return new MumlaBinder(this);
+        return new WimicBinder(this);
     }
 
     @Override
@@ -455,7 +455,7 @@ public class MumlaService extends RimicService implements
     private void setProximitySensorOn(boolean on) {
         if(on) {
             PowerManager pm = (PowerManager) getSystemService(POWER_SERVICE);
-            mProximityLock = pm.newWakeLock(PROXIMITY_SCREEN_OFF_WAKE_LOCK, "Mumla:Proximity");
+            mProximityLock = pm.newWakeLock(PROXIMITY_SCREEN_OFF_WAKE_LOCK, "Wimic:Proximity");
             mProximityLock.acquire();
         } else {
             if(mProximityLock != null) mProximityLock.release();
@@ -608,21 +608,21 @@ public class MumlaService extends RimicService implements
      * <b>Chat notifications are NOT suppressed.</b> They may be if a chat indicator is added in the
      * activity itself. For now, the user may disable chat notifications manually.
      *
-     * @param suppressNotifications true if Mumla is to disable notifications.
+     * @param suppressNotifications true if Wimic is to disable notifications.
      */
     @Override
     public void setSuppressNotifications(boolean suppressNotifications) {
         mSuppressNotifications = suppressNotifications;
     }
 
-    public static class MumlaBinder extends Binder {
-        private final MumlaService mService;
+    public static class WimicBinder extends Binder {
+        private final WimicService mService;
 
-        private MumlaBinder(MumlaService service) {
+        private WimicBinder(WimicService service) {
             mService = service;
         }
 
-        public IMumlaService getService() {
+        public IWimicService getService() {
             return mService;
         }
     }

@@ -36,7 +36,7 @@ public class CertificateGenerateActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        MumlaCertificateGenerateTask task = new MumlaCertificateGenerateTask(this) {
+        WimicCertificateGenerateTask task = new WimicCertificateGenerateTask(this) {
             @Override
             protected void onPostExecute(DatabaseCertificate result) {
                 super.onPostExecute(result);
