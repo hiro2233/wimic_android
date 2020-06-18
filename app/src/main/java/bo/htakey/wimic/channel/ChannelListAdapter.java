@@ -42,9 +42,9 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 
-import bo.htakey.rimic.HumlaService;
-import bo.htakey.rimic.IHumlaService;
-import bo.htakey.rimic.IHumlaSession;
+import bo.htakey.rimic.RimicService;
+import bo.htakey.rimic.IRimicService;
+import bo.htakey.rimic.IRimicSession;
 import bo.htakey.rimic.model.IChannel;
 import bo.htakey.rimic.model.IUser;
 import bo.htakey.rimic.model.Server;
@@ -64,7 +64,7 @@ public class ChannelListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     public static final long USER_ID_MASK = (0x1L << 33);
 
     private Context mContext;
-    private IHumlaService mService;
+    private IRimicService mService;
     private MumlaDatabase mDatabase;
     private List<Integer> mRootChannels;
     private List<Node> mNodes;
@@ -78,7 +78,7 @@ public class ChannelListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     private boolean mShowChannelUserCount;
     private final FragmentManager mFragmentManager;
 
-    public ChannelListAdapter(Context context, IHumlaService service, MumlaDatabase database,
+    public ChannelListAdapter(Context context, IRimicService service, MumlaDatabase database,
                               FragmentManager fragmentManager, boolean showPinnedOnly,
                               boolean showChannelUserCount) throws RemoteException {
         setHasStableIds(true);
@@ -150,7 +150,7 @@ public class ChannelListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
 
             int nameTypeface = Typeface.NORMAL;
             if (mService != null && mService.isConnected()) {
-                IHumlaSession session = mService.getSession();
+                IRimicSession session = mService.getSession();
                 IChannel ourChan = null;
                 try {
                     ourChan = session.getSessionChannel();
@@ -298,7 +298,7 @@ public class ChannelListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
         if (!mService.isConnected())
             return;
 
-        IHumlaSession session = mService.getSession();
+        IRimicSession session = mService.getSession();
         mNodes.clear();
         try {
             for (int cid : mRootChannels) {
@@ -441,9 +441,9 @@ public class ChannelListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
      * Changes the service backing the adapter. Updates the list as well.
      * @param service The new service to retrieve channels from.
      */
-    public void setService(IHumlaService service) {
+    public void setService(IRimicService service) {
         mService = service;
-        if (service.getConnectionState() == HumlaService.ConnectionState.CONNECTED) {
+        if (service.getConnectionState() == RimicService.ConnectionState.CONNECTED) {
             updateChannels();
             notifyDataSetChanged();
         }

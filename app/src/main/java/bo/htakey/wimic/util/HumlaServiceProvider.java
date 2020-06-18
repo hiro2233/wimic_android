@@ -22,8 +22,8 @@ import bo.htakey.wimic.service.IMumlaService;
 /**
  * Created by andrew on 03/08/13.
  */
-public interface HumlaServiceProvider {
+public interface RimicServiceProvider {
     IMumlaService getService();
-    void addServiceFragment(HumlaServiceFragment fragment);
-    void removeServiceFragment(HumlaServiceFragment fragment);
+    void addServiceFragment(RimicServiceFragment fragment);
+    void removeServiceFragment(RimicServiceFragment fragment);
 }

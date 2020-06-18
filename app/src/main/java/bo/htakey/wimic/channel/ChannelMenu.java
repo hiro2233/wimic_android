@@ -34,8 +34,8 @@ import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
-import bo.htakey.rimic.IHumlaService;
-import bo.htakey.rimic.IHumlaSession;
+import bo.htakey.rimic.IRimicService;
+import bo.htakey.rimic.IRimicSession;
 import bo.htakey.rimic.model.IChannel;
 import bo.htakey.rimic.model.Server;
 import bo.htakey.rimic.model.WhisperTargetChannel;
@@ -52,11 +52,11 @@ import bo.htakey.wimic.db.MumlaDatabase;
 public class ChannelMenu implements PermissionsPopupMenu.IOnMenuPrepareListener, PopupMenu.OnMenuItemClickListener {
     private final Context mContext;
     private final IChannel mChannel;
-    private final IHumlaService mService;
+    private final IRimicService mService;
     private final MumlaDatabase mDatabase;
     private final FragmentManager mFragmentManager;
 
-    public ChannelMenu(Context context, IChannel channel, IHumlaService service,
+    public ChannelMenu(Context context, IChannel channel, IRimicService service,
                        MumlaDatabase database, FragmentManager fragmentManager) {
         mContext = context;
         mChannel = channel;
@@ -182,7 +182,7 @@ public class ChannelMenu implements PermissionsPopupMenu.IOnMenuPrepareListener,
                         if (!mService.isConnected())
                             return;
 
-                        IHumlaSession session = mService.getSession();
+                        IRimicSession session = mService.getSession();
 
                         // Unregister any existing voice target.
                         if (session.getVoiceTargetMode() == VoiceTargetMode.WHISPER) {

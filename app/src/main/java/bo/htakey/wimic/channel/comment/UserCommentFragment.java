@@ -17,9 +17,9 @@
 
 package bo.htakey.wimic.channel.comment;
 
-import bo.htakey.rimic.IHumlaService;
+import bo.htakey.rimic.IRimicService;
 import bo.htakey.rimic.model.IUser;
-import bo.htakey.rimic.util.HumlaObserver;
+import bo.htakey.rimic.util.RimicObserver;
 
 /**
  * Created by andrew on 03/03/14.
@@ -27,10 +27,10 @@ import bo.htakey.rimic.util.HumlaObserver;
 public class UserCommentFragment extends AbstractCommentFragment {
 
     @Override
-    public void requestComment(final IHumlaService service) {
+    public void requestComment(final IRimicService service) {
         if (!service.isConnected())
             return;
-        service.registerObserver(new HumlaObserver() {
+        service.registerObserver(new RimicObserver() {
             @Override
             public void onUserStateUpdated(IUser user) {
                 if(user.getSession() == getSession() &&
@@ -44,7 +44,7 @@ public class UserCommentFragment extends AbstractCommentFragment {
     }
 
     @Override
-    public void editComment(IHumlaService service, String comment) {
+    public void editComment(IRimicService service, String comment) {
         if (!service.isConnected())
             return;
         service.getSession().setUserComment(getSession(), comment);

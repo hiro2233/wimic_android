@@ -26,7 +26,7 @@ import android.os.AsyncTask;
 
 import java.util.ArrayList;
 
-import bo.htakey.rimic.HumlaService;
+import bo.htakey.rimic.RimicService;
 import bo.htakey.rimic.model.Server;
 import bo.htakey.wimic.R;
 import bo.htakey.wimic.Settings;
@@ -53,8 +53,8 @@ public class ServerConnectTask extends AsyncTask<Server, Void, Intent> {
     protected Intent doInBackground(Server... params) {
         Server server = params[0];
 
-        /* Convert input method defined in settings to an integer format used by Humla. */
-        int inputMethod = mSettings.getHumlaInputMethod();
+        /* Convert input method defined in settings to an integer format used by Rimic. */
+        int inputMethod = mSettings.getRimicInputMethod();
 
         int audioSource = mSettings.isHandsetMode() ?
                 MediaRecorder.AudioSource.DEFAULT : MediaRecorder.AudioSource.MIC;
@@ -69,43 +69,43 @@ public class ServerConnectTask extends AsyncTask<Server, Void, Intent> {
         }
 
         Intent connectIntent = new Intent(mContext, MumlaService.class);
-        connectIntent.putExtra(HumlaService.EXTRAS_SERVER, server);
-        connectIntent.putExtra(HumlaService.EXTRAS_CLIENT_NAME, mContext.getString(R.string.app_name)+" "+applicationVersion);
-        connectIntent.putExtra(HumlaService.EXTRAS_TRANSMIT_MODE, inputMethod);
-        connectIntent.putExtra(HumlaService.EXTRAS_DETECTION_THRESHOLD, mSettings.getDetectionThreshold());
-        connectIntent.putExtra(HumlaService.EXTRAS_AMPLITUDE_BOOST, mSettings.getAmplitudeBoostMultiplier());
-        connectIntent.putExtra(HumlaService.EXTRAS_AUTO_RECONNECT, mSettings.isAutoReconnectEnabled());
-        connectIntent.putExtra(HumlaService.EXTRAS_AUTO_RECONNECT_DELAY, MumlaService.RECONNECT_DELAY);
-        connectIntent.putExtra(HumlaService.EXTRAS_USE_OPUS, !mSettings.isOpusDisabled());
-        connectIntent.putExtra(HumlaService.EXTRAS_INPUT_RATE, mSettings.getInputSampleRate());
-        connectIntent.putExtra(HumlaService.EXTRAS_INPUT_QUALITY, mSettings.getInputQuality());
-        connectIntent.putExtra(HumlaService.EXTRAS_FORCE_TCP, mSettings.isTcpForced());
-        connectIntent.putExtra(HumlaService.EXTRAS_USE_TOR, mSettings.isTorEnabled());
-        connectIntent.putStringArrayListExtra(HumlaService.EXTRAS_ACCESS_TOKENS, (ArrayList<String>) mDatabase.getAccessTokens(server.getId()));
-        connectIntent.putExtra(HumlaService.EXTRAS_AUDIO_SOURCE, audioSource);
-        connectIntent.putExtra(HumlaService.EXTRAS_AUDIO_STREAM, audioStream);
-        connectIntent.putExtra(HumlaService.EXTRAS_FRAMES_PER_PACKET, mSettings.getFramesPerPacket());
-        connectIntent.putExtra(HumlaService.EXTRAS_TRUST_STORE, MumlaTrustStore.getTrustStorePath(mContext));
-        connectIntent.putExtra(HumlaService.EXTRAS_TRUST_STORE_PASSWORD, MumlaTrustStore.getTrustStorePassword());
-        connectIntent.putExtra(HumlaService.EXTRAS_TRUST_STORE_FORMAT, MumlaTrustStore.getTrustStoreFormat());
-        connectIntent.putExtra(HumlaService.EXTRAS_HALF_DUPLEX, mSettings.isHalfDuplex());
-        connectIntent.putExtra(HumlaService.EXTRAS_ENABLE_PREPROCESSOR, mSettings.isPreprocessorEnabled());
+        connectIntent.putExtra(RimicService.EXTRAS_SERVER, server);
+        connectIntent.putExtra(RimicService.EXTRAS_CLIENT_NAME, mContext.getString(R.string.app_name)+" "+applicationVersion);
+        connectIntent.putExtra(RimicService.EXTRAS_TRANSMIT_MODE, inputMethod);
+        connectIntent.putExtra(RimicService.EXTRAS_DETECTION_THRESHOLD, mSettings.getDetectionThreshold());
+        connectIntent.putExtra(RimicService.EXTRAS_AMPLITUDE_BOOST, mSettings.getAmplitudeBoostMultiplier());
+        connectIntent.putExtra(RimicService.EXTRAS_AUTO_RECONNECT, mSettings.isAutoReconnectEnabled());
+        connectIntent.putExtra(RimicService.EXTRAS_AUTO_RECONNECT_DELAY, MumlaService.RECONNECT_DELAY);
+        connectIntent.putExtra(RimicService.EXTRAS_USE_OPUS, !mSettings.isOpusDisabled());
+        connectIntent.putExtra(RimicService.EXTRAS_INPUT_RATE, mSettings.getInputSampleRate());
+        connectIntent.putExtra(RimicService.EXTRAS_INPUT_QUALITY, mSettings.getInputQuality());
+        connectIntent.putExtra(RimicService.EXTRAS_FORCE_TCP, mSettings.isTcpForced());
+        connectIntent.putExtra(RimicService.EXTRAS_USE_TOR, mSettings.isTorEnabled());
+        connectIntent.putStringArrayListExtra(RimicService.EXTRAS_ACCESS_TOKENS, (ArrayList<String>) mDatabase.getAccessTokens(server.getId()));
+        connectIntent.putExtra(RimicService.EXTRAS_AUDIO_SOURCE, audioSource);
+        connectIntent.putExtra(RimicService.EXTRAS_AUDIO_STREAM, audioStream);
+        connectIntent.putExtra(RimicService.EXTRAS_FRAMES_PER_PACKET, mSettings.getFramesPerPacket());
+        connectIntent.putExtra(RimicService.EXTRAS_TRUST_STORE, MumlaTrustStore.getTrustStorePath(mContext));
+        connectIntent.putExtra(RimicService.EXTRAS_TRUST_STORE_PASSWORD, MumlaTrustStore.getTrustStorePassword());
+        connectIntent.putExtra(RimicService.EXTRAS_TRUST_STORE_FORMAT, MumlaTrustStore.getTrustStoreFormat());
+        connectIntent.putExtra(RimicService.EXTRAS_HALF_DUPLEX, mSettings.isHalfDuplex());
+        connectIntent.putExtra(RimicService.EXTRAS_ENABLE_PREPROCESSOR, mSettings.isPreprocessorEnabled());
         if (server.isSaved()) {
             ArrayList<Integer> muteHistory = (ArrayList<Integer>) mDatabase.getLocalMutedUsers(server.getId());
             ArrayList<Integer> ignoreHistory = (ArrayList<Integer>) mDatabase.getLocalIgnoredUsers(server.getId());
-            connectIntent.putExtra(HumlaService.EXTRAS_LOCAL_MUTE_HISTORY, muteHistory);
-            connectIntent.putExtra(HumlaService.EXTRAS_LOCAL_IGNORE_HISTORY, ignoreHistory);
+            connectIntent.putExtra(RimicService.EXTRAS_LOCAL_MUTE_HISTORY, muteHistory);
+            connectIntent.putExtra(RimicService.EXTRAS_LOCAL_IGNORE_HISTORY, ignoreHistory);
         }
 
         if (mSettings.isUsingCertificate()) {
             long certificateId = mSettings.getDefaultCertificate();
             byte[] certificate = mDatabase.getCertificateData(certificateId);
             if (certificate != null)
-                connectIntent.putExtra(HumlaService.EXTRAS_CERTIFICATE, certificate);
+                connectIntent.putExtra(RimicService.EXTRAS_CERTIFICATE, certificate);
             // TODO(acomminos): handle the case where a certificate's data is unavailable.
         }
 
-        connectIntent.setAction(HumlaService.ACTION_CONNECT);
+        connectIntent.setAction(RimicService.ACTION_CONNECT);
         return connectIntent;
     }
 

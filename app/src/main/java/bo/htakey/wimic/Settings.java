@@ -243,10 +243,10 @@ public class Settings {
     }
 
     /**
-     * Converts the preference input method value to the one used to connect to a server via Humla.
-     * @return An input method value used to instantiate a Humla service.
+     * Converts the preference input method value to the one used to connect to a server via Rimic.
+     * @return An input method value used to instantiate a Rimic service.
      */
-    public int getHumlaInputMethod() {
+    public int getRimicInputMethod() {
         String inputMethod = getInputMethod();
         if (ARRAY_INPUT_METHOD_VOICE.equals(inputMethod)) {
             return Constants.TRANSMIT_VOICE_ACTIVITY;
@@ -255,7 +255,7 @@ public class Settings {
         } else if (ARRAY_INPUT_METHOD_CONTINUOUS.equals(inputMethod)) {
             return Constants.TRANSMIT_CONTINUOUS;
         }
-        throw new RuntimeException("Could not convert input method '" + inputMethod + "' to a Humla input method id!");
+        throw new RuntimeException("Could not convert input method '" + inputMethod + "' to a Rimic input method id!");
     }
 
     public void setInputMethod(String inputMethod) {

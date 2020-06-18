@@ -27,7 +27,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-import bo.htakey.rimic.net.HumlaCertificateGenerator;
+import bo.htakey.rimic.net.RimicCertificateGenerator;
 import bo.htakey.wimic.R;
 import bo.htakey.wimic.db.DatabaseCertificate;
 import bo.htakey.wimic.db.MumlaDatabase;
@@ -57,7 +57,7 @@ public class MumlaCertificateGenerateTask extends AsyncTask<Void, Void, Database
     protected DatabaseCertificate doInBackground(Void... params) {
         try {
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
-            HumlaCertificateGenerator.generateCertificate(baos);
+            RimicCertificateGenerator.generateCertificate(baos);
 
             SimpleDateFormat dateFormat = new SimpleDateFormat(DATE_FORMAT, Locale.getDefault());
             String fileName = context.getString(R.string.certificate_export_format, dateFormat.format(new Date()));

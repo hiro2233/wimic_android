@@ -40,9 +40,9 @@ import java.util.List;
 import bo.htakey.wimic.Constants;
 import bo.htakey.wimic.R;
 import bo.htakey.wimic.db.DatabaseProvider;
-import bo.htakey.wimic.util.HumlaServiceFragment;
+import bo.htakey.wimic.util.RimicServiceFragment;
 
-public class AccessTokenFragment extends HumlaServiceFragment {
+public class AccessTokenFragment extends RimicServiceFragment {
 
     public interface AccessTokenListener {
         public void onAccessTokenAdded(long serverId, String token);

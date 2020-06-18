@@ -23,10 +23,10 @@ import android.view.View;
 
 import androidx.appcompat.widget.PopupMenu;
 
-import bo.htakey.rimic.IHumlaService;
+import bo.htakey.rimic.IRimicService;
 import bo.htakey.rimic.model.IChannel;
-import bo.htakey.rimic.util.HumlaObserver;
-import bo.htakey.rimic.util.IHumlaObserver;
+import bo.htakey.rimic.util.RimicObserver;
+import bo.htakey.rimic.util.IRimicObserver;
 
 /**
  * Encapsulates a menu requiring permissions.
@@ -35,11 +35,11 @@ import bo.htakey.rimic.util.IHumlaObserver;
 public class PermissionsPopupMenu implements PopupMenu.OnDismissListener {
     private final Context mContext;
     private final IChannel mChannel;
-    private final IHumlaService mService;
+    private final IRimicService mService;
     private final PopupMenu mMenu;
     private final IOnMenuPrepareListener mPrepareListener;
 
-    private final IHumlaObserver mPermissionsObserver = new HumlaObserver() {
+    private final IRimicObserver mPermissionsObserver = new RimicObserver() {
         @Override
         public void onChannelPermissionsUpdated(IChannel channel) {
             if (mChannel.equals(channel)) {
@@ -51,7 +51,7 @@ public class PermissionsPopupMenu implements PopupMenu.OnDismissListener {
     public PermissionsPopupMenu(Context context, View anchor, int menuRes,
                                 IOnMenuPrepareListener enforcer,
                                 PopupMenu.OnMenuItemClickListener itemClickListener,
-                                IChannel channel, IHumlaService service) {
+                                IChannel channel, IRimicService service) {
         mContext = context;
         mChannel = channel;
         mService = service;

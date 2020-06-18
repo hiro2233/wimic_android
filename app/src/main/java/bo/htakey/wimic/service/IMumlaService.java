@@ -2,12 +2,12 @@ package bo.htakey.wimic.service;
 
 import java.util.List;
 
-import bo.htakey.rimic.IHumlaService;
+import bo.htakey.rimic.IRimicService;
 
 /**
  * Created by andrew on 28/02/17.
  */
-public interface IMumlaService extends IHumlaService {
+public interface IMumlaService extends IRimicService {
     void setOverlayShown(boolean showOverlay);
 
     boolean isOverlayShown();

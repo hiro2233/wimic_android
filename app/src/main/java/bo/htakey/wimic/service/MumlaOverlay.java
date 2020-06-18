@@ -30,7 +30,7 @@ import android.widget.ListView;
 
 import bo.htakey.rimic.model.IChannel;
 import bo.htakey.rimic.model.IUser;
-import bo.htakey.rimic.util.HumlaObserver;
+import bo.htakey.rimic.util.RimicObserver;
 import bo.htakey.wimic.R;
 import bo.htakey.wimic.Settings;
 import bo.htakey.wimic.channel.ChannelAdapter;
@@ -44,7 +44,7 @@ public class MumlaOverlay {
     public static final int DEFAULT_WIDTH = 200;
     public static final int DEFAULT_HEIGHT = 240;
 
-    private HumlaObserver mObserver = new HumlaObserver() {
+    private RimicObserver mObserver = new RimicObserver() {
         @Override
         public void onUserTalkStateUpdated(IUser user) {
             mChannelAdapter.notifyDataSetChanged();

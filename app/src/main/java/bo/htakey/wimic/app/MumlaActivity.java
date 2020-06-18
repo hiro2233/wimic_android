@@ -72,13 +72,13 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 import info.guardianproject.netcipher.proxy.OrbotHelper;
-import bo.htakey.rimic.IHumlaService;
-import bo.htakey.rimic.IHumlaSession;
+import bo.htakey.rimic.IRimicService;
+import bo.htakey.rimic.IRimicSession;
 import bo.htakey.rimic.model.Server;
-import bo.htakey.rimic.net.HumlaConnection;
+import bo.htakey.rimic.net.RimicConnection;
 import bo.htakey.rimic.protobuf.Mumble;
-import bo.htakey.rimic.util.HumlaException;
-import bo.htakey.rimic.util.HumlaObserver;
+import bo.htakey.rimic.util.RimicException;
+import bo.htakey.rimic.util.RimicObserver;
 import bo.htakey.rimic.util.MumbleURLParser;
 import bo.htakey.wimic.BuildConfig;
 import bo.htakey.wimic.R;
@@ -98,14 +98,14 @@ import bo.htakey.wimic.servers.PublicServerListFragment;
 import bo.htakey.wimic.servers.ServerEditFragment;
 import bo.htakey.wimic.service.IMumlaService;
 import bo.htakey.wimic.service.MumlaService;
-import bo.htakey.wimic.util.HumlaServiceFragment;
-import bo.htakey.wimic.util.HumlaServiceProvider;
+import bo.htakey.wimic.util.RimicServiceFragment;
+import bo.htakey.wimic.util.RimicServiceProvider;
 import bo.htakey.wimic.util.MumlaTrustStore;
 
 import static bo.htakey.wimic.Constants.TAG;
 
 public class MumlaActivity extends AppCompatActivity implements ListView.OnItemClickListener,
-        FavouriteServerListFragment.ServerConnectHandler, HumlaServiceProvider, DatabaseProvider,
+        FavouriteServerListFragment.ServerConnectHandler, RimicServiceProvider, DatabaseProvider,
         SharedPreferences.OnSharedPreferenceChangeListener, DrawerAdapter.DrawerDataProvider,
         ServerEditFragment.ServerEditListener {
     /**
@@ -130,7 +130,7 @@ public class MumlaActivity extends AppCompatActivity implements ListView.OnItemC
     private AlertDialog.Builder mDisconnectPromptBuilder;
 
     /** List of fragments to be notified about service state changes. */
-    private List<HumlaServiceFragment> mServiceFragments = new ArrayList<HumlaServiceFragment>();
+    private List<RimicServiceFragment> mServiceFragments = new ArrayList<RimicServiceFragment>();
 
     private ServiceConnection mConnection = new ServiceConnection() {
         @Override
@@ -141,11 +141,11 @@ public class MumlaActivity extends AppCompatActivity implements ListView.OnItemC
             mService.clearChatNotifications(); // Clear chat notifications on resume.
             mDrawerAdapter.notifyDataSetChanged();
 
-            for(HumlaServiceFragment fragment : mServiceFragments)
+            for(RimicServiceFragment fragment : mServiceFragments)
                 fragment.setServiceBound(true);
 
             // Re-show server list if we're showing a fragment that depends on the service.
-            if(getSupportFragmentManager().findFragmentById(R.id.content_frame) instanceof HumlaServiceFragment &&
+            if(getSupportFragmentManager().findFragmentById(R.id.content_frame) instanceof RimicServiceFragment &&
                     !mService.isConnected()) {
                 loadDrawerFragment(DrawerAdapter.ITEM_FAVOURITES);
             }
@@ -158,7 +158,7 @@ public class MumlaActivity extends AppCompatActivity implements ListView.OnItemC
         }
     };
 
-    private HumlaObserver mObserver = new HumlaObserver() {
+    private RimicObserver mObserver = new RimicObserver() {
         @Override
         public void onConnected() {
             if (mSettings.shouldStartUpInPinnedMode()) {
@@ -179,9 +179,9 @@ public class MumlaActivity extends AppCompatActivity implements ListView.OnItemC
         }
 
         @Override
-        public void onDisconnected(HumlaException e) {
+        public void onDisconnected(RimicException e) {
             // Re-show server list if we're showing a fragment that depends on the service.
-            if(getSupportFragmentManager().findFragmentById(R.id.content_frame) instanceof HumlaServiceFragment) {
+            if(getSupportFragmentManager().findFragmentById(R.id.content_frame) instanceof RimicServiceFragment) {
                 loadDrawerFragment(DrawerAdapter.ITEM_FAVOURITES);
             }
             mDrawerAdapter.notifyDataSetChanged();
@@ -288,7 +288,7 @@ public class MumlaActivity extends AppCompatActivity implements ListView.OnItemC
                 super.onDrawerStateChanged(newState);
                 // Prevent push to talk from getting stuck on when the drawer is opened.
                 if (getService() != null && getService().isConnected()) {
-                    IHumlaSession session = getService().getSession();
+                    IRimicSession session = getService().getSession();
                     if (session.isTalking() && !mSettings.isPushToTalkToggle()) {
                         session.setTalkingState(false);
                     }
@@ -370,7 +370,7 @@ public class MumlaActivity extends AppCompatActivity implements ListView.OnItemC
             mConnectingDialog.dismiss();
 
         if(mService != null) {
-            for (HumlaServiceFragment fragment : mServiceFragments) {
+            for (RimicServiceFragment fragment : mServiceFragments) {
                 fragment.setServiceBound(false);
             }
             mService.unregisterObserver(mObserver);
@@ -569,9 +569,9 @@ public class MumlaActivity extends AppCompatActivity implements ListView.OnItemC
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     // Register an observer to reconnect to the new server once disconnected.
-                    mService.registerObserver(new HumlaObserver() {
+                    mService.registerObserver(new RimicObserver() {
                         @Override
-                        public void onDisconnected(HumlaException e) {
+                        public void onDisconnected(RimicException e) {
                             connectToServer(server);
                             mService.unregisterObserver(this);
                         }
@@ -593,9 +593,9 @@ public class MumlaActivity extends AppCompatActivity implements ListView.OnItemC
                 adb.show();
                 return;
             } else {
-                if (!isPortOpen(HumlaConnection.TOR_HOST, HumlaConnection.TOR_PORT, 2000)) {
+                if (!isPortOpen(RimicConnection.TOR_HOST, RimicConnection.TOR_PORT, 2000)) {
                     AlertDialog.Builder adb = new AlertDialog.Builder(MumlaActivity.this);
-                    adb.setMessage(getString(R.string.orbot_tor_failed, HumlaConnection.TOR_PORT));
+                    adb.setMessage(getString(R.string.orbot_tor_failed, RimicConnection.TOR_PORT));
                     adb.setPositiveButton(android.R.string.ok, null);
                     adb.show();
                     return;
@@ -691,9 +691,9 @@ public class MumlaActivity extends AppCompatActivity implements ListView.OnItemC
      * Will show reconnecting dialog if reconnecting, dismiss otherwise, etc.
      * Basically, this service will do catch-up if the activity wasn't bound to receive
      * connection state updates.
-     * @param service A bound IHumlaService.
+     * @param service A bound IRimicService.
      */
-    private void updateConnectionState(IHumlaService service) {
+    private void updateConnectionState(IRimicService service) {
         if (mConnectingDialog != null)
             mConnectingDialog.dismiss();
         if (mErrorDialog != null)
@@ -726,7 +726,7 @@ public class MumlaActivity extends AppCompatActivity implements ListView.OnItemC
                     if (getService() == null) {
                         break;
                     }
-                    HumlaException error = getService().getConnectionError();
+                    RimicException error = getService().getConnectionError();
                     AlertDialog.Builder ab = new AlertDialog.Builder(MumlaActivity.this);
                     ab.setTitle(getString(R.string.connectionRefused) + (mSettings.isTorEnabled() ? " (Tor)" : ""));
                     if (mService.isReconnecting()) {
@@ -742,7 +742,7 @@ public class MumlaActivity extends AppCompatActivity implements ListView.OnItemC
                                 }
                             }
                         });
-                    } else if (error.getReason() == HumlaException.HumlaDisconnectReason.REJECT &&
+                    } else if (error.getReason() == RimicException.RimicDisconnectReason.REJECT &&
                                (error.getReject().getType() == Mumble.Reject.RejectType.WrongUserPW ||
                                 error.getReject().getType() == Mumble.Reject.RejectType.WrongServerPW)) {
                         final EditText passwordField = new EditText(this);
@@ -806,12 +806,12 @@ public class MumlaActivity extends AppCompatActivity implements ListView.OnItemC
     }
 
     @Override
-    public void addServiceFragment(HumlaServiceFragment fragment) {
+    public void addServiceFragment(RimicServiceFragment fragment) {
         mServiceFragments.add(fragment);
     }
 
     @Override
-    public void removeServiceFragment(HumlaServiceFragment fragment) {
+    public void removeServiceFragment(RimicServiceFragment fragment) {
         mServiceFragments.remove(fragment);
     }
 

@@ -41,23 +41,23 @@ import java.util.Collections;
 import java.util.List;
 
 import bo.htakey.rimic.Constants;
-import bo.htakey.rimic.HumlaService;
+import bo.htakey.rimic.RimicService;
 import bo.htakey.rimic.exception.AudioException;
 import bo.htakey.rimic.model.IMessage;
 import bo.htakey.rimic.model.IUser;
 import bo.htakey.rimic.model.TalkState;
-import bo.htakey.rimic.util.HumlaException;
-import bo.htakey.rimic.util.HumlaObserver;
+import bo.htakey.rimic.util.RimicException;
+import bo.htakey.rimic.util.RimicObserver;
 import bo.htakey.wimic.R;
 import bo.htakey.wimic.Settings;
 import bo.htakey.wimic.service.ipc.TalkBroadcastReceiver;
 import bo.htakey.wimic.util.HtmlUtils;
 
 /**
- * An extension of the Humla service with some added Mumla-exclusive non-standard Mumble features.
+ * An extension of the Rimic service with some added Mumla-exclusive non-standard Mumble features.
  * Created by andrew on 28/07/13.
  */
-public class MumlaService extends HumlaService implements
+public class MumlaService extends RimicService implements
         SharedPreferences.OnSharedPreferenceChangeListener,
         MumlaConnectionNotification.OnActionListener,
         MumlaReconnectNotification.OnActionListener, IMumlaService {
@@ -111,7 +111,7 @@ public class MumlaService extends HumlaService implements
 
     private BroadcastReceiver mTalkReceiver;
 
-    private HumlaObserver mObserver = new HumlaObserver() {
+    private RimicObserver mObserver = new RimicObserver() {
         @Override
         public void onConnecting() {
             // Remove old notification left from reconnect,
@@ -142,7 +142,7 @@ public class MumlaService extends HumlaService implements
         }
 
         @Override
-        public void onDisconnected(HumlaException e) {
+        public void onDisconnected(RimicException e) {
             if (mNotification != null) {
                 mNotification.hide();
                 mNotification = null;
@@ -350,7 +350,7 @@ public class MumlaService extends HumlaService implements
     }
 
     @Override
-    public void onConnectionDisconnected(HumlaException e) {
+    public void onConnectionDisconnected(RimicException e) {
         super.onConnectionDisconnected(e);
         try {
             unregisterReceiver(mTalkReceiver);
@@ -378,18 +378,18 @@ public class MumlaService extends HumlaService implements
         boolean requiresReconnect = false;
         switch (key) {
             case Settings.PREF_INPUT_METHOD:
-                /* Convert input method defined in settings to an integer format used by Humla. */
-                int inputMethod = mSettings.getHumlaInputMethod();
-                changedExtras.putInt(HumlaService.EXTRAS_TRANSMIT_MODE, inputMethod);
+                /* Convert input method defined in settings to an integer format used by Rimic. */
+                int inputMethod = mSettings.getRimicInputMethod();
+                changedExtras.putInt(RimicService.EXTRAS_TRANSMIT_MODE, inputMethod);
                 mChannelOverlay.setPushToTalkShown(inputMethod == Constants.TRANSMIT_PUSH_TO_TALK);
                 break;
             case Settings.PREF_HANDSET_MODE:
                 setProximitySensorOn(isConnectionEstablished() && mSettings.isHandsetMode());
-                changedExtras.putInt(HumlaService.EXTRAS_AUDIO_STREAM, mSettings.isHandsetMode() ?
+                changedExtras.putInt(RimicService.EXTRAS_AUDIO_STREAM, mSettings.isHandsetMode() ?
                                      AudioManager.STREAM_VOICE_CALL : AudioManager.STREAM_MUSIC);
                 break;
             case Settings.PREF_THRESHOLD:
-                changedExtras.putFloat(HumlaService.EXTRAS_DETECTION_THRESHOLD,
+                changedExtras.putFloat(RimicService.EXTRAS_DETECTION_THRESHOLD,
                         mSettings.getDetectionThreshold());
                 break;
             case Settings.PREF_HOT_CORNER_KEY:

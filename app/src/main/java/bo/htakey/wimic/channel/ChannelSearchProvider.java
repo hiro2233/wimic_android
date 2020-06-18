@@ -33,8 +33,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Locale;
 
-import bo.htakey.rimic.IHumlaService;
-import bo.htakey.rimic.IHumlaSession;
+import bo.htakey.rimic.IRimicService;
+import bo.htakey.rimic.IRimicSession;
 import bo.htakey.rimic.model.IChannel;
 import bo.htakey.rimic.model.IUser;
 import bo.htakey.wimic.Constants;
@@ -46,7 +46,7 @@ public class ChannelSearchProvider extends ContentProvider {
     public static final String INTENT_DATA_CHANNEL = "channel";
     public static final String INTENT_DATA_USER = "user";
 
-    private IHumlaService mService;
+    private IRimicService mService;
     private final Object mServiceLock = new Object();
 
     private ServiceConnection mConn = new ServiceConnection() {
@@ -114,7 +114,7 @@ public class ChannelSearchProvider extends ContentProvider {
         if (!mService.isConnected())
             return null;
 
-        IHumlaSession session = mService.getSession();
+        IRimicSession session = mService.getSession();
 
         String query = "";
         for(int x=0;x<selectionArgs.length;x++) {

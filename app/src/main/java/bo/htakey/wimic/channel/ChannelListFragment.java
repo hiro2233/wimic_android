@@ -44,23 +44,23 @@ import androidx.core.view.MenuItemCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import bo.htakey.rimic.IHumlaService;
-import bo.htakey.rimic.IHumlaSession;
+import bo.htakey.rimic.IRimicService;
+import bo.htakey.rimic.IRimicSession;
 import bo.htakey.rimic.model.IChannel;
 import bo.htakey.rimic.model.IUser;
-import bo.htakey.rimic.util.HumlaException;
-import bo.htakey.rimic.util.HumlaObserver;
-import bo.htakey.rimic.util.IHumlaObserver;
+import bo.htakey.rimic.util.RimicException;
+import bo.htakey.rimic.util.RimicObserver;
+import bo.htakey.rimic.util.IRimicObserver;
 import bo.htakey.wimic.R;
 import bo.htakey.wimic.Settings;
 import bo.htakey.wimic.db.DatabaseProvider;
-import bo.htakey.wimic.util.HumlaServiceFragment;
+import bo.htakey.wimic.util.RimicServiceFragment;
 
-public class ChannelListFragment extends HumlaServiceFragment implements OnChannelClickListener, OnUserClickListener, SharedPreferences.OnSharedPreferenceChangeListener {
+public class ChannelListFragment extends RimicServiceFragment implements OnChannelClickListener, OnUserClickListener, SharedPreferences.OnSharedPreferenceChangeListener {
 
-    private IHumlaObserver mServiceObserver = new HumlaObserver() {
+    private IRimicObserver mServiceObserver = new RimicObserver() {
         @Override
-        public void onDisconnected(HumlaException e) {
+        public void onDisconnected(RimicException e) {
             mChannelView.setAdapter(null);
         }
 
@@ -191,12 +191,12 @@ public class ChannelListFragment extends HumlaServiceFragment implements OnChann
     }
 
     @Override
-    public IHumlaObserver getServiceObserver() {
+    public IRimicObserver getServiceObserver() {
         return mServiceObserver;
     }
 
     @Override
-    public void onServiceBound(IHumlaService service) {
+    public void onServiceBound(IRimicService service) {
         try {
             if (mChannelListAdapter == null) {
                 setupChannelList();
@@ -216,7 +216,7 @@ public class ChannelListFragment extends HumlaServiceFragment implements OnChann
         MenuItem deafenItem = menu.findItem(R.id.menu_deafen_button);
 
         if(getService() != null && getService().isConnected()) {
-            IHumlaSession session = getService().getSession();
+            IRimicSession session = getService().getSession();
 
             // Color the action bar icons to the primary text color of the theme, TODO move this elsewhere
             int foregroundColor = getActivity().getTheme().obtainStyledAttributes(new int[]{android.R.attr.textColorPrimaryInverse}).getColor(0, -1);
@@ -257,7 +257,7 @@ public class ChannelListFragment extends HumlaServiceFragment implements OnChann
                 String itemType = cursor.getString(typeColumn);
                 int itemId = cursor.getInt(dataIdColumn);
 
-                IHumlaSession session = getService().getSession();
+                IRimicSession session = getService().getSession();
                 if(ChannelSearchProvider.INTENT_DATA_CHANNEL.equals(itemType)) {
                     if(session.getSessionChannel().getId() != itemId) {
                         session.joinChannel(itemId);
@@ -279,7 +279,7 @@ public class ChannelListFragment extends HumlaServiceFragment implements OnChann
         if (getService() == null || !getService().isConnected())
             return super.onOptionsItemSelected(item);
 
-        IHumlaSession session = getService().getSession();
+        IRimicSession session = getService().getSession();
         switch (item.getItemId()) {
             case R.id.menu_mute_button: {
                 IUser self = session.getSessionUser();
