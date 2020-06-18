@@ -27,7 +27,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-import se.lublin.humla.net.HumlaCertificateGenerator;
+import bo.htakey.rimic.net.HumlaCertificateGenerator;
 import bo.htakey.wimic.R;
 import bo.htakey.wimic.db.DatabaseCertificate;
 import bo.htakey.wimic.db.MumlaDatabase;

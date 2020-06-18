@@ -17,7 +17,7 @@
 
 package bo.htakey.wimic.channel;
 
-import se.lublin.humla.model.IChannel;
+import bo.htakey.rimic.model.IChannel;
 
 /**
  * Created by andrew on 20/10/14.

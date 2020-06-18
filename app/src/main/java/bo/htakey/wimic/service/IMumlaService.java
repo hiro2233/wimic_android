@@ -2,7 +2,7 @@ package bo.htakey.wimic.service;
 
 import java.util.List;
 
-import se.lublin.humla.IHumlaService;
+import bo.htakey.rimic.IHumlaService;
 
 /**
  * Created by andrew on 28/02/17.

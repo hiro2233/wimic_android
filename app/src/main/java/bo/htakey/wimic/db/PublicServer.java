@@ -18,7 +18,7 @@
 package bo.htakey.wimic.db;
 
 
-import se.lublin.humla.model.Server;
+import bo.htakey.rimic.model.Server;
 
 public class PublicServer extends Server {
 

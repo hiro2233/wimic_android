@@ -17,8 +17,8 @@
 
 package bo.htakey.wimic.channel;
 
-import se.lublin.humla.model.IChannel;
-import se.lublin.humla.model.IUser;
+import bo.htakey.rimic.model.IChannel;
+import bo.htakey.rimic.model.IUser;
 import bo.htakey.wimic.BuildConfig;
 
 public interface ChatTargetProvider {

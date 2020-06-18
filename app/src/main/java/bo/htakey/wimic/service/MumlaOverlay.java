@@ -28,9 +28,9 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.ListView;
 
-import se.lublin.humla.model.IChannel;
-import se.lublin.humla.model.IUser;
-import se.lublin.humla.util.HumlaObserver;
+import bo.htakey.rimic.model.IChannel;
+import bo.htakey.rimic.model.IUser;
+import bo.htakey.rimic.util.HumlaObserver;
 import bo.htakey.wimic.R;
 import bo.htakey.wimic.Settings;
 import bo.htakey.wimic.channel.ChannelAdapter;

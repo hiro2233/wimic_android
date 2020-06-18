@@ -30,7 +30,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 
-import se.lublin.humla.model.Server;
+import bo.htakey.rimic.model.Server;
 import bo.htakey.wimic.R;
 import bo.htakey.wimic.Settings;
 

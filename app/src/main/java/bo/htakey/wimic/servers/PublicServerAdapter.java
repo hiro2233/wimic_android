@@ -27,7 +27,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-import se.lublin.humla.model.Server;
+import bo.htakey.rimic.model.Server;
 import bo.htakey.wimic.R;
 import bo.htakey.wimic.db.PublicServer;
 

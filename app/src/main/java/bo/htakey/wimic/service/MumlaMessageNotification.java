@@ -31,7 +31,7 @@ import androidx.core.app.NotificationManagerCompat;
 import java.util.ArrayList;
 import java.util.List;
 
-import se.lublin.humla.model.IMessage;
+import bo.htakey.rimic.model.IMessage;
 import bo.htakey.wimic.R;
 import bo.htakey.wimic.app.DrawerAdapter;
 import bo.htakey.wimic.app.MumlaActivity;

@@ -31,9 +31,9 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
-import se.lublin.humla.IHumlaService;
-import se.lublin.humla.IHumlaSession;
-import se.lublin.humla.net.HumlaUDPMessageType;
+import bo.htakey.rimic.IHumlaService;
+import bo.htakey.rimic.IHumlaSession;
+import bo.htakey.rimic.net.HumlaUDPMessageType;
 import bo.htakey.wimic.R;
 import bo.htakey.wimic.util.HumlaServiceFragment;
 

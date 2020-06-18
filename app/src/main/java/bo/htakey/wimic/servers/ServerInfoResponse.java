@@ -19,7 +19,7 @@ package bo.htakey.wimic.servers;
 
 import java.nio.ByteBuffer;
 
-import se.lublin.humla.model.Server;
+import bo.htakey.rimic.model.Server;
 
 /**
  * Response from server pings.

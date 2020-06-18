@@ -48,7 +48,7 @@ class PublicServerFetchTask extends AsyncTask<Void, Void, List<PublicServer>> {
             URL url = new URL(MUMBLE_PUBLIC_URL);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("GET");
-            connection.addRequestProperty("version", se.lublin.humla.Constants.PROTOCOL_STRING);
+            connection.addRequestProperty("version", bo.htakey.rimic.Constants.PROTOCOL_STRING);
             connection.connect();
             InputStream stream = connection.getInputStream();
 

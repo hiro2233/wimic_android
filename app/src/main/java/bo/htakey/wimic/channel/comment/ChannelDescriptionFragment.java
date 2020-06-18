@@ -17,9 +17,9 @@
 
 package bo.htakey.wimic.channel.comment;
 
-import se.lublin.humla.IHumlaService;
-import se.lublin.humla.model.IChannel;
-import se.lublin.humla.util.HumlaObserver;
+import bo.htakey.rimic.IHumlaService;
+import bo.htakey.rimic.model.IChannel;
+import bo.htakey.rimic.util.HumlaObserver;
 
 /**
  * Created by andrew on 03/03/14.

@@ -21,8 +21,8 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 
-import se.lublin.humla.IHumlaService;
-import se.lublin.humla.IHumlaSession;
+import bo.htakey.rimic.IHumlaService;
+import bo.htakey.rimic.IHumlaSession;
 
 /**
  * Created by andrew on 08/08/14.

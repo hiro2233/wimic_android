@@ -34,7 +34,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-import se.lublin.humla.model.Server;
+import bo.htakey.rimic.model.Server;
 import bo.htakey.wimic.R;
 
 /**

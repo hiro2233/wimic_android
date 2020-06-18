@@ -20,7 +20,7 @@ package bo.htakey.wimic.util;
 import java.util.LinkedList;
 import java.util.List;
 
-import se.lublin.humla.model.IChannel;
+import bo.htakey.rimic.model.IChannel;
 
 /**
  * Tools for dealing with the recursive user-channel hierarchy.

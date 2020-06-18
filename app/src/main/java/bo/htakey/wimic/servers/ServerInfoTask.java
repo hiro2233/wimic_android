@@ -25,7 +25,7 @@ import java.net.DatagramSocket;
 import java.net.InetAddress;
 import java.nio.ByteBuffer;
 
-import se.lublin.humla.model.Server;
+import bo.htakey.rimic.model.Server;
 import bo.htakey.wimic.Constants;
 
 /**

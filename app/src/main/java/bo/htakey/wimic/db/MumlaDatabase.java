@@ -19,7 +19,7 @@ package bo.htakey.wimic.db;
 
 import java.util.List;
 
-import se.lublin.humla.model.Server;
+import bo.htakey.rimic.model.Server;
 
 /**
  * An interface for persistent storage services (i.e. databases, cloud) to implement.

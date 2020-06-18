@@ -30,7 +30,7 @@ import android.widget.TabHost;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.DialogFragment;
 
-import se.lublin.humla.IHumlaService;
+import bo.htakey.rimic.IHumlaService;
 import bo.htakey.wimic.R;
 import bo.htakey.wimic.util.HumlaServiceProvider;
 

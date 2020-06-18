@@ -25,10 +25,10 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import se.lublin.humla.model.IChannel;
-import se.lublin.humla.model.IUser;
-import se.lublin.humla.model.TalkState;
-import se.lublin.humla.model.User;
+import bo.htakey.rimic.model.IChannel;
+import bo.htakey.rimic.model.IUser;
+import bo.htakey.rimic.model.TalkState;
+import bo.htakey.rimic.model.User;
 import bo.htakey.wimic.R;
 
 /**
