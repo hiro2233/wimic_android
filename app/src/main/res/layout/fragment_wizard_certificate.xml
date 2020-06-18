@@ -27,7 +27,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:text="Creating a certificate uniquely identifies yourself on Mumble servers, and provides a basic degree of security. Certificate usage is highly recommended, and often mandatory."
+        android:text="Creating a certificate uniquely identifies yourself on servers, and provides a basic degree of security. Certificate usage is highly recommended, and often mandatory."
         android:fontFamily="sans-serif-light"
         android:textSize="16sp"
         android:layout_weight="1"/>
@@ -45,7 +45,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-light"
         android:textStyle="italic"
-        android:text="If you already have a certificate you would like to use with Mumla, you can put it in the Mumla folder on your external storage and load it in settings later."
+        android:text="If you already have a certificate you would like to use WiMic, you can put it in the folder on your external storage and load it in settings later."
         android:padding="4dp"
         android:gravity="right"/>
 </LinearLayout>

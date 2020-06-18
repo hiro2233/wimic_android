@@ -133,9 +133,9 @@
     <string name="offline">Оффлайн</string>
     <string name="clearChat">Очистить чат</string>
     <string name="connected">Подключено</string>
-    <string name="mumlaConnected">Mumla подключен</string>
-    <string name="mumlaConnecting">Mumla подключается</string>
-    <string name="mumlaDisconnected">Mumla отключен</string>
+    <string name="mumlaConnected">WiMic подключен</string>
+    <string name="mumlaConnecting">WiMic подключается</string>
+    <string name="mumlaDisconnected">WiMic отключен</string>
     <string name="lostConnection">Потеряно подключение к серверу.</string>
     <string name="resume">Продолжить</string>
     <string name="channel">Канал</string>
@@ -163,7 +163,7 @@
     <string name="country">Страна</string>
     <string name="share">Поделиться</string>
     <string name="description">Описание</string>
-    <string name="shareMessage">Присоединяйся к этому Mumble серверу с помощью Mumla! %s</string>
+    <string name="shareMessage">Присоединяйся к этому Mumble серверу с помощью WiMic! %s</string>
     <string name="noServerInfo">Отправить ping чтобы получить информацию</string>
     <string name="status_notify_muted_and_deafened">Звук и микрофон отключен.</string>
     <string name="status_notify_muted">Микрофон отключен.</string>
@@ -188,7 +188,7 @@
     <string name="hint_reason">Причина</string>
     <string name="hint_ptt">Нажми чтобы говорить</string>
     <string name="hint_ptt_summary">Просто нажмите эту кнопку чтобы говорить. Дважды нажмите чтобы переключить её.</string>
-    <string name="hint_server_add">Добро пожаловать в Mumla</string>
+    <string name="hint_server_add">Добро пожаловать в WiMic</string>
     <string name="hint_server_add_summary">Добавьте сервер в избранное нажав \'Добавить\' в панели управления.</string>
     <string name="hint_switching">Переключение между страницами</string>
     <string name="hint_switching_summary">Переключайтесь между чатом и просмотром каналов, используя верхнюю левую кнопку или проводя пальцем.</string>
@@ -204,7 +204,7 @@
     <string name="channel_add">Добавить канал</string>
     <string name="tts_failed">Не удалось запустить TTS</string>
     <string name="mumble_url_parse_failed">Mumble URL не верный.</string>
-    <string name="first_run_generate_certificate_title">Добро пожаловать в Mumla!</string>
+    <string name="first_run_generate_certificate_title">Добро пожаловать в WiMic!</string>
     <string name="first_run_generate_certificate">Создание сертификата очень рекомендуется, и требуется некоторыми для подключения некоторыми серверами.</string>
     <string name="generate">Создать</string>
     <string name="certificate_not_valid">Не удалось загрузить сертификат %s!</string>

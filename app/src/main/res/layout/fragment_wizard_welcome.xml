@@ -23,24 +23,24 @@
     android:gravity="center">
 
     <TextView
+        android:id="@+id/wizard_welcome_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="28sp"
-        android:text="Welcome to Mumla"
-        android:id="@+id/wizard_welcome_title"
-        android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
         android:layout_marginBottom="10dp"
-        android:fontFamily="sans-serif-light"/>
+        android:fontFamily="sans-serif-light"
+        android:text="Welcome to WiMic"
+        android:textSize="28sp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Thanks for installing Mumla!\nLet's get started."
-        android:gravity="center"
-        android:layout_below="@+id/wizard_welcome_title"
-        android:layout_alignRight="@+id/wizard_welcome_title"
         android:layout_alignLeft="@+id/wizard_welcome_title"
-        android:fontFamily="sans-serif-light" />
+        android:layout_alignRight="@+id/wizard_welcome_title"
+        android:layout_below="@+id/wizard_welcome_title"
+        android:fontFamily="sans-serif-light"
+        android:gravity="center"
+        android:text="Thanks for installing WiMic!\nLet's get started."
+        android:textAppearance="?android:attr/textAppearanceSmall" />
 </RelativeLayout>

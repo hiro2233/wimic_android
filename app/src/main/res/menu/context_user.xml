@@ -58,12 +58,13 @@
         android:checkable="true"
         app:showAsAction="never"
         />
-    <item android:id="@+id/context_ignore_messages"
-        android:title="@string/user_menu_ignore_messages"
-        android:icon="@drawable/ic_action_bad"
+    <item
+        android:id="@+id/context_ignore_messages"
         android:checkable="true"
-        app:showAsAction="never"
-        />
+        android:icon="@drawable/ic_action_bad"
+        android:title="@string/user_menu_ignore_messages"
+        android:visible="false"
+        app:showAsAction="never" />
     <item android:id="@+id/context_view_comment"
         android:title="@string/user_menu_view_comment"
         android:icon="@drawable/ic_action_comment"

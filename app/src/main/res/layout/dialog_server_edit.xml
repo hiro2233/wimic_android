@@ -16,6 +16,7 @@
   -->
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
@@ -31,7 +32,9 @@
         android:id="@+id/server_edit_name"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:inputType="text" />
+        android:inputType="text"
+        android:text="Connection1"
+        tools:text="Connection1" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -50,21 +53,26 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <EditText
             android:id="@+id/server_edit_host"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:inputType="textUri" />
+            android:inputType="textUri"
+            android:text="192.168.1.16"
+            tools:text="192.168.1.16" />
+
         <EditText
             android:id="@+id/server_edit_port"
             android:layout_width="wrap_content"
-            android:maxEms="5"
             android:layout_height="wrap_content"
             android:hint="@string/default_"
             android:inputType="number"
-            android:maxLength="5">
-        </EditText>
+            android:maxEms="5"
+            android:maxLength="5"
+            android:text="1234"
+            tools:text="1234"></EditText>
     </LinearLayout>
 
     <TextView
@@ -73,19 +81,27 @@
         android:text="@string/server_username" />
 
     <EditText
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
         android:id="@+id/server_edit_username"
-        android:inputType="text" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:text="wimic1"
+        tools:text="wimic1" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/server_password" />
+        android:text="@string/server_password"
+        android:visibility="invisible"
+        tools:visibility="invisible" />
 
     <EditText
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
         android:id="@+id/server_edit_password"
-        android:inputType="textPassword" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:text="1234"
+        android:visibility="invisible"
+        tools:text="1234"
+        tools:visibility="invisible" />
 </LinearLayout>

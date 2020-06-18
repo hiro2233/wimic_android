@@ -7,7 +7,7 @@
     <string name="wizard_confirm_close">您确定要退出安装向导吗？您可以随时在应用设置内重新打开。</string>
 
     <!-- Welcome screen -->
-    <string name="wizard_welcome_title">欢迎使用 Mumla</string>
+    <string name="wizard_welcome_title">欢迎使用 WiMic</string>
 
     <!-- Certificate setup -->
     <string name="wizard_certificate_title">创建证书</string>

@@ -16,34 +16,33 @@
   ~ along with this program.  If not, see <http://www.gnu.org/licenses/>.
   -->
 
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <GridView
         android:id="@+id/server_list_grid"
-        android:layout_height="fill_parent"
         android:layout_width="fill_parent"
-        android:gravity="center"
+        android:layout_height="fill_parent"
+        android:clipToPadding="false"
         android:columnWidth="320dp"
-        android:numColumns="auto_fit"
-        android:verticalSpacing="10dp"
+        android:fastScrollEnabled="true"
+        android:gravity="center"
         android:horizontalSpacing="10dp"
+        android:listSelector="@android:color/transparent"
+        android:numColumns="auto_fit"
         android:padding="10dp"
         android:stretchMode="columnWidth"
-        android:clipToPadding="false"
-        android:fastScrollEnabled="true"
-        android:listSelector="@android:color/transparent" />
+        android:verticalSpacing="10dp" />
 
     <TextView
         android:id="@+id/server_list_grid_empty"
-        android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:text="@string/no_servers"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
         android:fontFamily="sans-serif-light"
         android:gravity="center"
-        android:visibility="gone"
-        android:layout_centerInParent="true"/>
+        android:text="@string/no_servers"
+        android:visibility="gone" />
 </RelativeLayout>

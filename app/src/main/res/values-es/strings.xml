@@ -132,9 +132,9 @@
     <string name="offline">Desconectado</string>
     <string name="clearChat">Limpiar chat</string>
     <string name="connected">Conectado</string>
-    <string name="mumlaConnected">Mumla conectado</string>
-    <string name="mumlaConnecting">Mumla está conectando</string>
-    <string name="mumlaDisconnected">Mumla desconectado</string>
+    <string name="mumlaConnected">WiMic conectado</string>
+    <string name="mumlaConnecting">WiMic está conectando</string>
+    <string name="mumlaDisconnected">WiMic desconectado</string>
     <string name="lostConnection">Conexión perdida con el servidor</string>
     <string name="resume">Reanudar</string>
     <string name="channel">Canal</string>
@@ -162,7 +162,7 @@
     <string name="country">País</string>
     <string name="share">Compartir</string>
     <string name="description">Descripción</string>
-    <string name="shareMessage">¡Entre a este servidor de Mumble con Mumla! %s</string>
+    <string name="shareMessage">¡Entre a este servidor de Mumble con WiMic! %s</string>
     <string name="noServerInfo">Hacer ping para obtener información</string>
     <string name="status_notify_muted_and_deafened">Mudo y sordo.</string>
     <string name="status_notify_muted">Mudo.</string>
@@ -187,7 +187,7 @@
     <string name="hint_reason">Razón</string>
     <string name="hint_ptt">Presionar-para-hablar</string>
     <string name="hint_ptt_summary">Simplemente presione este botón para hablar. Toque dos veces para alternar.</string>
-    <string name="hint_server_add">Bienvenido a Mumla</string>
+    <string name="hint_server_add">Bienvenido a WiMic</string>
     <string name="hint_server_add_summary">Para empezar, añada un servidor a favoritos presionando el botón añadir en la barra de acciones.</string>
     <string name="hint_switching">Cambio de vista</string>
     <string name="hint_switching_summary">Cambie entre la vista del chat y de los canales usando los botones arriba a la izquierda o arrastrando</string>
@@ -203,7 +203,7 @@
     <string name="channel_add">Añadir canal</string>
     <string name="tts_failed">Texto a voz ha fallado al inciarse</string>
     <string name="mumble_url_parse_failed">¡Fallo al procesar la URL de Mumble!</string>
-    <string name="first_run_generate_certificate_title">¡Bienvenido a Mumla!</string>
+    <string name="first_run_generate_certificate_title">¡Bienvenido a WiMic!</string>
     <string name="first_run_generate_certificate">Generar un certificado es altamente recomendable y necesario para conectarse a ciertos servidores.</string>
     <string name="generate">Generar</string>
     <string name="certificate_not_valid">¡No se pudo cargar el certificado \'%s\'!</string>

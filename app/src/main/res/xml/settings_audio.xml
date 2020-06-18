@@ -43,12 +43,12 @@
     <PreferenceCategory android:title="@string/voiceActivitySettings"
         android:key="vad_settings">
         <se.lublin.mumla.preference.SeekBarDialogPreference
-            multiplier="0.1"
-            android:defaultValue="50"
-            android:key="vadThreshold"
             max="100"
+            multiplier="0.1"
+            android:defaultValue="70"
+            android:key="vadThreshold"
             android:summary="@string/detectionThresholdSum"
-            android:title="@string/detectionThreshold"/>
+            android:title="@string/detectionThreshold" />
     </PreferenceCategory>
     <PreferenceCategory android:title="@string/pttSettings"
         android:key="ptt_settings">
@@ -90,22 +90,22 @@
 
         <!-- TODO add an actual min of 8000hz -->
         <ListPreference
-            android:key="input_quality"
-            android:defaultValue="48000"
-            android:title="@string/audioSampleRate"
-            android:summary="@string/audioSampleRateSum"
+            android:defaultValue="8000"
             android:entries="@array/audioSampleRateValues"
-            android:entryValues="@array/audioSampleRateValues"/>
+            android:entryValues="@array/audioSampleRateValues"
+            android:key="input_quality"
+            android:summary="@string/audioSampleRateSum"
+            android:title="@string/audioSampleRate" />
 
         <se.lublin.mumla.preference.SeekBarDialogPreference
-            android:key="input_bitrate"
-            android:title="@string/inputQuality"
-            android:summary="@string/inputQualitySum"
-            multiplier="1000"
             max="96"
             min="8"
-            android:defaultValue="40"
-            android:text=" bps"/>
+            multiplier="1000"
+            android:defaultValue="8"
+            android:key="input_bitrate"
+            android:summary="@string/inputQualitySum"
+            android:text=" bps"
+            android:title="@string/inputQuality" />
 
         <ListPreference
             android:key="audio_per_packet"
@@ -133,10 +133,12 @@
             android:title="@string/callMode" />
             -->
 
+        <!--
         <CheckBoxPreference
             android:defaultValue="false"
             android:key="disableOpus"
             android:summary="@string/disableOpusSum"
             android:title="@string/disableOpus" />
+        -->
     </PreferenceCategory>
 </PreferenceScreen>

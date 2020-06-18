@@ -100,12 +100,13 @@
         <item>6</item>
     </string-array>
 
-    <string name="copyright">Copyright &#169; 2014–2017 Andrew Comminos\nCopyright &#169; 2020 Daniel Lublin mumla@lublin.se\n\nhttps://mumla-app.gitlab.io</string>
-    <string name="project_link">https://mumla-app.gitlab.io</string>
+    <string name="copyright">Copyright &#169; 2014–2017 Andrew Comminos\nCopyright &#169; 2020 Daniel Lublin mumla@lublin.se\nCopyright &#169; 2020 Hiroshi Takey F. htakey@gmail.com\n\nhttps://github.com/hiro2233</string>
+    <string name="project_link">https://github.com/hiro2233</string>
     <string name="acknowledgements_link">https://gitlab.com/quite/mumla/-/graphs/master</string>
     <string name="license_gplv3">GNU General Public License v3.0</string>
     <string name="license_gplv3_link">https://www.gnu.org/copyleft/gpl.html</string>
     <string name="license_apache2">Apache License Version 2.0</string>
     <string name="license_apache2_link">https://www.apache.org/licenses/LICENSE-2.0.html</string>
+    <string name="acknowledgementsextra_link">https://github.com/hiro2233</string>
 
 </resources>

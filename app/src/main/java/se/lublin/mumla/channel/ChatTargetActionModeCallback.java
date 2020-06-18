@@ -41,7 +41,7 @@ public class ChatTargetActionModeCallback implements ActionMode.Callback {
     @Override
     public boolean onCreateActionMode(ActionMode actionMode, Menu menu) {
         actionMode.setTitle(mChatTarget.getName());
-        actionMode.setSubtitle(R.string.current_chat_target);
+        //actionMode.setSubtitle(R.string.current_chat_target);
         mProvider.setChatTarget(getChatTarget());
         return true;
     }

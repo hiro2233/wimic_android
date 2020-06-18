@@ -74,12 +74,12 @@ public abstract class ServerAdapter<E extends Server> extends ArrayAdapter<E> {
         boolean requestFailure = infoResponse != null && infoResponse.isDummy();
 
         TextView nameText = (TextView) view.findViewById(R.id.server_row_name);
-        TextView userText = (TextView) view.findViewById(R.id.server_row_user);
+        //TextView userText = (TextView) view.findViewById(R.id.server_row_user);
         TextView addressText = (TextView) view.findViewById(R.id.server_row_address);
 
         nameText.setText(server.getName());
 
-        if(userText != null) userText.setText(server.getUsername());
+        //if(userText != null) userText.setText(server.getUsername());
         if (addressText != null) {
             addressText.setText(server.getHost()
                                 + (server.getPort() == 0 ? "" : ":" + server.getPort()));
@@ -97,21 +97,21 @@ public abstract class ServerAdapter<E extends Server> extends ArrayAdapter<E> {
 
         TextView serverVersionText = (TextView) view.findViewById(R.id.server_row_version_status);
         TextView serverLatencyText = (TextView) view.findViewById(R.id.server_row_latency);
-        TextView serverUsersText = (TextView) view.findViewById(R.id.server_row_usercount);
+        //TextView serverUsersText = (TextView) view.findViewById(R.id.server_row_usercount);
         ProgressBar serverInfoProgressBar = (ProgressBar) view.findViewById(R.id.server_row_ping_progress);
 
         serverVersionText.setVisibility(!requestExists ? View.INVISIBLE : View.VISIBLE);
-        serverUsersText.setVisibility(!requestExists ? View.INVISIBLE : View.VISIBLE);
+        //serverUsersText.setVisibility(!requestExists ? View.INVISIBLE : View.VISIBLE);
         serverLatencyText.setVisibility(!requestExists ? View.INVISIBLE : View.VISIBLE);
         serverInfoProgressBar.setVisibility(!requestExists ? View.VISIBLE : View.INVISIBLE);
 
         if(infoResponse != null && !requestFailure) {
-            serverVersionText.setText(getContext().getString(R.string.online)+" ("+infoResponse.getVersionString()+")");
-            serverUsersText.setText(infoResponse.getCurrentUsers()+"/"+infoResponse.getMaximumUsers());
+            serverVersionText.setText(getContext().getString(R.string.online));
+            //serverUsersText.setText(infoResponse.getCurrentUsers()+"/"+infoResponse.getMaximumUsers());
             serverLatencyText.setText(infoResponse.getLatency()+"ms");
         } else if(requestFailure) {
             serverVersionText.setText(R.string.offline);
-            serverUsersText.setText("");
+            //serverUsersText.setText("");
             serverLatencyText.setText("");
         }
 

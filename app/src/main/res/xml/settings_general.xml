@@ -17,60 +17,80 @@
   ~ along with this program.  If not, see <http://www.gnu.org/licenses/>.
   -->
 
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-    <CheckBoxPreference
-        android:defaultValue="true"
-        android:key="chatNotify"
-        android:summary="@string/chatNotificationsSum"
-        android:title="@string/chatNotifications" />
+<PreferenceScreen xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="chatNotify"
+            android:summary="@string/chatNotificationsSum"
+            android:title="@string/chatNotifications"
+            android:visibility="gone"
+            tools:visibility="gone" />
+    -->
 
-    <CheckBoxPreference
-        android:key="stay_awake"
-        android:defaultValue="false"
-        android:title="@string/stay_awake"
-        android:summary="@string/stay_awake_sum" />
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="stay_awake"
+            android:summary="@string/stay_awake_sum"
+            android:title="@string/stay_awake" />
 
-    <CheckBoxPreference
-        android:defaultValue="true"
-        android:key="useTts"
-        android:summary="@string/useTtsSum"
-        android:title="@string/useTts" />
+    <!--
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="useTts"
+            android:summary="@string/useTtsSum"
+            android:title="@string/useTts"
+            android:visibility="invisible"
+            tools:visibility="invisible" />
 
-    <CheckBoxPreference
-        android:defaultValue="false"
-        android:key="shortTtsMessages"
-        android:summary="@string/shortTtsMessagesSum"
-        android:title="@string/shortTtsMessages" />
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="shortTtsMessages"
+            android:summary="@string/shortTtsMessagesSum"
+            android:title="@string/shortTtsMessages"
+            android:visibility="invisible"
+            tools:visibility="invisible" />
 
-    <CheckBoxPreference
-        android:defaultValue="true"
-        android:key="load_images"
-        android:summary="@string/loadImagesSum"
-        android:title="@string/loadImages"/>
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="load_images"
+            android:summary="@string/loadImagesSum"
+            android:title="@string/loadImages"
+            android:visibility="invisible"
+            tools:visibility="invisible" />
+    -->
 
-    <CheckBoxPreference
-        android:defaultValue="true"
-        android:key="autoReconnect"
-        android:summary="@string/autoReconnectSum"
-        android:title="@string/autoReconnect" />
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="autoReconnect"
+            android:summary="@string/autoReconnectSum"
+            android:title="@string/autoReconnect" />
 
-    <CheckBoxPreference
-        android:defaultValue="false"
-        android:key="forceTcp"
-        android:summary="@string/forceTcpSum"
-        android:title="@string/forceTcp"/>
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="forceTcp"
+            android:summary="@string/forceTcpSum"
+            android:title="@string/forceTcp"/>
 
-    <CheckBoxPreference
-        android:defaultValue="false"
-        android:key="useTor"
-        android:summary="@string/useTorSum"
-        android:title="@string/useTor"/>
+    <!--
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="useTor"
+            android:summary="@string/useTorSum"
+            android:title="@string/useTor"
+            android:visibility="invisible"
+            tools:visibility="invisible" />
 
-    <CheckBoxPreference
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:defaultValue="false"
-        android:key="startUpInPinnedMode"
-        android:summary="@string/pref_start_upIn_pinned_mode_sum"
-        android:title="@string/pref_start_up_in_pinned_mode" />
-</PreferenceScreen>
+        <CheckBoxPreference
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:defaultValue="false"
+            android:key="startUpInPinnedMode"
+            android:summary="@string/pref_start_upIn_pinned_mode_sum"
+            android:title="@string/pref_start_up_in_pinned_mode"
+            android:visibility="invisible"
+            tools:visibility="invisible" />
+    -->
+
+    </PreferenceScreen>

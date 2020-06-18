@@ -132,9 +132,9 @@
     <string name="offline">Hors ligne</string>
     <string name="clearChat">Vider le chat</string>
     <string name="connected">Connecté</string>
-    <string name="mumlaConnected">Mumla connecté</string>
-    <string name="mumlaConnecting">Mumla en connexion</string>
-    <string name="mumlaDisconnected">Mumla déconnecté</string>
+    <string name="mumlaConnected">WiMic connecté</string>
+    <string name="mumlaConnecting">WiMic en connexion</string>
+    <string name="mumlaDisconnected">WiMic déconnecté</string>
     <string name="lostConnection">Connexion au serveur perdu.</string>
     <string name="resume">Reprendre</string>
     <string name="channel">Salon</string>
@@ -187,7 +187,7 @@
     <string name="hint_reason">Raison</string>
     <string name="hint_ptt">Appuyer pour parler</string>
     <string name="hint_ptt_summary">Appuyez simplement sur ce bouton enfoncé pour parler. Double-cliquez pour l\'activer.</string>
-    <string name="hint_server_add">Bienvenue sur Mumla</string>
+    <string name="hint_server_add">Bienvenue sur WiMic</string>
     <string name="hint_server_add_summary">Pour commence, ajouter un serveur favori en appuyant sur le bouton ajouter dans la barre d\'action.</string>
     <string name="hint_switching">Basculer entre les vues</string>
     <string name="hint_switching_summary">Basculer entre le chat et le salon en utilisant les boutons en haut à gauche ou en glissant.</string>
@@ -203,7 +203,7 @@
     <string name="channel_add">Ajouter un salon</string>
     <string name="tts_failed">Erreur de l\'initialisation de TTS</string>
     <string name="mumble_url_parse_failed">Échec de l\'analyse de l\'URL Mumble !</string>
-    <string name="first_run_generate_certificate_title">Bienvenue dans Mumla!</string>
+    <string name="first_run_generate_certificate_title">Bienvenue dans WiMic!</string>
     <string name="first_run_generate_certificate">Générer un certificat est très recommandé, et nécessaire pour la connexion à certains serveurs.</string>
     <string name="generate">Générer</string>
     <string name="certificate_not_valid">Impossible de charger le certificat \'%s\'!</string>

@@ -151,9 +151,9 @@
     <string name="offline">Offline</string>
     <string name="clearChat">Clear Chat</string>
     <string name="connected">Connected</string>
-    <string name="mumlaConnected">Mumla connected</string>
-    <string name="mumlaConnecting">Mumla connecting</string>
-    <string name="mumlaDisconnected">Mumla disconnected</string>
+    <string name="mumlaConnected">WiMic connected</string>
+    <string name="mumlaConnecting">WiMic connecting</string>
+    <string name="mumlaDisconnected">WiMic disconnected</string>
     <string name="lostConnection">Lost connection to the server.</string>
     <string name="resume">Resume</string>
     <string name="channel">Channel</string>
@@ -181,7 +181,7 @@
     <string name="country">Country</string>
     <string name="share">Share</string>
     <string name="description">Description</string>
-    <string name="shareMessage">Join this Mumble server with Mumla! %s</string>
+    <string name="shareMessage">Join this Mumble server with WiMic! %s</string>
     <string name="noServerInfo">Ping to fetch info</string>
     <string name="status_notify_muted_and_deafened">Muted and deafened.</string>
     <string name="status_notify_muted">Muted.</string>
@@ -206,7 +206,7 @@
     <string name="hint_reason">Reason</string>
     <string name="hint_ptt">Push-to-talk</string>
     <string name="hint_ptt_summary">Simply press this button to talk. Double-tap to toggle it.</string>
-    <string name="hint_server_add">Welcome to Mumla</string>
+    <string name="hint_server_add">Welcome to WiMic</string>
     <string name="hint_server_add_summary">Add a favorite server by pressing \'Add\' from the action bar.</string>
     <string name="hint_switching">Switching Between Views</string>
     <string name="hint_switching_summary">Switch between the chat and channel views by using the top left buttons, or swiping.</string>
@@ -222,7 +222,7 @@
     <string name="channel_add">Add Channel</string>
     <string name="tts_failed">Could not start TTS</string>
     <string name="mumble_url_parse_failed">Mumble URL is not valid.</string>
-    <string name="first_run_generate_certificate_title">Welcome to Mumla!</string>
+    <string name="first_run_generate_certificate_title">Welcome to WiMic!</string>
     <string name="first_run_generate_certificate">Generating a certificate is highly recommended, and necessary for connection to some servers.</string>
     <string name="generate">Generate</string>
     <string name="certificate_not_valid">Could not load certificate %s!</string>
