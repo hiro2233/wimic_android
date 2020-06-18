@@ -30,9 +30,9 @@ import android.widget.TabHost;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.DialogFragment;
 
-import bo.htakey.rimic.IHumlaService;
+import bo.htakey.rimic.IRimicService;
 import bo.htakey.wimic.R;
-import bo.htakey.wimic.util.HumlaServiceProvider;
+import bo.htakey.wimic.util.RimicServiceProvider;
 
 /**
  * Fragment to change your comment using basic WYSIWYG tools.
@@ -43,7 +43,7 @@ public abstract class AbstractCommentFragment extends DialogFragment {
     private TabHost mTabHost;
     private WebView mCommentView;
     private EditText mCommentEdit;
-    private HumlaServiceProvider mProvider;
+    private RimicServiceProvider mProvider;
     private String mComment;
 
     @Override
@@ -57,9 +57,9 @@ public abstract class AbstractCommentFragment extends DialogFragment {
         super.onAttach(activity);
 
         try {
-            mProvider = (HumlaServiceProvider) activity;
+            mProvider = (RimicServiceProvider) activity;
         } catch (ClassCastException e) {
-            throw new RuntimeException(activity.getClass().getName() + " must implement HumlaServiceProvider!");
+            throw new RuntimeException(activity.getClass().getName() + " must implement RimicServiceProvider!");
         }
     }
 
@@ -134,14 +134,14 @@ public abstract class AbstractCommentFragment extends DialogFragment {
     /**
      * Requests a comment from the service. Will not be called if we already have a comment provided.
      * This method is expected to set a callback that will call {@link bo.htakey.wimic.channel.comment.AbstractCommentFragment#loadComment(String comment)}.
-     * @param service The bound Humla service to use for remote calls.
+     * @param service The bound Rimic service to use for remote calls.
      */
-    public abstract void requestComment(IHumlaService service);
+    public abstract void requestComment(IRimicService service);
 
     /**
      * Asks the service to replace the comment.
-     * @param service The bound Humla service to use for remote calls.
+     * @param service The bound Rimic service to use for remote calls.
      * @param comment The comment the user has defined.
      */
-    public abstract void editComment(IHumlaService service, String comment);
+    public abstract void editComment(IRimicService service, String comment);
 }

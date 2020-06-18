@@ -29,18 +29,18 @@ import android.widget.TextView;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.DialogFragment;
 
-import bo.htakey.rimic.IHumlaSession;
+import bo.htakey.rimic.IRimicSession;
 import bo.htakey.rimic.model.IChannel;
 import bo.htakey.rimic.net.Permissions;
 import bo.htakey.wimic.R;
-import bo.htakey.wimic.util.HumlaServiceProvider;
+import bo.htakey.wimic.util.RimicServiceProvider;
 
 /**
  * Created by andrew on 23/11/13.
  */
 public class ChannelEditFragment extends DialogFragment {
 
-    private HumlaServiceProvider mServiceProvider;
+    private RimicServiceProvider mServiceProvider;
     private TextView mNameField;
     private TextView mDescriptionField;
     private TextView mPositionField;
@@ -51,9 +51,9 @@ public class ChannelEditFragment extends DialogFragment {
         super.onAttach(activity);
 
         try {
-            mServiceProvider = (HumlaServiceProvider) activity;
+            mServiceProvider = (RimicServiceProvider) activity;
         } catch (ClassCastException e) {
-            throw new ClassCastException(activity.toString() + " must implement HumlaServiceProvider");
+            throw new ClassCastException(activity.toString() + " must implement RimicServiceProvider");
         }
     }
 
@@ -69,7 +69,7 @@ public class ChannelEditFragment extends DialogFragment {
         // If we can only make temporary channels, remove the option.
         if (mServiceProvider.getService().isConnected()) {
             // TODO: we probably should just stop this dialog in its tracks if we're disconnected.
-            IHumlaSession session = mServiceProvider.getService().getSession();
+            IRimicSession session = mServiceProvider.getService().getSession();
             IChannel parentChannel = session.getChannel(getParent());
             int combinedPermissions = session.getPermissions() | parentChannel.getPermissions();
             boolean canMakeChannel = (combinedPermissions & Permissions.MakeChannel) > 0;

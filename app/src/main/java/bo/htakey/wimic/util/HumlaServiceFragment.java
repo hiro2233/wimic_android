@@ -23,17 +23,17 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import bo.htakey.rimic.IHumlaService;
-import bo.htakey.rimic.util.IHumlaObserver;
+import bo.htakey.rimic.IRimicService;
+import bo.htakey.rimic.util.IRimicObserver;
 import bo.htakey.wimic.service.IMumlaService;
 
 /**
- * Fragment class intended to make binding the Humla service to fragments easier.
+ * Fragment class intended to make binding the Rimic service to fragments easier.
  * Created by andrew on 04/08/13.
  */
-public abstract class HumlaServiceFragment extends Fragment {
+public abstract class RimicServiceFragment extends Fragment {
 
-    private HumlaServiceProvider mServiceProvider;
+    private RimicServiceProvider mServiceProvider;
 
     /** State boolean to make sure we don't double initialize a fragment once a service has been bound. */
     private boolean mBound;
@@ -43,9 +43,9 @@ public abstract class HumlaServiceFragment extends Fragment {
         super.onAttach(activity);
 
         try {
-            mServiceProvider = (HumlaServiceProvider) activity;
+            mServiceProvider = (RimicServiceProvider) activity;
         } catch (ClassCastException e) {
-            throw new ClassCastException(activity.toString() + " must implement HumlaServiceProvider");
+            throw new ClassCastException(activity.toString() + " must implement RimicServiceProvider");
         }
     }
 
@@ -66,16 +66,16 @@ public abstract class HumlaServiceFragment extends Fragment {
     }
 
     /** The definitive place where data from the service will be used to initialize the fragment. Only called once per bind, whether the fragment loads first or the service. */
-    public void onServiceBound(IHumlaService service) { }
+    public void onServiceBound(IRimicService service) { }
 
     public void onServiceUnbound() { }
 
     /** If implemented, will register the returned observer to the service upon binding. */
-    public IHumlaObserver getServiceObserver() {
+    public IRimicObserver getServiceObserver() {
         return null;
     }
 
-    private void onServiceAttached(IHumlaService service) {
+    private void onServiceAttached(IRimicService service) {
         mBound = true;
         if(getServiceObserver() != null)
             service.registerObserver(getServiceObserver());
@@ -83,7 +83,7 @@ public abstract class HumlaServiceFragment extends Fragment {
         onServiceBound(service);
     }
 
-    private void onServiceDetached(IHumlaService service) {
+    private void onServiceDetached(IRimicService service) {
         mBound = false;
         if(getServiceObserver() != null)
             service.unregisterObserver(getServiceObserver());

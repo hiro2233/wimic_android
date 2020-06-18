@@ -21,8 +21,8 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 
-import bo.htakey.rimic.IHumlaService;
-import bo.htakey.rimic.IHumlaSession;
+import bo.htakey.rimic.IRimicService;
+import bo.htakey.rimic.IRimicSession;
 
 /**
  * Created by andrew on 08/08/14.
@@ -34,9 +34,9 @@ public class TalkBroadcastReceiver extends BroadcastReceiver {
     public static final String TALK_STATUS_OFF = "off";
     public static final String TALK_STATUS_TOGGLE = "toggle";
 
-    private IHumlaService mService;
+    private IRimicService mService;
 
-    public TalkBroadcastReceiver(IHumlaService service) {
+    public TalkBroadcastReceiver(IRimicService service) {
         mService = service;
     }
 
@@ -45,7 +45,7 @@ public class TalkBroadcastReceiver extends BroadcastReceiver {
         if (BROADCAST_TALK.equals(intent.getAction())) {
             if (!mService.isConnected())
                 return;
-            IHumlaSession session = mService.getSession();
+            IRimicSession session = mService.getSession();
             String status = intent.getStringExtra(EXTRA_TALK_STATUS);
             if (status == null) status = TALK_STATUS_TOGGLE;
             if (TALK_STATUS_ON.equals(status)) {

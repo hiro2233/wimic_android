@@ -44,24 +44,24 @@ import androidx.viewpager.widget.ViewPager;
 import java.util.ArrayList;
 import java.util.List;
 
-import bo.htakey.rimic.HumlaService;
-import bo.htakey.rimic.IHumlaService;
-import bo.htakey.rimic.IHumlaSession;
+import bo.htakey.rimic.RimicService;
+import bo.htakey.rimic.IRimicService;
+import bo.htakey.rimic.IRimicSession;
 import bo.htakey.rimic.model.IUser;
 import bo.htakey.rimic.model.WhisperTarget;
-import bo.htakey.rimic.util.HumlaObserver;
-import bo.htakey.rimic.util.IHumlaObserver;
+import bo.htakey.rimic.util.RimicObserver;
+import bo.htakey.rimic.util.IRimicObserver;
 import bo.htakey.rimic.util.VoiceTargetMode;
 import bo.htakey.wimic.Constants;
 import bo.htakey.wimic.R;
 import bo.htakey.wimic.Settings;
-import bo.htakey.wimic.util.HumlaServiceFragment;
+import bo.htakey.wimic.util.RimicServiceFragment;
 
 /**
  * Class to encapsulate both a ChannelListFragment and ChannelChatFragment.
  * Created by andrew on 02/08/13.
  */
-public class ChannelFragment extends HumlaServiceFragment implements SharedPreferences.OnSharedPreferenceChangeListener, ChatTargetProvider {
+public class ChannelFragment extends RimicServiceFragment implements SharedPreferences.OnSharedPreferenceChangeListener, ChatTargetProvider {
 
     private ViewPager mViewPager;
     private PagerTabStrip mTabStrip;
@@ -79,11 +79,11 @@ public class ChannelFragment extends HumlaServiceFragment implements SharedPrefe
     /** True iff the talk button has been hidden (e.g. when muted) */
     private boolean mTalkButtonHidden;
 
-    private HumlaObserver mObserver = new HumlaObserver() {
+    private RimicObserver mObserver = new RimicObserver() {
         @Override
         public void onUserTalkStateUpdated(IUser user) {
             if (getService().isConnected()) {
-                IHumlaSession session = getService().getSession();
+                IRimicSession session = getService().getSession();
                 boolean self;
                 try {
                     self = (user != null) && user.getSession() == session.getSessionId();
@@ -112,7 +112,7 @@ public class ChannelFragment extends HumlaServiceFragment implements SharedPrefe
         @Override
         public void onUserStateUpdated(IUser user) {
             if (getService().isConnected()) {
-                IHumlaSession session = getService().getSession();
+                IRimicSession session = getService().getSession();
                 if (user != null && user.getSession() == session.getSessionId()) {
                     configureInput();
                 }
@@ -174,7 +174,7 @@ public class ChannelFragment extends HumlaServiceFragment implements SharedPrefe
                 if (getService() == null || !getService().isConnected())
                     return;
 
-                IHumlaSession session = getService().getSession();
+                IRimicSession session = getService().getSession();
                 if (session.getVoiceTargetMode() == VoiceTargetMode.WHISPER) {
                     byte target = session.getVoiceTargetId();
                     session.setVoiceTargetId((byte) 0);
@@ -253,14 +253,14 @@ public class ChannelFragment extends HumlaServiceFragment implements SharedPrefe
     }
 
     @Override
-    public IHumlaObserver getServiceObserver() {
+    public IRimicObserver getServiceObserver() {
         return mObserver;
     }
 
     @Override
-    public void onServiceBound(IHumlaService service) {
+    public void onServiceBound(IRimicService service) {
         super.onServiceBound(service);
-        if (service.getConnectionState() == HumlaService.ConnectionState.CONNECTED) {
+        if (service.getConnectionState() == RimicService.ConnectionState.CONNECTED) {
             configureTargetPanel();
             configureInput();
         }
@@ -270,7 +270,7 @@ public class ChannelFragment extends HumlaServiceFragment implements SharedPrefe
         if (!getService().isConnected())
             return;
 
-        IHumlaSession session = getService().getSession();
+        IRimicSession session = getService().getSession();
         VoiceTargetMode mode = session.getVoiceTargetMode();
         if (mode == VoiceTargetMode.WHISPER) {
             WhisperTarget target = session.getWhisperTarget();

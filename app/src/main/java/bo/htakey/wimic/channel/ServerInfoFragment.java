@@ -31,17 +31,17 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
-import bo.htakey.rimic.IHumlaService;
-import bo.htakey.rimic.IHumlaSession;
-import bo.htakey.rimic.net.HumlaUDPMessageType;
+import bo.htakey.rimic.IRimicService;
+import bo.htakey.rimic.IRimicSession;
+import bo.htakey.rimic.net.RimicUDPMessageType;
 import bo.htakey.wimic.R;
-import bo.htakey.wimic.util.HumlaServiceFragment;
+import bo.htakey.wimic.util.RimicServiceFragment;
 
 /**
  * A fragment that displays known information from the remote server.
  * Created by andrew on 28/08/13.
  */
-public class ServerInfoFragment extends HumlaServiceFragment {
+public class ServerInfoFragment extends RimicServiceFragment {
 
     private static final int POLL_RATE = 1000;
 
@@ -79,7 +79,7 @@ public class ServerInfoFragment extends HumlaServiceFragment {
         if(getService() == null || !getService().isConnected())
             return;
 
-        IHumlaSession session = getService().getSession();
+        IRimicSession session = getService().getSession();
 
         mProtocolView.setText(getString(R.string.server_info_protocol, session.getServerRelease()));
         mOSVersionView.setText(getString(R.string.server_info_version, session.getServerOSName(), session.getServerOSVersion()));
@@ -91,7 +91,7 @@ public class ServerInfoFragment extends HumlaServiceFragment {
                 getService().getTargetServer().getSrvPort()));
 
         String codecName;
-        HumlaUDPMessageType codecType = session.getCodec();
+        RimicUDPMessageType codecType = session.getCodec();
         switch (codecType) {
             case UDPVoiceOpus:
                 codecName = "Opus";
@@ -115,7 +115,7 @@ public class ServerInfoFragment extends HumlaServiceFragment {
     }
 
     @Override
-    public void onServiceBound(IHumlaService service) {
+    public void onServiceBound(IRimicService service) {
         // wow this is ugly
         mPollFuture = mExecutorService.scheduleAtFixedRate(new Runnable() {
             @Override

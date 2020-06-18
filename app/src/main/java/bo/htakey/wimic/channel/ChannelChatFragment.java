@@ -50,25 +50,25 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import bo.htakey.rimic.IHumlaService;
-import bo.htakey.rimic.IHumlaSession;
+import bo.htakey.rimic.IRimicService;
+import bo.htakey.rimic.IRimicSession;
 import bo.htakey.rimic.model.IChannel;
 import bo.htakey.rimic.model.IMessage;
 import bo.htakey.rimic.model.IUser;
 import bo.htakey.rimic.model.User;
-import bo.htakey.rimic.util.HumlaDisconnectedException;
-import bo.htakey.rimic.util.HumlaObserver;
-import bo.htakey.rimic.util.IHumlaObserver;
+import bo.htakey.rimic.util.RimicDisconnectedException;
+import bo.htakey.rimic.util.RimicObserver;
+import bo.htakey.rimic.util.IRimicObserver;
 import bo.htakey.wimic.Constants;
 import bo.htakey.wimic.R;
 import bo.htakey.wimic.service.IChatMessage;
-import bo.htakey.wimic.util.HumlaServiceFragment;
+import bo.htakey.wimic.util.RimicServiceFragment;
 import bo.htakey.wimic.util.MumbleImageGetter;
 
-public class ChannelChatFragment extends HumlaServiceFragment implements ChatTargetProvider.OnChatTargetSelectedListener {
+public class ChannelChatFragment extends RimicServiceFragment implements ChatTargetProvider.OnChatTargetSelectedListener {
     private static final Pattern LINK_PATTERN = Pattern.compile("(https?://\\S+)");
 
-    private IHumlaObserver mServiceObserver = new HumlaObserver() {
+    private IRimicObserver mServiceObserver = new RimicObserver() {
 
         @Override
         public void onMessageLogged(IMessage message) {
@@ -92,9 +92,9 @@ public class ChannelChatFragment extends HumlaServiceFragment implements ChatTar
 
         @Override
         public void onUserJoinedChannel(IUser user, IChannel newChannel, IChannel oldChannel) {
-            IHumlaService service = getService();
+            IRimicService service = getService();
             if (service.isConnected()) {
-                IHumlaSession session = service.getSession();
+                IRimicSession session = service.getSession();
                 if (user != null && session.getSessionUser() != null &&
                         user.equals(session.getSessionUser()) &&
                         mTargetProvider.getChatTarget() == null) {
@@ -152,7 +152,7 @@ public class ChannelChatFragment extends HumlaServiceFragment implements ChatTar
             public void onClick(View v) {
                 try {
                     sendMessage();
-                } catch (HumlaDisconnectedException e) {
+                } catch (RimicDisconnectedException e) {
                     Log.d(Constants.TAG, "ChannelChatFragment, exception from sendMessage: " + e);
                 }
             }
@@ -163,7 +163,7 @@ public class ChannelChatFragment extends HumlaServiceFragment implements ChatTar
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 try {
                     sendMessage();
-                } catch (HumlaDisconnectedException e) {
+                } catch (RimicDisconnectedException e) {
                     Log.d(Constants.TAG, "ChannelChatFragment, exception from sendMessage: " + e);
                 }
                 return true;
@@ -230,15 +230,15 @@ public class ChannelChatFragment extends HumlaServiceFragment implements ChatTar
     /**
      * Sends the message currently in {@link bo.htakey.wimic.channel.ChannelChatFragment#mChatTextEdit}
      * to the remote server. Clears the message box if the message was sent successfully.
-     * @throws HumlaDisconnectedException If the service is disconnected.
+     * @throws RimicDisconnectedException If the service is disconnected.
      */
-    private void sendMessage() throws HumlaDisconnectedException {
+    private void sendMessage() throws RimicDisconnectedException {
         if(mChatTextEdit.length() == 0) return;
         String message = mChatTextEdit.getText().toString();
         String formattedMessage = markupOutgoingMessage(message);
         ChatTargetProvider.ChatTarget target = mTargetProvider.getChatTarget();
         IMessage responseMessage = null;
-        IHumlaSession session = getService().getSession();
+        IRimicSession session = getService().getSession();
         if(target == null)
             responseMessage = session.sendChannelTextMessage(session.getSessionChannel().getId(), formattedMessage, false);
         else if(target.getUser() != null)
@@ -275,7 +275,7 @@ public class ChannelChatFragment extends HumlaServiceFragment implements ChatTar
     public void updateChatTargetText(final ChatTargetProvider.ChatTarget target) {
         if(getService() == null || !getService().isConnected()) return;
 
-        IHumlaSession session = getService().getSession();
+        IRimicSession session = getService().getSession();
         String hint = null;
         if(target == null && session.getSessionChannel() != null) {
             hint = getString(R.string.messageToChannel, session.getSessionChannel().getName());
@@ -290,7 +290,7 @@ public class ChannelChatFragment extends HumlaServiceFragment implements ChatTar
 
 
     @Override
-    public void onServiceBound(IHumlaService service) {
+    public void onServiceBound(IRimicService service) {
         mChatAdapter = new ChannelChatAdapter(getActivity(), service, getService().getMessageLog());
         mChatList.setAdapter(mChatAdapter);
         mChatList.post(new Runnable() {
@@ -302,7 +302,7 @@ public class ChannelChatFragment extends HumlaServiceFragment implements ChatTar
     }
 
     @Override
-    public IHumlaObserver getServiceObserver() {
+    public IRimicObserver getServiceObserver() {
         return mServiceObserver;
     }
 
@@ -313,10 +313,10 @@ public class ChannelChatFragment extends HumlaServiceFragment implements ChatTar
 
     private static class ChannelChatAdapter extends ArrayAdapter<IChatMessage> {
         private final MumbleImageGetter mImageGetter;
-        private final IHumlaService mService;
+        private final IRimicService mService;
         private final DateFormat mDateFormat;
 
-        public ChannelChatAdapter(Context context, IHumlaService service, List<IChatMessage> messages) {
+        public ChannelChatAdapter(Context context, IRimicService service, List<IChatMessage> messages) {
             super(context, 0, new ArrayList<>(messages));
             mService = service;
             mImageGetter = new MumbleImageGetter(context);
@@ -344,7 +344,7 @@ public class ChannelChatFragment extends HumlaServiceFragment implements ChatTar
                     boolean selfAuthored;
                     try {
                         selfAuthored = textMessage.getActor() == mService.getSession().getSessionId();
-                    } catch (HumlaDisconnectedException e) {
+                    } catch (RimicDisconnectedException e) {
                         selfAuthored = false;
                     }
 
