@@ -25,13 +25,16 @@
     android:layout_marginRight="16dp"
     android:divider="?attr/dividerHorizontal"
     android:orientation="horizontal"
-    android:showDividers="middle">
+    android:showDividers="middle"
+    android:baselineAligned="false">
 
     <LinearLayout
         android:id="@+id/left_split"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="1" >
+        android:layout_weight="1"
+        android:visibility="gone"
+        tools:visibility="gone">
 
         <FrameLayout
             android:id="@+id/chat_fragment"
@@ -83,7 +86,8 @@
                 app:srcCompat="@drawable/ic_action_delete_dark"
                 android:tint="?android:textColorPrimary"
                 android:layout_gravity="center_vertical|end"
-                android:background="?attr/selectableItemBackgroundBorderless"/>
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="TODO" />
 
         </FrameLayout>
 

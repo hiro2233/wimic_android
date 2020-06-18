@@ -61,7 +61,7 @@
     <string name="chatNotificationsSum">当用户发送文字消息时显示提醒。</string>
     <string name="defaultUsername">默认用户名</string>
     <string name="defaultUsernameSum">连接到服务器时使用的默认用户名。</string>
-    <string name="defaultUsernameDefault">Mumla_User</string>
+    <string name="defaultUsernameDefault">WiMic_User</string>
     <string name="certificateGenerate">生成证书</string>
     <string name="certificateGenerateSum">生成一份新的 Mumla 自签名证书。推荐新用户使用。</string>
     <string name="pttSettings">按住发言设置</string>

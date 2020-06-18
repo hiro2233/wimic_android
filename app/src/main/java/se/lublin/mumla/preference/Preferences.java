@@ -55,7 +55,7 @@ public class Preferences extends PreferenceActivity {
     public static final String ACTION_PREFS_APPEARANCE = "se.lublin.mumla.app.PREFS_APPEARANCE";
     public static final String ACTION_PREFS_ABOUT = "se.lublin.mumla.app.PREFS_ABOUT";
 
-    private static final String USE_TOR_KEY = "useTor";
+    //private static final String USE_TOR_KEY = "useTor";
     private static final String VERSION_KEY = "version";
 
     @Override
@@ -95,8 +95,8 @@ public class Preferences extends PreferenceActivity {
     }
 
     private static void configureOrbotPreferences(PreferenceScreen screen) {
-        Preference useOrbotPreference = screen.findPreference(USE_TOR_KEY);
-        useOrbotPreference.setEnabled(OrbotHelper.isOrbotInstalled(screen.getContext()));
+        //Preference useOrbotPreference = screen.findPreference(USE_TOR_KEY);
+        //useOrbotPreference.setEnabled(OrbotHelper.isOrbotInstalled(screen.getContext()));
     }
 
     private static void configureAudioPreferences(final PreferenceScreen screen) {

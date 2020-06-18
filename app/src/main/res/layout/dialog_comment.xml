@@ -18,24 +18,19 @@
   -->
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <TabHost
+        android:id="@+id/comment_tabhost"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/comment_tabhost">
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:orientation="vertical">
-
-            <TabWidget
-                android:id="@android:id/tabs"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"></TabWidget>
 
             <FrameLayout
                 android:id="@android:id/tabcontent"
@@ -48,9 +43,9 @@
                     android:layout_height="fill_parent">
 
                     <WebView
+                        android:id="@+id/comment_view"
                         android:layout_width="320dp"
-                        android:layout_height="300dp"
-                        android:id="@+id/comment_view"/>
+                        android:layout_height="300dp" />
 
                 </LinearLayout>
 
@@ -60,13 +55,18 @@
                     android:layout_height="fill_parent">
 
                     <EditText
+                        android:id="@+id/comment_edit"
                         android:layout_width="320dp"
                         android:layout_height="300dp"
-                        android:id="@+id/comment_edit"
-                        android:inputType="textMultiLine|textNoSuggestions"
-                        android:gravity="top|left"/>
+                        android:gravity="top|left"
+                        android:inputType="textMultiLine|textNoSuggestions" />
                 </LinearLayout>
             </FrameLayout>
+
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"></TabWidget>
         </LinearLayout>
     </TabHost>
 </LinearLayout>

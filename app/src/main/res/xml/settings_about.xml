@@ -17,7 +17,8 @@
   ~ along with this program.  If not, see <http://www.gnu.org/licenses/>.
   -->
 
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
     <Preference
         android:title="@string/app_name"
         android:summary="@string/copyright">
@@ -29,12 +30,26 @@
         android:key="version"
         android:title="@string/version"/>
     <Preference
-        android:title="@string/acknowledgements"
-        android:summary="@string/acknowledgementsSum">
+        android:summary="@string/acknowledgementsextraSum"
+        android:title="@string/acknowledgementsextra">
         <intent
             android:action="android.intent.action.VIEW"
-            android:data="@string/acknowledgements_link"/>
+            android:data="@string/acknowledgementsextra_link" />
     </Preference>
+
+<!--
+    <Preference
+        android:id="@+id/preference"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:summary="@string/acknowledgementsSum"
+        android:title="@string/acknowledgements">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="@string/acknowledgements_link" />
+    </Preference>
+-->
+
     <PreferenceCategory
         android:title="@string/licenses">
         <Preference android:title="@string/license_gplv3">

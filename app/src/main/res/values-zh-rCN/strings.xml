@@ -188,7 +188,7 @@
     <string name="hint_reason">原因</string>
     <string name="hint_ptt">按键发言</string>
     <string name="hint_ptt_summary">按下此按钮以发言，双击按钮以切换状态。</string>
-    <string name="hint_server_add">欢迎使用 Mumla</string>
+    <string name="hint_server_add">欢迎使用 WiMic</string>
     <string name="hint_server_add_summary">点击操作栏上的“添加”按钮添加一个服务器。</string>
     <string name="hint_switching">切换视图</string>
     <string name="hint_switching_summary">使用左上角的按钮或左右滑动，在聊天与频道视图之间切换。</string>
@@ -204,7 +204,7 @@
     <string name="channel_add">添加频道</string>
     <string name="tts_failed">无法启用文字转语音</string>
     <string name="mumble_url_parse_failed">Mumble URL 无效。</string>
-    <string name="first_run_generate_certificate_title">欢迎使用 Mumla！</string>
+    <string name="first_run_generate_certificate_title">欢迎使用 WiMic！</string>
     <string name="first_run_generate_certificate">强烈推荐您生成证书，部分服务器要求您必须有证书。</string>
     <string name="generate">生成</string>
     <string name="certificate_not_valid">无法加载证书 %s！</string>

@@ -101,7 +101,7 @@ public class UserMenu implements PermissionsPopupMenu.IOnMenuPrepareListener, Po
                 (mUser.getHash() != null && !mUser.getHash().isEmpty()) &&
                 (perms & ((self ? Permissions.SelfRegister : Permissions.Register) | Permissions.Write)) > 0);
         menu.findItem(R.id.context_local_mute).setVisible(!self);
-        menu.findItem(R.id.context_ignore_messages).setVisible(!self);
+        //menu.findItem(R.id.context_ignore_messages).setVisible(!self);
 
         // TODO info
 //            informationItem.enabled = (((perms & (Permissions.Write | Permissions.Register))) > 0 || (channelPermissions & (Permissions.Write | Permissions.Enter)) > 0 || (mUser.getSessionId() == mService.getSessionId()));

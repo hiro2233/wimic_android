@@ -64,7 +64,7 @@ public class Settings {
     // up itself...
 
     public static final String PREF_THRESHOLD = "vadThreshold";
-    public static final int DEFAULT_THRESHOLD = 50;
+    public static final int DEFAULT_THRESHOLD = 70;
 
     public static final String PREF_PUSH_KEY = "talkKey";
     public static final Integer DEFAULT_PUSH_KEY = -1;
@@ -125,7 +125,7 @@ public class Settings {
     public static final String PREF_CERT_ID = "certificateId";
 
     public static final String PREF_DEFAULT_USERNAME = "defaultUsername";
-    public static final String DEFAULT_DEFAULT_USERNAME = "Mumla_User"; // funny var name
+    public static final String DEFAULT_DEFAULT_USERNAME = "WiMic_User"; // funny var name
 
     public static final String PREF_FORCE_TCP = "forceTcp";
     public static final Boolean DEFAULT_FORCE_TCP = false;
@@ -146,7 +146,7 @@ public class Settings {
     public static final Boolean DEFAULT_FIRST_RUN = true;
 
     public static final String PREF_LOAD_IMAGES = "load_images";
-    public static final boolean DEFAULT_LOAD_IMAGES = true;
+    public static final boolean DEFAULT_LOAD_IMAGES = false;
 
     public static final String PREF_FRAMES_PER_PACKET = "audio_per_packet";
     public static final String DEFAULT_FRAMES_PER_PACKET = "2";

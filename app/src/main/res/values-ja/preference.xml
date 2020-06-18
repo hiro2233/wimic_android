@@ -56,7 +56,7 @@
     <string name="chatNotificationsSum">ユーザーがチャットに投稿した時に、通知を表示します。</string>
     <string name="defaultUsername">デフォルトのユーザー名</string>
     <string name="defaultUsernameSum">サーバへ接続する時に使用するデフォルトのユーザー名。</string>
-    <string name="defaultUsernameDefault">Mumla_User</string>
+    <string name="defaultUsernameDefault">WiMic_User</string>
     <string name="certificateGenerate">証明書を生成</string>
     <string name="certificateGenerateSum">新しい自己署名の Mumla 証明書を生成します。初心者におすすめです。</string>
     <string name="pttSettings">プッシュツートーク設定</string>

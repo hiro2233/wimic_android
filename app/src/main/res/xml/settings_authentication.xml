@@ -51,8 +51,8 @@
     </Preference>
 
     <EditTextPreference
+        android:defaultValue="wimic1"
         android:key="defaultUsername"
         android:summary="@string/defaultUsernameSum"
-        android:title="@string/defaultUsername"
-        android:defaultValue="@string/defaultUsernameDefault"/>
+        android:title="@string/defaultUsername" />
 </PreferenceScreen>
