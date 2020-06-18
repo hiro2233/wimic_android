@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package se.lublin.mumla.db;
+package bo.htakey.wimic.db;
 
 /**
  * A stub for a certificate entry in Mumla's database.

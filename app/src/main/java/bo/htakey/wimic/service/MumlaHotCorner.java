@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package se.lublin.mumla.service;
+package bo.htakey.wimic.service;
 
 import android.content.Context;
 import android.content.Intent;
@@ -28,7 +28,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Toast;
 
-import se.lublin.mumla.R;
+import bo.htakey.wimic.R;
 
 /**
  * A hot corner in an area of the screen specified by {@link MumlaHotCorner#getGravity()}.

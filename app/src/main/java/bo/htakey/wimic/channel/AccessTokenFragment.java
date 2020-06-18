@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package se.lublin.mumla.channel;
+package bo.htakey.wimic.channel;
 
 import android.app.Activity;
 import android.content.Context;
@@ -37,10 +37,10 @@ import android.widget.TextView.OnEditorActionListener;
 import java.util.ArrayList;
 import java.util.List;
 
-import se.lublin.mumla.Constants;
-import se.lublin.mumla.R;
-import se.lublin.mumla.db.DatabaseProvider;
-import se.lublin.mumla.util.HumlaServiceFragment;
+import bo.htakey.wimic.Constants;
+import bo.htakey.wimic.R;
+import bo.htakey.wimic.db.DatabaseProvider;
+import bo.htakey.wimic.util.HumlaServiceFragment;
 
 public class AccessTokenFragment extends HumlaServiceFragment {
 

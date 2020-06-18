@@ -15,13 +15,13 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package se.lublin.mumla.test;
+package bo.htakey.wimic.test;
 
 import android.test.AndroidTestCase;
 
 import java.util.UUID;
 
-import se.lublin.mumla.db.MumlaSQLiteDatabase;
+import bo.htakey.wimic.db.MumlaSQLiteDatabase;
 
 /**
  * Test case designed to test operations of Mumla's database.

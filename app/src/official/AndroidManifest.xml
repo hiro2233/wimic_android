@@ -21,8 +21,8 @@
 
     <application>
         <provider
-            android:name="se.lublin.mumla.channel.ChannelSearchProvider"
-            android:authorities="se.lublin.mumla.channel.ChannelSearchProvider"
+            android:name="bo.htakey.wimic.channel.ChannelSearchProvider"
+            android:authorities="bo.htakey.wimic.channel.ChannelSearchProvider"
             android:exported="false" />
     </application>
 

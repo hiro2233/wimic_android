@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package se.lublin.mumla;
+package bo.htakey.wimic;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -40,10 +40,10 @@ import java.util.HashSet;
 import java.util.Set;
 
 import se.lublin.humla.Constants;
-import se.lublin.mumla.db.DatabaseCertificate;
-import se.lublin.mumla.db.MumlaSQLiteDatabase;
+import bo.htakey.wimic.db.DatabaseCertificate;
+import bo.htakey.wimic.db.MumlaSQLiteDatabase;
 
-import static se.lublin.mumla.Constants.TAG;
+import static bo.htakey.wimic.Constants.TAG;
 
 /**
  * Singleton settings class for universal access to the app's preferences.
@@ -120,7 +120,7 @@ public class Settings {
 
     /**
      * The DB identifier for the default certificate.
-     * @see se.lublin.mumla.db.DatabaseCertificate
+     * @see bo.htakey.wimic.db.DatabaseCertificate
      */
     public static final String PREF_CERT_ID = "certificateId";
 

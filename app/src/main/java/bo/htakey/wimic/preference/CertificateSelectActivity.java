@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package se.lublin.mumla.preference;
+package bo.htakey.wimic.preference;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -27,11 +27,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
 import java.util.List;
 
-import se.lublin.mumla.R;
-import se.lublin.mumla.Settings;
-import se.lublin.mumla.db.DatabaseCertificate;
-import se.lublin.mumla.db.MumlaDatabase;
-import se.lublin.mumla.db.MumlaSQLiteDatabase;
+import bo.htakey.wimic.R;
+import bo.htakey.wimic.Settings;
+import bo.htakey.wimic.db.DatabaseCertificate;
+import bo.htakey.wimic.db.MumlaDatabase;
+import bo.htakey.wimic.db.MumlaSQLiteDatabase;
 
 /**
  * Created by andrew on 11/01/16.

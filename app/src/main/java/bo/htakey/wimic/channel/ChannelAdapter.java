@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package se.lublin.mumla.channel;
+package bo.htakey.wimic.channel;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -29,7 +29,7 @@ import se.lublin.humla.model.IChannel;
 import se.lublin.humla.model.IUser;
 import se.lublin.humla.model.TalkState;
 import se.lublin.humla.model.User;
-import se.lublin.mumla.R;
+import bo.htakey.wimic.R;
 
 /**
  * Simple adapter to display the users in a single channel.

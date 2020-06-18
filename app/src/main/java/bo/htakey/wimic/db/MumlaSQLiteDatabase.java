@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package se.lublin.mumla.db;
+package bo.htakey.wimic.db;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -28,7 +28,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import se.lublin.humla.model.Server;
-import se.lublin.mumla.Constants;
+import bo.htakey.wimic.Constants;
 
 public class MumlaSQLiteDatabase extends SQLiteOpenHelper implements MumlaDatabase {
     public static final String DATABASE_NAME = "mumble.db";

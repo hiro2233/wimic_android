@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package se.lublin.mumla.service;
+package bo.htakey.wimic.service;
 
 import android.app.Notification;
 import android.app.NotificationChannel;
@@ -30,9 +30,9 @@ import android.os.Build;
 
 import androidx.core.app.NotificationCompat;
 
-import se.lublin.mumla.R;
-import se.lublin.mumla.app.DrawerAdapter;
-import se.lublin.mumla.app.MumlaActivity;
+import bo.htakey.wimic.R;
+import bo.htakey.wimic.app.DrawerAdapter;
+import bo.htakey.wimic.app.MumlaActivity;
 
 /**
  * Wrapper to create Mumla notifications.

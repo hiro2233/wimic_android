@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package se.lublin.mumla.servers;
+package bo.htakey.wimic.servers;
 
 import android.os.AsyncTask;
 import android.util.Log;
@@ -26,7 +26,7 @@ import java.net.InetAddress;
 import java.nio.ByteBuffer;
 
 import se.lublin.humla.model.Server;
-import se.lublin.mumla.Constants;
+import bo.htakey.wimic.Constants;
 
 /**
  * Pings the requested server and returns a ServerInfoResponse.

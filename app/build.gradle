@@ -63,7 +63,7 @@ android {
         targetSdkVersion 29
         multiDexEnabled true
 
-        applicationId "se.lublin.mumla"
+        applicationId "bo.htakey.wimic"
         versionCode 87
         versionName gitDescribe()
 
@@ -77,15 +77,15 @@ android {
     productFlavors {
         official {
             dimension "release"
-            applicationId "se.lublin.mumla"
+            applicationId "bo.htakey.wimic"
         }
         donation {
             dimension "release"
-            applicationId "se.lublin.mumla.donation"
+            applicationId "bo.htakey.wimic.donation"
         }
         beta {
             dimension "release"
-            applicationId "se.lublin.mumla.beta"
+            applicationId "bo.htakey.wimic.beta"
         }
     }
 

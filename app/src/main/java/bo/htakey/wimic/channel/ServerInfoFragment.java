@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package se.lublin.mumla.channel;
+package bo.htakey.wimic.channel;
 
 import android.os.Bundle;
 import android.os.Handler;
@@ -34,8 +34,8 @@ import java.util.concurrent.TimeUnit;
 import se.lublin.humla.IHumlaService;
 import se.lublin.humla.IHumlaSession;
 import se.lublin.humla.net.HumlaUDPMessageType;
-import se.lublin.mumla.R;
-import se.lublin.mumla.util.HumlaServiceFragment;
+import bo.htakey.wimic.R;
+import bo.htakey.wimic.util.HumlaServiceFragment;
 
 /**
  * A fragment that displays known information from the remote server.

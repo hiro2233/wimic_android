@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package se.lublin.mumla.service;
+package bo.htakey.wimic.service;
 
 import android.content.Context;
 import android.graphics.PixelFormat;
@@ -31,9 +31,9 @@ import android.widget.ListView;
 import se.lublin.humla.model.IChannel;
 import se.lublin.humla.model.IUser;
 import se.lublin.humla.util.HumlaObserver;
-import se.lublin.mumla.R;
-import se.lublin.mumla.Settings;
-import se.lublin.mumla.channel.ChannelAdapter;
+import bo.htakey.wimic.R;
+import bo.htakey.wimic.Settings;
+import bo.htakey.wimic.channel.ChannelAdapter;
 
 /**
  * An onscreen interactive overlay displaying the users in the current channel.

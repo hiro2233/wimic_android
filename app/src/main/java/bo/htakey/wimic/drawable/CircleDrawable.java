@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package se.lublin.mumla.drawable;
+package bo.htakey.wimic.drawable;
 
 import android.content.res.Resources;
 import android.graphics.Bitmap;
@@ -31,7 +31,7 @@ import android.graphics.Shader;
 import android.graphics.drawable.Drawable;
 import android.util.TypedValue;
 
-import se.lublin.mumla.R;
+import bo.htakey.wimic.R;
 
 /**
  * A drawable containing a circular bitmap in the style of @drawable/outline_circle_talking_off.

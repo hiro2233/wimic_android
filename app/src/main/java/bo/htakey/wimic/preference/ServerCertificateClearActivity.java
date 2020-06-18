@@ -15,15 +15,15 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package se.lublin.mumla.preference;
+package bo.htakey.wimic.preference;
 
 import android.os.Bundle;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import se.lublin.mumla.R;
-import se.lublin.mumla.util.MumlaTrustStore;
+import bo.htakey.wimic.R;
+import bo.htakey.wimic.util.MumlaTrustStore;
 
 /**
  * Created by andrew on 13/01/16.

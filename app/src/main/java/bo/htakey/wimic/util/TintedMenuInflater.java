@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package se.lublin.mumla.util;
+package bo.htakey.wimic.util;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -25,7 +25,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
-import se.lublin.mumla.R;
+import bo.htakey.wimic.R;
 
 /**
  * A wrapper around a {@link android.view.MenuInflater} that tints menu items to the control color

@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package se.lublin.mumla.preference;
+package bo.htakey.wimic.preference;
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -28,10 +28,10 @@ import java.util.Date;
 import java.util.Locale;
 
 import se.lublin.humla.net.HumlaCertificateGenerator;
-import se.lublin.mumla.R;
-import se.lublin.mumla.db.DatabaseCertificate;
-import se.lublin.mumla.db.MumlaDatabase;
-import se.lublin.mumla.db.MumlaSQLiteDatabase;
+import bo.htakey.wimic.R;
+import bo.htakey.wimic.db.DatabaseCertificate;
+import bo.htakey.wimic.db.MumlaDatabase;
+import bo.htakey.wimic.db.MumlaSQLiteDatabase;
 
 public class MumlaCertificateGenerateTask extends AsyncTask<Void, Void, DatabaseCertificate> {
     private static final String DATE_FORMAT = "yyyy-MM-dd-HH-mm-ss";

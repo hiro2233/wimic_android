@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package se.lublin.mumla.service;
+package bo.htakey.wimic.service;
 
 import android.app.Notification;
 import android.app.NotificationChannel;
@@ -32,9 +32,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import se.lublin.humla.model.IMessage;
-import se.lublin.mumla.R;
-import se.lublin.mumla.app.DrawerAdapter;
-import se.lublin.mumla.app.MumlaActivity;
+import bo.htakey.wimic.R;
+import bo.htakey.wimic.app.DrawerAdapter;
+import bo.htakey.wimic.app.MumlaActivity;
 
 /**
  * A notification indicating that new messages have been received.

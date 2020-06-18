@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package se.lublin.mumla.channel;
+package bo.htakey.wimic.channel;
 
 import android.app.Activity;
 import android.content.Context;
@@ -59,11 +59,11 @@ import se.lublin.humla.model.User;
 import se.lublin.humla.util.HumlaDisconnectedException;
 import se.lublin.humla.util.HumlaObserver;
 import se.lublin.humla.util.IHumlaObserver;
-import se.lublin.mumla.Constants;
-import se.lublin.mumla.R;
-import se.lublin.mumla.service.IChatMessage;
-import se.lublin.mumla.util.HumlaServiceFragment;
-import se.lublin.mumla.util.MumbleImageGetter;
+import bo.htakey.wimic.Constants;
+import bo.htakey.wimic.R;
+import bo.htakey.wimic.service.IChatMessage;
+import bo.htakey.wimic.util.HumlaServiceFragment;
+import bo.htakey.wimic.util.MumbleImageGetter;
 
 public class ChannelChatFragment extends HumlaServiceFragment implements ChatTargetProvider.OnChatTargetSelectedListener {
     private static final Pattern LINK_PATTERN = Pattern.compile("(https?://\\S+)");
@@ -228,7 +228,7 @@ public class ChannelChatFragment extends HumlaServiceFragment implements ChatTar
     }
 
     /**
-     * Sends the message currently in {@link se.lublin.mumla.channel.ChannelChatFragment#mChatTextEdit}
+     * Sends the message currently in {@link bo.htakey.wimic.channel.ChannelChatFragment#mChatTextEdit}
      * to the remote server. Clears the message box if the message was sent successfully.
      * @throws HumlaDisconnectedException If the service is disconnected.
      */

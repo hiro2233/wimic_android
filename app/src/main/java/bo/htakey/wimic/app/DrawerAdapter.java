@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package se.lublin.mumla.app;
+package bo.htakey.wimic.app;
 
 import android.content.Context;
 import android.graphics.PorterDuff;
@@ -26,7 +26,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import se.lublin.mumla.R;
+import bo.htakey.wimic.R;
 
 /**
  * Created by andrew on 01/08/13.

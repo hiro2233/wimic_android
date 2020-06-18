@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package se.lublin.mumla.util;
+package bo.htakey.wimic.util;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -25,7 +25,7 @@ import androidx.fragment.app.Fragment;
 
 import se.lublin.humla.IHumlaService;
 import se.lublin.humla.util.IHumlaObserver;
-import se.lublin.mumla.service.IMumlaService;
+import bo.htakey.wimic.service.IMumlaService;
 
 /**
  * Fragment class intended to make binding the Humla service to fragments easier.

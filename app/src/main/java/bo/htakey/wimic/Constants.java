@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package se.lublin.mumla;
+package bo.htakey.wimic;
 
 public class Constants {
     public static final String TAG = "Mumla";

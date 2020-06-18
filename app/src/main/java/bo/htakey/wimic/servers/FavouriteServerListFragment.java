@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package se.lublin.mumla.servers;
+package bo.htakey.wimic.servers;
 
 import android.app.Activity;
 import android.content.DialogInterface;
@@ -37,9 +37,9 @@ import androidx.fragment.app.Fragment;
 import java.util.List;
 
 import se.lublin.humla.model.Server;
-import se.lublin.mumla.R;
-import se.lublin.mumla.db.DatabaseProvider;
-import se.lublin.mumla.db.PublicServer;
+import bo.htakey.wimic.R;
+import bo.htakey.wimic.db.DatabaseProvider;
+import bo.htakey.wimic.db.PublicServer;
 
 /**
  * Displays a list of servers, and allows the user to connect and edit them.

@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package se.lublin.mumla.util;
+package bo.htakey.wimic.util;
 
 import java.util.LinkedList;
 import java.util.List;
