@@ -21,24 +21,24 @@ import android.test.AndroidTestCase;
 
 import java.util.UUID;
 
-import bo.htakey.wimic.db.MumlaSQLiteDatabase;
+import bo.htakey.wimic.db.WimicSQLiteDatabase;
 
 /**
- * Test case designed to test operations of Mumla's database.
+ * Test case designed to test operations of Wimic's database.
  * A new DB is created and destroyed with each test call.
  * Created by andrew on 19/08/14.
  */
-public class MumlaSQLTestCase extends AndroidTestCase {
+public class WimicSQLTestCase extends AndroidTestCase {
     /** Database name used in the active test. */
     private String mDatabaseName;
     /** Database for the active test. */
-    private MumlaSQLiteDatabase mDatabase;
+    private WimicSQLiteDatabase mDatabase;
 
     @Override
     protected void setUp() throws Exception {
         super.setUp();
         mDatabaseName = UUID.randomUUID().toString() + ".db";
-        mDatabase = new MumlaSQLiteDatabase(getContext(), mDatabaseName);
+        mDatabase = new WimicSQLiteDatabase(getContext(), mDatabaseName);
         mDatabase.open();
     }
 

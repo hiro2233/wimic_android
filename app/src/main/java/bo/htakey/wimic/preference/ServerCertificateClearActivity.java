@@ -23,7 +23,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import bo.htakey.wimic.R;
-import bo.htakey.wimic.util.MumlaTrustStore;
+import bo.htakey.wimic.util.WimicTrustStore;
 
 /**
  * Created by andrew on 13/01/16.
@@ -32,7 +32,7 @@ public class ServerCertificateClearActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        MumlaTrustStore.clearTrustStore(this);
+        WimicTrustStore.clearTrustStore(this);
         Toast.makeText(this, R.string.trust_cleared, Toast.LENGTH_LONG).show();
         finish();
     }

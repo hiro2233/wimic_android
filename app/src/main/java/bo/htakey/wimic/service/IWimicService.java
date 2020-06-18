@@ -7,7 +7,7 @@ import bo.htakey.rimic.IRimicService;
 /**
  * Created by andrew on 28/02/17.
  */
-public interface IMumlaService extends IRimicService {
+public interface IWimicService extends IRimicService {
     void setOverlayShown(boolean showOverlay);
 
     boolean isOverlayShown();

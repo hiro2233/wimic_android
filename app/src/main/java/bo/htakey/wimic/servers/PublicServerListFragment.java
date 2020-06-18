@@ -63,7 +63,7 @@ import bo.htakey.rimic.model.Server;
 import bo.htakey.wimic.R;
 import bo.htakey.wimic.Settings;
 import bo.htakey.wimic.db.DatabaseProvider;
-import bo.htakey.wimic.db.MumlaDatabase;
+import bo.htakey.wimic.db.WimicDatabase;
 import bo.htakey.wimic.db.PublicServer;
 
 /**
@@ -164,7 +164,7 @@ public class PublicServerListFragment extends Fragment implements OnItemClickLis
                 } else {
                     server.setUsername(settings.getDefaultUsername());
                 }
-                MumlaDatabase database = mDatabaseProvider.getDatabase();
+                WimicDatabase database = mDatabaseProvider.getDatabase();
                 database.addServer(server);
             }
         });

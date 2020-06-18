@@ -32,9 +32,9 @@ import java.security.cert.CertificateException;
 /**
  * Created by andrew on 05/04/14.
  */
-public class MumlaTrustStore {
+public class WimicTrustStore {
 
-    private static final String STORE_FILE = "mumla-store.bks";
+    private static final String STORE_FILE = "wimic-store.bks";
     private static final String STORE_PASS = "";
     private static final String STORE_FORMAT = "BKS";
 

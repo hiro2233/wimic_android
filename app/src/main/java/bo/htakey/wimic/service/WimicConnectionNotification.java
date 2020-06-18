@@ -32,13 +32,13 @@ import androidx.core.app.NotificationCompat;
 
 import bo.htakey.wimic.R;
 import bo.htakey.wimic.app.DrawerAdapter;
-import bo.htakey.wimic.app.MumlaActivity;
+import bo.htakey.wimic.app.WimicActivity;
 
 /**
- * Wrapper to create Mumla notifications.
+ * Wrapper to create Wimic notifications.
  * Created by andrew on 08/08/14.
  */
-public class MumlaConnectionNotification {
+public class WimicConnectionNotification {
     private static final int NOTIFICATION_ID = 1;
     private static final String BROADCAST_MUTE = "b_mute";
     private static final String BROADCAST_DEAFEN = "b_deafen";
@@ -64,17 +64,17 @@ public class MumlaConnectionNotification {
     };
 
     /**
-     * Creates a foreground Mumla notification for the given service.
+     * Creates a foreground Wimic notification for the given service.
      * @param service The service to register a foreground notification for.
      * @param listener An listener for notification actions.
-     * @return A new MumlaNotification instance.
+     * @return A new WimicNotification instance.
      */
-    public static MumlaConnectionNotification create(Service service, String ticker, String contentText,
+    public static WimicConnectionNotification create(Service service, String ticker, String contentText,
                                                      OnActionListener listener) {
-        return new MumlaConnectionNotification(service, ticker, contentText, listener);
+        return new WimicConnectionNotification(service, ticker, contentText, listener);
     }
 
-    private MumlaConnectionNotification(Service service, String ticker, String contentText,
+    private WimicConnectionNotification(Service service, String ticker, String contentText,
                                         OnActionListener listener) {
         mService = service;
         mListener = listener;
@@ -127,7 +127,7 @@ public class MumlaConnectionNotification {
     }
 
     /**
-     * Called to update/create the service's foreground Mumla notification.
+     * Called to update/create the service's foreground Wimic notification.
      */
     private Notification createNotification() {
         String channelId = "";
@@ -170,8 +170,8 @@ public class MumlaConnectionNotification {
                             overlayIntent, PendingIntent.FLAG_CANCEL_CURRENT));
         }
 
-        Intent channelListIntent = new Intent(mService, MumlaActivity.class);
-        channelListIntent.putExtra(MumlaActivity.EXTRA_DRAWER_FRAGMENT, DrawerAdapter.ITEM_SERVER);
+        Intent channelListIntent = new Intent(mService, WimicActivity.class);
+        channelListIntent.putExtra(WimicActivity.EXTRA_DRAWER_FRAGMENT, DrawerAdapter.ITEM_SERVER);
         // FLAG_CANCEL_CURRENT ensures that the extra always gets sent.
         PendingIntent pendingIntent = PendingIntent.getActivity(mService, 0, channelListIntent, PendingIntent.FLAG_CANCEL_CURRENT);
         builder.setContentIntent(pendingIntent);

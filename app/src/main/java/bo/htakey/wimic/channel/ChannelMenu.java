@@ -44,7 +44,7 @@ import bo.htakey.rimic.util.VoiceTargetMode;
 import bo.htakey.wimic.Constants;
 import bo.htakey.wimic.R;
 import bo.htakey.wimic.channel.comment.ChannelDescriptionFragment;
-import bo.htakey.wimic.db.MumlaDatabase;
+import bo.htakey.wimic.db.WimicDatabase;
 
 /**
  * Created by andrew on 22/11/15.
@@ -53,11 +53,11 @@ public class ChannelMenu implements PermissionsPopupMenu.IOnMenuPrepareListener,
     private final Context mContext;
     private final IChannel mChannel;
     private final IRimicService mService;
-    private final MumlaDatabase mDatabase;
+    private final WimicDatabase mDatabase;
     private final FragmentManager mFragmentManager;
 
     public ChannelMenu(Context context, IChannel channel, IRimicService service,
-                       MumlaDatabase database, FragmentManager fragmentManager) {
+                       WimicDatabase database, FragmentManager fragmentManager) {
         mContext = context;
         mChannel = channel;
         mService = service;

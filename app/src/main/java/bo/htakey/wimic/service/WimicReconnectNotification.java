@@ -36,7 +36,7 @@ import bo.htakey.wimic.R;
  * a prompt to reconnect with the error message.
  * Created by andrew on 17/01/15.
  */
-public class MumlaReconnectNotification {
+public class WimicReconnectNotification {
     private static final int NOTIFICATION_ID = 2;
     private static final String BROADCAST_DISMISS = "b_dismiss";
     private static final String BROADCAST_RECONNECT = "b_reconnect";
@@ -58,16 +58,16 @@ public class MumlaReconnectNotification {
         }
     };
 
-    public static MumlaReconnectNotification show(Context context,
+    public static WimicReconnectNotification show(Context context,
                                                   String error,
                                                   boolean autoReconnect,
                                                   OnActionListener listener) {
-        MumlaReconnectNotification notification = new MumlaReconnectNotification(context, listener);
+        WimicReconnectNotification notification = new WimicReconnectNotification(context, listener);
         notification.show(error, autoReconnect);
         return notification;
     }
 
-    public MumlaReconnectNotification(Context context, OnActionListener listener) {
+    public WimicReconnectNotification(Context context, OnActionListener listener) {
         mContext = context;
         mListener = listener;
     }
@@ -100,9 +100,9 @@ public class MumlaReconnectNotification {
         builder.setSmallIcon(R.drawable.ic_stat_notify);
         builder.setPriority(NotificationCompat.PRIORITY_MAX);
         builder.setDefaults(NotificationCompat.DEFAULT_VIBRATE | NotificationCompat.DEFAULT_LIGHTS);
-        builder.setContentTitle(mContext.getString(R.string.mumlaDisconnected));
+        builder.setContentTitle(mContext.getString(R.string.wimicDisconnected));
         builder.setContentText(error);
-        builder.setTicker(mContext.getString(R.string.mumlaDisconnected));
+        builder.setTicker(mContext.getString(R.string.wimicDisconnected));
 
         Intent dismissIntent = new Intent(BROADCAST_DISMISS);
         builder.setDeleteIntent(PendingIntent.getBroadcast(mContext, 2, dismissIntent,

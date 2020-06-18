@@ -25,7 +25,7 @@ import androidx.fragment.app.Fragment;
 
 import bo.htakey.rimic.IRimicService;
 import bo.htakey.rimic.util.IRimicObserver;
-import bo.htakey.wimic.service.IMumlaService;
+import bo.htakey.wimic.service.IWimicService;
 
 /**
  * Fragment class intended to make binding the Rimic service to fragments easier.
@@ -98,7 +98,7 @@ public abstract class RimicServiceFragment extends Fragment {
             onServiceDetached(mServiceProvider.getService());
     }
 
-    public IMumlaService getService() {
+    public IWimicService getService() {
         return mServiceProvider.getService();
     }
 }

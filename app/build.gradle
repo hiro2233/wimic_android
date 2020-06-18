@@ -67,7 +67,7 @@ android {
         versionCode 87
         versionName gitDescribe()
 
-        setProperty("archivesBaseName", "mumla")
+        setProperty("archivesBaseName", "wimic")
         buildConfigField "long", "TIMESTAMP", System.currentTimeMillis() + "L"
 
         testInstrumentationRunner "android.test.InstrumentationTestRunner"

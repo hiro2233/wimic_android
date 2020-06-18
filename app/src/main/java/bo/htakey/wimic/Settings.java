@@ -41,7 +41,7 @@ import java.util.Set;
 
 import bo.htakey.rimic.Constants;
 import bo.htakey.wimic.db.DatabaseCertificate;
-import bo.htakey.wimic.db.MumlaSQLiteDatabase;
+import bo.htakey.wimic.db.WimicSQLiteDatabase;
 
 import static bo.htakey.wimic.Constants.TAG;
 
@@ -190,7 +190,7 @@ public class Settings {
 
         // TODO(acomminos): Settings migration infra.
         if (preferences.contains(PREF_CERT_DEPRECATED)) {
-            // Perform legacy certificate migration into MumlaSQLiteDatabase.
+            // Perform legacy certificate migration into WimicSQLiteDatabase.
             Toast.makeText(ctx, R.string.migration_certificate_begin, Toast.LENGTH_LONG).show();
             String certPath = preferences.getString(PREF_CERT_DEPRECATED, "");
             String certPassword = preferences.getString(PREF_CERT_PASSWORD_DEPRECATED, "");
@@ -204,7 +204,7 @@ public class Settings {
                 oldStore.load(certInput, certPassword.toCharArray());
                 oldStore.store(outputStream, new char[0]);
 
-                MumlaSQLiteDatabase database = new MumlaSQLiteDatabase(ctx);
+                WimicSQLiteDatabase database = new WimicSQLiteDatabase(ctx);
                 DatabaseCertificate certificate =
                         database.addCertificate(certFile.getName(), outputStream.toByteArray());
                 database.close();
@@ -324,13 +324,13 @@ public class Settings {
     public int getTheme() {
         String theme = preferences.getString(PREF_THEME, ARRAY_THEME_LIGHT);
         if(ARRAY_THEME_LIGHT.equals(theme))
-            return R.style.Theme_Mumla;
+            return R.style.Theme_Wimic;
         else if(ARRAY_THEME_DARK.equals(theme))
-            return R.style.Theme_Mumla_Dark;
+            return R.style.Theme_Wimic_Dark;
         else if(ARRAY_THEME_SOLARIZED_LIGHT.equals(theme))
-            return R.style.Theme_Mumla_Solarized_Light;
+            return R.style.Theme_Wimic_Solarized_Light;
         else if(ARRAY_THEME_SOLARIZED_DARK.equals(theme))
-            return R.style.Theme_Mumla_Solarized_Dark;
+            return R.style.Theme_Wimic_Solarized_Dark;
         return -1;
     }
 

@@ -21,7 +21,7 @@
     <string name="about">Acerca de</string>
     <string name="aboutSum">Legal y agradecimientos</string>
     <string name="acknowledgements">Agradecimientos</string>
-    <string name="acknowledgementsSum">Mira quién ha contribuido a Mumla</string>
+    <string name="acknowledgementsSum">Mira quién ha contribuido a Wimic</string>
     <string name="licenses">Licencias</string>
     <string name="authentication">Autenticación</string>
     <string name="authenticationSum">Gestiona y crea certificados</string>
@@ -31,7 +31,7 @@
     <string name="audioInputVolume">Volumen del micrófono</string>
     <string name="audioInputVolumeSum">Multiplicador del volumen del micrófono utilizado para normalizar el audio artificialmente.</string>
     <string name="callMode">Modo de llamada</string>
-    <string name="callModeSum">El modo de llamada del Mumla, se comportará como una llamada de voz o  un altavoz.</string>
+    <string name="callModeSum">El modo de llamada del Wimic, se comportará como una llamada de voz o  un altavoz.</string>
     <string name="detectionThreshold">Umbral de detección</string>
     <string name="detectionThresholdSum">La amplitud mínima requerida para que la voz sea detectada( solo aplicable para el modo de transmisión por actividad de voz )</string>
     <string name="pttKey">Tecla de Presionar-para-hablar</string>
@@ -58,7 +58,7 @@
     <string name="defaultUsernameSum">El nombre de usuario predeterminado que se usará al conectar a los servidores.</string>
     <string name="defaultUsernameDefault">WiMic_User</string>
     <string name="certificateGenerate">Generar certificado</string>
-    <string name="certificateGenerateSum">Genera un nuevo certificado de Mumla auto-firmado. Recomendado para principiantes.</string>
+    <string name="certificateGenerateSum">Genera un nuevo certificado de Wimic auto-firmado. Recomendado para principiantes.</string>
     <string name="pttSettings">Opciones de Presionar-para-hablar</string>
     <string name="pttSettingsSum">Configúrelo si Presionar-para-hablar está habilitado.</string>
     <string name="voiceActivitySettings">Opciones de actividad de voz</string>
@@ -96,5 +96,5 @@
     <string name="audio_per_packet">Audio por paquete</string>
     <string name="audio_per_packet_sum">La cantidad de audio por paquete de voz.</string>
     <string name="stay_awake">Mantener pantalla encendida</string>
-    <string name="stay_awake_sum">La pantalla no se apagará mientras Mumla esté abierto.</string>
+    <string name="stay_awake_sum">La pantalla no se apagará mientras Wimic esté abierto.</string>
 </resources>

@@ -21,7 +21,7 @@
     <string name="about">Over</string>
     <string name="aboutSum">Legaal en dankbetuigingen</string>
     <string name="acknowledgements">Dankbetuigingen</string>
-    <string name="acknowledgementsSum">Bekijk wie tot Mumla heeft bijgedragen</string>
+    <string name="acknowledgementsSum">Bekijk wie tot Wimic heeft bijgedragen</string>
     <string name="licenses">Licenties</string>
     <string name="authentication">Authenticatie</string>
     <string name="authenticationSum">Beheer en creeer certificaten</string>
@@ -31,7 +31,7 @@
     <string name="audioInputVolume">Microfoon Volume</string>
     <string name="audioInputVolumeSum">Microfoon volume vermeerdering om audio kunstmatig te normaliseren.</string>
     <string name="callMode">Oproep Modus</string>
-    <string name="callModeSum">De oproep modus van Mumla, zijnde luidspreker of gewone oproep.</string>
+    <string name="callModeSum">De oproep modus van Wimic, zijnde luidspreker of gewone oproep.</string>
     <string name="detectionThreshold">Detectie Drempelwaarde</string>
     <string name="detectionThresholdSum">De minimum geluidsnorm vereist om stemdetectie te starten.</string>
     <string name="pttKey">Push to Talk Knop</string>
@@ -56,9 +56,9 @@
     <string name="chatNotificationsSum">Toon notificatie wanneer een gebruiker in chat post.</string>
     <string name="defaultUsername">Standaard Gebruikersnaam</string>
     <string name="defaultUsernameSum">De standaard gebruikersnaam te gebruiken bij verbinding met servers.</string>
-    <string name="defaultUsernameDefault">Mumla_Gebruiker</string>
+    <string name="defaultUsernameDefault">Wimic_Gebruiker</string>
     <string name="certificateGenerate">Genereer Certificaat</string>
-    <string name="certificateGenerateSum">Genereert een nieuw self-signed Mumla certificaat. Annbevolen voor beginners.</string>
+    <string name="certificateGenerateSum">Genereert een nieuw self-signed Wimic certificaat. Annbevolen voor beginners.</string>
     <string name="pttSettings">Push to Talk Instellingen</string>
     <string name="pttSettingsSum">Configureer Push to Talk als dit ingeschakeld is.</string>
     <string name="voiceActivitySettings">Stem Activatie Instellingen</string>
@@ -83,7 +83,7 @@
     <string name="loadImagesSum">Al dan niet externe afbeeldingen laden in chat.</string>
     <string name="loadImages">Externe Afbeeldingen Laden</string>
     <string name="clearServerCertificates">Wis Server Certificaten</string>
-    <string name="clearServerCertificatesSum">Wis alle toegestane certificaten uit de Mumla database.</string>
+    <string name="clearServerCertificatesSum">Wis alle toegestane certificaten uit de Wimic database.</string>
     <string name="version">Versie</string>
     <string name="halfDuplex">Half Duplex Modus</string>
     <string name="halfDuplexSum">Dempt het geluid van het toestel bij push to talk om feedback te voorkomen.</string>

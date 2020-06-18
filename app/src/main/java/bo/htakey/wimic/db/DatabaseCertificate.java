@@ -18,7 +18,7 @@
 package bo.htakey.wimic.db;
 
 /**
- * A stub for a certificate entry in Mumla's database.
+ * A stub for a certificate entry in Wimic's database.
  * Created by andrew on 11/01/16.
  */
 public class DatabaseCertificate {

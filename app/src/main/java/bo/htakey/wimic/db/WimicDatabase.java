@@ -25,7 +25,7 @@ import bo.htakey.rimic.model.Server;
  * An interface for persistent storage services (i.e. databases, cloud) to implement.
  * Created by andrew on 13/08/13.
  */
-public interface MumlaDatabase {
+public interface WimicDatabase {
     public void open();
     public void close();
 

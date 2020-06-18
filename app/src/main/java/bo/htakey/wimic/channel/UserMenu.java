@@ -39,7 +39,7 @@ import bo.htakey.rimic.net.Permissions;
 import bo.htakey.wimic.Constants;
 import bo.htakey.wimic.R;
 import bo.htakey.wimic.channel.comment.UserCommentFragment;
-import bo.htakey.wimic.service.MumlaService;
+import bo.htakey.wimic.service.WimicService;
 import bo.htakey.wimic.util.ModelUtils;
 
 /**
@@ -48,11 +48,11 @@ import bo.htakey.wimic.util.ModelUtils;
 public class UserMenu implements PermissionsPopupMenu.IOnMenuPrepareListener, PopupMenu.OnMenuItemClickListener {
     private final Context mContext;
     private final IUser mUser;
-    private final MumlaService mService;
+    private final WimicService mService;
     private final FragmentManager mFragmentManager;
     private final IUserLocalStateListener mStateListener;
 
-    public UserMenu(Context context, IUser user, MumlaService service,
+    public UserMenu(Context context, IUser user, WimicService service,
                     FragmentManager fragmentManager, IUserLocalStateListener stateListener) {
         mContext = context;
         mUser = user;

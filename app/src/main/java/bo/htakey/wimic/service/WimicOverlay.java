@@ -39,7 +39,7 @@ import bo.htakey.wimic.channel.ChannelAdapter;
  * An onscreen interactive overlay displaying the users in the current channel.
  * Created by andrew on 26/09/13.
  */
-public class MumlaOverlay {
+public class WimicOverlay {
 
     public static final int DEFAULT_WIDTH = 200;
     public static final int DEFAULT_HEIGHT = 240;
@@ -79,9 +79,9 @@ public class MumlaOverlay {
     private boolean mShown = false;
 //    private boolean mShowChat = false;
 
-    private MumlaService mService;
+    private WimicService mService;
 
-    public MumlaOverlay(MumlaService service) {
+    public WimicOverlay(WimicService service) {
         mService = service;
         mOverlayView = View.inflate(service, R.layout.overlay, null);
         mTalkButton = (ImageView) mOverlayView.findViewById(R.id.overlay_talk);

@@ -91,7 +91,7 @@ public class Preferences extends PreferenceActivity {
 
     @Override
     protected boolean isValidFragment(String fragmentName) {
-        return MumlaPreferenceFragment.class.getName().equals(fragmentName);
+        return WimicPreferenceFragment.class.getName().equals(fragmentName);
     }
 
     private static void configureOrbotPreferences(PreferenceScreen screen) {
@@ -151,7 +151,7 @@ public class Preferences extends PreferenceActivity {
     }
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
-    public static class MumlaPreferenceFragment extends PreferenceFragment {
+    public static class WimicPreferenceFragment extends PreferenceFragment {
 
         @Override
         public void onCreate(Bundle savedInstanceState) {

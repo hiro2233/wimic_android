@@ -88,9 +88,9 @@
     <string name="offline">Offline</string>
     <string name="clearChat">Pulisci chat</string>
     <string name="connected">Connesso</string>
-    <string name="mumlaConnected">WiMic connesso</string>
-    <string name="mumlaConnecting">WiMic in connessione</string>
-    <string name="mumlaDisconnected">WIMic disconnesso </string>
+    <string name="wimicConnected">WiMic connesso</string>
+    <string name="wimicConnecting">WiMic in connessione</string>
+    <string name="wimicDisconnected">WIMic disconnesso </string>
     <string name="lostConnection">Connessione al server persa.</string>
     <string name="resume">Riprendi</string>
     <string name="channel">Canale</string>
