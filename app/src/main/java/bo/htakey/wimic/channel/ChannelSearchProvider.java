@@ -33,10 +33,10 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Locale;
 
-import se.lublin.humla.IHumlaService;
-import se.lublin.humla.IHumlaSession;
-import se.lublin.humla.model.IChannel;
-import se.lublin.humla.model.IUser;
+import bo.htakey.rimic.IHumlaService;
+import bo.htakey.rimic.IHumlaSession;
+import bo.htakey.rimic.model.IChannel;
+import bo.htakey.rimic.model.IUser;
 import bo.htakey.wimic.Constants;
 import bo.htakey.wimic.R;
 import bo.htakey.wimic.service.MumlaService;

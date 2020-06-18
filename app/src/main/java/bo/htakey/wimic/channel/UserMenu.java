@@ -33,9 +33,9 @@ import androidx.fragment.app.FragmentManager;
 
 import java.util.List;
 
-import se.lublin.humla.model.IChannel;
-import se.lublin.humla.model.IUser;
-import se.lublin.humla.net.Permissions;
+import bo.htakey.rimic.model.IChannel;
+import bo.htakey.rimic.model.IUser;
+import bo.htakey.rimic.net.Permissions;
 import bo.htakey.wimic.Constants;
 import bo.htakey.wimic.R;
 import bo.htakey.wimic.channel.comment.UserCommentFragment;

@@ -23,8 +23,8 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import se.lublin.humla.IHumlaService;
-import se.lublin.humla.util.IHumlaObserver;
+import bo.htakey.rimic.IHumlaService;
+import bo.htakey.rimic.util.IHumlaObserver;
 import bo.htakey.wimic.service.IMumlaService;
 
 /**

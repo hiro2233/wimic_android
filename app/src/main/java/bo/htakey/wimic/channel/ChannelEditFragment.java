@@ -29,9 +29,9 @@ import android.widget.TextView;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.DialogFragment;
 
-import se.lublin.humla.IHumlaSession;
-import se.lublin.humla.model.IChannel;
-import se.lublin.humla.net.Permissions;
+import bo.htakey.rimic.IHumlaSession;
+import bo.htakey.rimic.model.IChannel;
+import bo.htakey.rimic.net.Permissions;
 import bo.htakey.wimic.R;
 import bo.htakey.wimic.util.HumlaServiceProvider;
 

@@ -36,7 +36,7 @@ import androidx.fragment.app.Fragment;
 
 import java.util.List;
 
-import se.lublin.humla.model.Server;
+import bo.htakey.rimic.model.Server;
 import bo.htakey.wimic.R;
 import bo.htakey.wimic.db.DatabaseProvider;
 import bo.htakey.wimic.db.PublicServer;

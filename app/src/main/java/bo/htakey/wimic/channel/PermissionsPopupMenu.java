@@ -23,10 +23,10 @@ import android.view.View;
 
 import androidx.appcompat.widget.PopupMenu;
 
-import se.lublin.humla.IHumlaService;
-import se.lublin.humla.model.IChannel;
-import se.lublin.humla.util.HumlaObserver;
-import se.lublin.humla.util.IHumlaObserver;
+import bo.htakey.rimic.IHumlaService;
+import bo.htakey.rimic.model.IChannel;
+import bo.htakey.rimic.util.HumlaObserver;
+import bo.htakey.rimic.util.IHumlaObserver;
 
 /**
  * Encapsulates a menu requiring permissions.

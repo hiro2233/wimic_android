@@ -26,8 +26,8 @@ import android.os.AsyncTask;
 
 import java.util.ArrayList;
 
-import se.lublin.humla.HumlaService;
-import se.lublin.humla.model.Server;
+import bo.htakey.rimic.HumlaService;
+import bo.htakey.rimic.model.Server;
 import bo.htakey.wimic.R;
 import bo.htakey.wimic.Settings;
 import bo.htakey.wimic.db.MumlaDatabase;

@@ -27,7 +27,7 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.List;
 
-import se.lublin.humla.model.Server;
+import bo.htakey.rimic.model.Server;
 import bo.htakey.wimic.Constants;
 
 public class MumlaSQLiteDatabase extends SQLiteOpenHelper implements MumlaDatabase {

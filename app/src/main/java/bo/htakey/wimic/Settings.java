@@ -39,7 +39,7 @@ import java.security.cert.CertificateException;
 import java.util.HashSet;
 import java.util.Set;
 
-import se.lublin.humla.Constants;
+import bo.htakey.rimic.Constants;
 import bo.htakey.wimic.db.DatabaseCertificate;
 import bo.htakey.wimic.db.MumlaSQLiteDatabase;
 

@@ -19,7 +19,7 @@ package bo.htakey.wimic.service;
 
 import java.util.Date;
 
-import se.lublin.humla.model.IMessage;
+import bo.htakey.rimic.model.IMessage;
 
 /**
  * A general chat message, either a text message from a user or an

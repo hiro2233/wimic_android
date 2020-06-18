@@ -22,7 +22,7 @@ import android.view.MenuItem;
 
 import java.util.List;
 
-import se.lublin.humla.model.Server;
+import bo.htakey.rimic.model.Server;
 import bo.htakey.wimic.R;
 
 /**
