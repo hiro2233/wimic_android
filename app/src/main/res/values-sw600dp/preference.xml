@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="acknowledgementsextra">Acknowledgements</string>
-    <string name="acknowledgementsextraSum">WiMic project is based on Wimic, see the WiMic\'s changes, click here</string>
+    <string name="acknowledgementsextraSum">WiMic project is based on Mumla, see the WiMic\'s changes, click here</string>
 </resources>
