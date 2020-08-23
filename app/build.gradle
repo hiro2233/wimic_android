@@ -97,6 +97,10 @@ android {
             dimension "release"
             applicationId "bo.htakey.wimic.beta"
         }
+        betainternal {
+            dimension "release"
+            applicationId "bo.htakey.wimic"
+        }
     }
 
     buildTypes {
