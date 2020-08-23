@@ -342,8 +342,7 @@ public class WimicActivity extends AppCompatActivity implements ListView.OnItemC
             }
         }
 
-        setVolumeControlStream(mSettings.isHandsetMode() ?
-                AudioManager.STREAM_VOICE_CALL : AudioManager.STREAM_MUSIC);
+        setVolumeControlStream(AudioManager.STREAM_VOICE_CALL);
 
         if(mSettings.isFirstRun()) showSetupWizard();
     }
@@ -823,8 +822,7 @@ public class WimicActivity extends AppCompatActivity implements ListView.OnItemC
         } else if (Settings.PREF_STAY_AWAKE.equals(key)) {
             setStayAwake(mSettings.shouldStayAwake());
         } else if (Settings.PREF_HANDSET_MODE.equals(key)) {
-            setVolumeControlStream(mSettings.isHandsetMode() ?
-                    AudioManager.STREAM_VOICE_CALL : AudioManager.STREAM_MUSIC);
+            setVolumeControlStream(AudioManager.STREAM_VOICE_CALL);
         }
     }
 
