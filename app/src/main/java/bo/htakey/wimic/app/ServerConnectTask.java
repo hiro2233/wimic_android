@@ -28,6 +28,7 @@ import java.util.ArrayList;
 
 import bo.htakey.rimic.RimicService;
 import bo.htakey.rimic.model.Server;
+import bo.htakey.wimic.BuildConfig;
 import bo.htakey.wimic.R;
 import bo.htakey.wimic.Settings;
 import bo.htakey.wimic.db.WimicDatabase;
@@ -62,6 +63,22 @@ public class ServerConnectTask extends AsyncTask<Server, Void, Intent> {
                 AudioManager.STREAM_VOICE_CALL : AudioManager.STREAM_MUSIC;
 
         String applicationVersion = "";
+        String flavour = "";
+        String appname = mContext.getString(R.string.app_name);
+
+        if (BuildConfig.FLAVOR.equals("betainternal")) {
+            flavour = "-betainternal";
+        }
+        if (BuildConfig.FLAVOR.equals("beta")) {
+            flavour = "-beta";
+        }
+        if (BuildConfig.FLAVOR.equals("official")) {
+            flavour = "-official";
+        }
+        if (BuildConfig.FLAVOR.equals("donation")) {
+            flavour = "-donation";
+        }
+
         try {
             applicationVersion = mContext.getPackageManager().getPackageInfo(mContext.getPackageName(), 0).versionName;
         } catch (PackageManager.NameNotFoundException e) {
@@ -70,7 +87,7 @@ public class ServerConnectTask extends AsyncTask<Server, Void, Intent> {
 
         Intent connectIntent = new Intent(mContext, WimicService.class);
         connectIntent.putExtra(RimicService.EXTRAS_SERVER, server);
-        connectIntent.putExtra(RimicService.EXTRAS_CLIENT_NAME, mContext.getString(R.string.app_name)+" "+applicationVersion);
+        connectIntent.putExtra(RimicService.EXTRAS_CLIENT_NAME, appname+flavour+" "+applicationVersion);
         connectIntent.putExtra(RimicService.EXTRAS_TRANSMIT_MODE, inputMethod);
         connectIntent.putExtra(RimicService.EXTRAS_DETECTION_THRESHOLD, mSettings.getDetectionThreshold());
         connectIntent.putExtra(RimicService.EXTRAS_AMPLITUDE_BOOST, mSettings.getAmplitudeBoostMultiplier());
