@@ -344,9 +344,7 @@ public class WimicService extends RimicService implements
             mHotCorner.setShown(true);
         }
         // Configure proximity sensor
-        if (mSettings.isHandsetMode()) {
-            setProximitySensorOn(true);
-        }
+        setProximitySensorOn(true);
     }
 
     @Override
@@ -384,7 +382,7 @@ public class WimicService extends RimicService implements
                 mChannelOverlay.setPushToTalkShown(inputMethod == Constants.TRANSMIT_PUSH_TO_TALK);
                 break;
             case Settings.PREF_HANDSET_MODE:
-                setProximitySensorOn(isConnectionEstablished() && mSettings.isHandsetMode());
+                setProximitySensorOn(true);
                 changedExtras.putInt(RimicService.EXTRAS_AUDIO_STREAM, mSettings.isHandsetMode() ?
                                      AudioManager.STREAM_VOICE_CALL : AudioManager.STREAM_MUSIC);
                 break;
