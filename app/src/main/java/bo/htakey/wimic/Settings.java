@@ -64,7 +64,7 @@ public class Settings {
     // up itself...
 
     public static final String PREF_THRESHOLD = "vadThreshold";
-    public static final int DEFAULT_THRESHOLD = 70;
+    public static final int DEFAULT_THRESHOLD = 75;
 
     public static final String PREF_PUSH_KEY = "talkKey";
     public static final Integer DEFAULT_PUSH_KEY = -1;
@@ -84,13 +84,13 @@ public class Settings {
     public static final Boolean DEFAULT_PTT_TOGGLE = false;
 
     public static final String PREF_INPUT_RATE = "input_quality";
-    public static final String DEFAULT_RATE = "8000";
+    public static final String DEFAULT_RATE = "16000";
 
     public static final String PREF_INPUT_QUALITY = "input_bitrate";
     public static final int DEFAULT_INPUT_QUALITY = 8000;
 
     public static final String PREF_AMPLITUDE_BOOST = "inputVolume";
-    public static final Integer DEFAULT_AMPLITUDE_BOOST = 100;
+    public static final Integer DEFAULT_AMPLITUDE_BOOST = 70;
 
     public static final String PREF_CHAT_NOTIFY = "chatNotify";
     public static final Boolean DEFAULT_CHAT_NOTIFY = false;
