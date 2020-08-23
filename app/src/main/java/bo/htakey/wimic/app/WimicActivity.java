@@ -728,58 +728,60 @@ public class WimicActivity extends AppCompatActivity implements ListView.OnItemC
                     RimicException error = getService().getConnectionError();
                     AlertDialog.Builder ab = new AlertDialog.Builder(WimicActivity.this);
                     ab.setTitle(getString(R.string.connectionRefused) + (mSettings.isTorEnabled() ? " (Tor)" : ""));
-                    if (mService.isReconnecting()) {
-                        ab.setMessage(error.getMessage() + "\n\n"
-                                + getString(R.string.attempting_reconnect,
-                                error.getCause() != null ? error.getCause().getMessage() : "unknown"));
-                        ab.setPositiveButton(R.string.cancel_reconnect, new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                if (getService() != null) {
-                                    getService().cancelReconnect();
-                                    getService().markErrorShown();
+                    try {
+                        if (mService.isReconnecting()) {
+                            ab.setMessage(error.getMessage() + "\n\n"
+                                    + getString(R.string.attempting_reconnect,
+                                    error.getCause() != null ? error.getCause().getMessage() : "unknown"));
+                            ab.setPositiveButton(R.string.cancel_reconnect, new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    if (getService() != null) {
+                                        getService().cancelReconnect();
+                                        getService().markErrorShown();
+                                    }
                                 }
-                            }
-                        });
-                    } else if (error.getReason() == RimicException.RimicDisconnectReason.REJECT &&
-                               (error.getReject().getType() == Mumble.Reject.RejectType.WrongUserPW ||
-                                error.getReject().getType() == Mumble.Reject.RejectType.WrongServerPW)) {
-                        ab.setTitle(R.string.invalid_password);
-                        ab.setMessage(error.getMessage());
-                        ab.setPositiveButton(R.string.reconnect, new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                Server server = getService().getTargetServer();
-                                if (server == null)
-                                    return;
-                                if (server.isSaved())
-                                    mDatabase.updateServer(server);
-                                connectToServer(server);
-                            }
-                        });
-                        ab.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                if (getService() != null)
-                                    getService().markErrorShown();
-                            }
-                        });
-                    } else {
-                        ab.setMessage(error.getMessage());
-                        ab.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                if (getService() != null)
-                                    getService().markErrorShown();
-                            }
-                        });
+                            });
+                        } else if (error.getReason() == RimicException.RimicDisconnectReason.REJECT &&
+                                (error.getReject().getType() == Mumble.Reject.RejectType.WrongUserPW ||
+                                        error.getReject().getType() == Mumble.Reject.RejectType.WrongServerPW)) {
+                            ab.setTitle(R.string.invalid_password);
+                            ab.setMessage(error.getMessage());
+                            ab.setPositiveButton(R.string.reconnect, new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    Server server = getService().getTargetServer();
+                                    if (server == null)
+                                        return;
+                                    if (server.isSaved())
+                                        mDatabase.updateServer(server);
+                                    connectToServer(server);
+                                }
+                            });
+                            ab.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    if (getService() != null)
+                                        getService().markErrorShown();
+                                }
+                            });
+                        } else {
+                            ab.setMessage(error.getMessage());
+                            ab.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    if (getService() != null)
+                                        getService().markErrorShown();
+                                }
+                            });
+                        }
+                    } catch (Exception e) {
+                        break;
                     }
                     ab.setCancelable(false);
                     mErrorDialog = ab.show();
                 }
                 break;
-
-
         }
     }
 
