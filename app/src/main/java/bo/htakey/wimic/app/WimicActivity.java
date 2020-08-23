@@ -744,21 +744,14 @@ public class WimicActivity extends AppCompatActivity implements ListView.OnItemC
                     } else if (error.getReason() == RimicException.RimicDisconnectReason.REJECT &&
                                (error.getReject().getType() == Mumble.Reject.RejectType.WrongUserPW ||
                                 error.getReject().getType() == Mumble.Reject.RejectType.WrongServerPW)) {
-                        final EditText passwordField = new EditText(this);
-                        passwordField.setInputType(InputType.TYPE_CLASS_TEXT |
-                                InputType.TYPE_TEXT_VARIATION_PASSWORD);
-                        passwordField.setHint(R.string.password);
                         ab.setTitle(R.string.invalid_password);
                         ab.setMessage(error.getMessage());
-                        ab.setView(passwordField);
                         ab.setPositiveButton(R.string.reconnect, new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 Server server = getService().getTargetServer();
                                 if (server == null)
                                     return;
-                                String password = passwordField.getText().toString();
-                                server.setPassword(password);
                                 if (server.isSaved())
                                     mDatabase.updateServer(server);
                                 connectToServer(server);
