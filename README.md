@@ -1,25 +1,24 @@
-# Mumla
+# WiMic Android
 
-Mumla is a fork and continuation of [Plumble](https://github.com/acomminos/Plumble),
+WiMic Android is a fork and continuation of [Plumble](https://github.com/acomminos/Plumble),
 a robust GPLv3 Mumble client for Android originally written by Andrew Comminos.
-It uses the [Humla](https://gitlab.com/quite/humla) protocol implementation
+It uses the [Rimic](https://github.com/hiro2233/rimic_android) protocol implementation
 (forked from Comminos's [Jumble](https://github.com/acomminos/Jumble)).
 
-Mumla should run on Android 4.0 (IceCreamSandwich, API 14) and later.
+WiMic Android should run on Android 4.0 (IceCreamSandwich, API 14) and later.
 
-Mumla is available [on F-Droid](https://f-droid.org/packages/se.lublin.mumla/).
+WiMic Android is available on [Google Play](https://play.google.com/store/apps/details?id=bo.htakey.wimic).
 
-There is a small [landing page](https://mumla-app.gitlab.io/), that also has
-information about [Beta releases](https://mumla-app.gitlab.io/beta/).
+There is an instructions configuration and [WiMic Server/Client](https://github.com/hiro2233/wimic) installation on https://hiro2233.github.io/wimic/docs/.
 
 ## Building on GNU/Linux
 
-TODO: humla-spongycastle should be built as a sub-project of Humla's Gradle,
+TODO: rimic-spongycastle should be built as a sub-project of Rimic's Gradle,
 but currently isn't.
 
     git submodule update --init --recursive
 
-    pushd libraries/humla/libs/humla-spongycastle
+    pushd libraries/rimic/libs/rimic-spongycastle
     ../../gradlew jar
     popd
 
@@ -27,4 +26,4 @@ but currently isn't.
 
 ## License
 
-Mumla's [LICENSE](LICENSE) is GNU GPL v3.
+WiMic's [LICENSE](LICENSE) is GNU GPL v3.
