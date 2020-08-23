@@ -21,15 +21,15 @@
 
     <style name="Theme.Wimic" parent="@style/Theme.AppCompat.Light.DarkActionBar">
         <item name="android:textColorPrimary">#000</item>
-        <item name="android:textColorSecondary">#666</item>
+        <item name="android:textColorSecondary">#777</item>
         <item name="android:textColorPrimaryInverse">#FFF</item>
-        <item name="android:textColorSecondaryInverse">#AAA</item>
+        <item name="android:textColorSecondaryInverse">#000</item>
 
         <item name="actionBarStyle">@style/WimicDarkActionBar</item>
 
-        <item name="colorPrimary">#454D5E</item>
-        <item name="colorPrimaryDark">#2F3440</item>
-        <item name="colorAccent">#454D5E</item>
+        <item name="colorPrimary">@color/wimic_orange</item>
+        <item name="colorPrimaryDark">@color/wimic_orange_light</item>
+        <item name="colorAccent">#777</item>
 
         <item name="cardStyle">@style/Theme.Wimic.CardView</item>
     </style>
@@ -38,9 +38,9 @@
     </style>
 
     <style name="Theme.Wimic.Dark" parent="@style/Theme.AppCompat">
-        <item name="android:textColorPrimary">#FFF</item>
+        <item name="android:textColorPrimary">#000</item>
         <item name="android:textColorSecondary">#DDD</item>
-        <item name="android:textColorPrimaryInverse">#FFF</item>
+        <item name="android:textColorPrimaryInverse">#000</item>
         <item name="android:textColorSecondaryInverse">#AAA</item>
 
         <item name="actionBarStyle">@style/WimicDarkActionBar</item>
@@ -49,6 +49,7 @@
     </style>
 
     <style name="WimicDarkActionBar" parent="@style/Widget.AppCompat.ActionBar.Solid">
+        <item name="background">@color/card_dark</item>
         <item name="titleTextStyle">@style/WimicDarkActionBarText</item>
     </style>
 

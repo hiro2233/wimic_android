@@ -63,4 +63,6 @@
     <color name="ripple_talk_state_suppressed">@color/holo_green_dark</color>
     <color name="ripple_talk_state_server_muted">@color/holo_blue_dark</color>
     <color name="ripple_talk_state_server_deafened">@color/holo_blue_dark</color>
+    <color name="wimic_orange">#D07746</color>
+    <color name="wimic_orange_light">#D06030</color>
 </resources>

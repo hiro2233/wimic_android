@@ -33,19 +33,19 @@
         android:defaultValue="false"/>
 
     <bo.htakey.wimic.preference.SeekBarDialogPreference
-        android:title="@string/audioInputVolume"
-        android:summary="@string/audioInputVolumeSum"
-        android:key="inputVolume"
         max="200"
-        android:defaultValue="100"
-        android:text="%"/>
+        android:defaultValue="70"
+        android:key="inputVolume"
+        android:summary="@string/audioInputVolumeSum"
+        android:text="%"
+        android:title="@string/audioInputVolume" />
 
     <PreferenceCategory android:title="@string/voiceActivitySettings"
         android:key="vad_settings">
         <bo.htakey.wimic.preference.SeekBarDialogPreference
             max="100"
             multiplier="0.1"
-            android:defaultValue="70"
+            android:defaultValue="75"
             android:key="vadThreshold"
             android:summary="@string/detectionThresholdSum"
             android:title="@string/detectionThreshold" />
@@ -90,7 +90,7 @@
 
         <!-- TODO add an actual min of 8000hz -->
         <ListPreference
-            android:defaultValue="8000"
+            android:defaultValue="16000"
             android:entries="@array/audioSampleRateValues"
             android:entryValues="@array/audioSampleRateValues"
             android:key="input_quality"
