@@ -64,7 +64,7 @@ android {
         multiDexEnabled true
 
         applicationId "bo.htakey.wimic"
-        versionCode 88
+        versionCode 89
         versionName gitDescribe()
 
         setProperty("archivesBaseName", "wimic")
