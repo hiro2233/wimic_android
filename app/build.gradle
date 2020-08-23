@@ -76,7 +76,7 @@ android {
     splits {
         abi {
             // Enables building multiple APKs per ABI.
-            enable false
+            enable true
             reset()
             include "armeabi", "armeabi-v7a", "arm64-v8a"
             universalApk false
