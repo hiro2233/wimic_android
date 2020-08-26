@@ -57,8 +57,7 @@ public class ServerConnectTask extends AsyncTask<Server, Void, Intent> {
         /* Convert input method defined in settings to an integer format used by Rimic. */
         int inputMethod = mSettings.getRimicInputMethod();
 
-        int audioSource = mSettings.isHandsetMode() ?
-                MediaRecorder.AudioSource.DEFAULT : MediaRecorder.AudioSource.MIC;
+        int audioSource = MediaRecorder.AudioSource.VOICE_COMMUNICATION;
         int audioStream = mSettings.isHandsetMode() ?
                 AudioManager.STREAM_VOICE_CALL : AudioManager.STREAM_MUSIC;
 
