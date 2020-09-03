@@ -32,8 +32,6 @@ import android.media.AudioManager;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.preference.PreferenceManager;
-import android.text.InputType;
-import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
@@ -342,7 +340,7 @@ public class WimicActivity extends AppCompatActivity implements ListView.OnItemC
             }
         }
 
-        setVolumeControlStream(AudioManager.STREAM_VOICE_CALL);
+        setVolumeControlStream(AudioManager.USE_DEFAULT_STREAM_TYPE);
 
         if(mSettings.isFirstRun()) showSetupWizard();
     }
@@ -817,7 +815,7 @@ public class WimicActivity extends AppCompatActivity implements ListView.OnItemC
         } else if (Settings.PREF_STAY_AWAKE.equals(key)) {
             setStayAwake(mSettings.shouldStayAwake());
         } else if (Settings.PREF_HANDSET_MODE.equals(key)) {
-            setVolumeControlStream(AudioManager.STREAM_VOICE_CALL);
+            setVolumeControlStream(AudioManager.USE_DEFAULT_STREAM_TYPE);
         }
     }
 
