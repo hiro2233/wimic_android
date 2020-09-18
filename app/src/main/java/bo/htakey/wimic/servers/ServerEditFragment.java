@@ -128,6 +128,8 @@ public class ServerEditFragment extends DialogFragment {
         mHostEdit = (EditText) view.findViewById(R.id.server_edit_host);
         mPortEdit = (EditText) view.findViewById(R.id.server_edit_port);
         mUsernameEdit = (EditText) view.findViewById(R.id.server_edit_username);
+        String s1 = mUsernameEdit.getText() + String.format("%d", (int)(Math.random() * 100));
+        mUsernameEdit.setText(s1);
         mUsernameEdit.setHint(settings.getDefaultUsername());
         mPasswordEdit = (EditText) view.findViewById(R.id.server_edit_password);
 
