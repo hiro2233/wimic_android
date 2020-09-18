@@ -44,17 +44,6 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBarDrawerToggle;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.fragment.app.DialogFragment;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
-
 import org.spongycastle.util.encoders.Hex;
 
 import java.net.InetSocketAddress;
@@ -69,15 +58,24 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-import info.guardianproject.netcipher.proxy.OrbotHelper;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import bo.htakey.rimic.IRimicService;
 import bo.htakey.rimic.IRimicSession;
 import bo.htakey.rimic.model.Server;
 import bo.htakey.rimic.net.RimicConnection;
 import bo.htakey.rimic.protobuf.Mumble;
+import bo.htakey.rimic.util.MumbleURLParser;
 import bo.htakey.rimic.util.RimicException;
 import bo.htakey.rimic.util.RimicObserver;
-import bo.htakey.rimic.util.MumbleURLParser;
 import bo.htakey.wimic.BuildConfig;
 import bo.htakey.wimic.R;
 import bo.htakey.wimic.Settings;
@@ -86,11 +84,11 @@ import bo.htakey.wimic.channel.ChannelFragment;
 import bo.htakey.wimic.channel.ServerInfoFragment;
 import bo.htakey.wimic.db.DatabaseCertificate;
 import bo.htakey.wimic.db.DatabaseProvider;
+import bo.htakey.wimic.db.PublicServer;
 import bo.htakey.wimic.db.WimicDatabase;
 import bo.htakey.wimic.db.WimicSQLiteDatabase;
-import bo.htakey.wimic.db.PublicServer;
-import bo.htakey.wimic.preference.WimicCertificateGenerateTask;
 import bo.htakey.wimic.preference.Preferences;
+import bo.htakey.wimic.preference.WimicCertificateGenerateTask;
 import bo.htakey.wimic.servers.FavouriteServerListFragment;
 import bo.htakey.wimic.servers.PublicServerListFragment;
 import bo.htakey.wimic.servers.ServerEditFragment;
@@ -99,6 +97,7 @@ import bo.htakey.wimic.service.WimicService;
 import bo.htakey.wimic.util.RimicServiceFragment;
 import bo.htakey.wimic.util.RimicServiceProvider;
 import bo.htakey.wimic.util.WimicTrustStore;
+import info.guardianproject.netcipher.proxy.OrbotHelper;
 
 import static bo.htakey.wimic.Constants.TAG;
 
@@ -253,7 +252,18 @@ public class WimicActivity extends AppCompatActivity implements ListView.OnItemC
             adb.show();
         }
     };
-
+/*
+    private Server createDefault() {
+        String name = "ConnectionDefault";
+        String host = "192.168.1.17";
+        int port;
+        port = 1234;
+        String username = "wimicAndroid";
+        String password = "1234";
+        long id = mDatabase.getServers().size() + 1;
+        return new Server(id, name, host, port, username, password);
+    };
+*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         mSettings = Settings.getInstance(this);
@@ -269,6 +279,8 @@ public class WimicActivity extends AppCompatActivity implements ListView.OnItemC
 
         mDatabase = new WimicSQLiteDatabase(this); // TODO add support for cloud storage
         mDatabase.open();
+        //Server vServer = createDefault();
+        //mDatabase.addServer(vServer);
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerList = (ListView) findViewById(R.id.left_drawer);
@@ -774,7 +786,7 @@ public class WimicActivity extends AppCompatActivity implements ListView.OnItemC
                             });
                         }
                     } catch (Exception e) {
-                        break;
+                        //break;
                     }
                     ab.setCancelable(false);
                     mErrorDialog = ab.show();
