@@ -30,6 +30,7 @@ import android.os.IBinder;
 import android.os.PowerManager;
 import android.preference.PreferenceManager;
 import android.speech.tts.TextToSpeech;
+import android.util.Log;
 import android.widget.Toast;
 
 import org.jsoup.Jsoup;
@@ -353,6 +354,7 @@ public class WimicService extends RimicService implements
 
     @Override
     public void onConnectionDisconnected(RimicException e) {
+        Log.i(bo.htakey.wimic.Constants.TAG, "Wimic - Disconnected");
         super.onConnectionDisconnected(e);
         try {
             unregisterReceiver(mTalkReceiver);
@@ -517,7 +519,9 @@ public class WimicService extends RimicService implements
 
     @Override
     public void reconnect() {
-        connect();
+        if (!isReconnecting()) {
+            connect();
+        }
     }
 
     @Override
