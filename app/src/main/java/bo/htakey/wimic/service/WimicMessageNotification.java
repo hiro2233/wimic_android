@@ -25,12 +25,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 
-import androidx.core.app.NotificationCompat;
-import androidx.core.app.NotificationManagerCompat;
-
 import java.util.ArrayList;
 import java.util.List;
 
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 import bo.htakey.rimic.model.IMessage;
 import bo.htakey.wimic.R;
 import bo.htakey.wimic.app.DrawerAdapter;
@@ -44,7 +43,7 @@ import bo.htakey.wimic.app.WimicActivity;
  */
 public class WimicMessageNotification {
     private static final int NOTIFICATION_ID = 2;
-    private static final long VIBRATION_PATTERN[] = { 0, 100 };
+    private static final long[] VIBRATION_PATTERN = { 0, 100 };
 
     private final Context mContext;
     private final List<IMessage> mUnreadMessages;
@@ -93,7 +92,7 @@ public class WimicMessageNotification {
                 .setTicker(message.getActorName())
                 .setContentTitle(message.getActorName())
                 .setContentText(message.getMessage())
-                .setVibrate(VIBRATION_PATTERN)
+                //.setVibrate(VIBRATION_PATTERN)
                 .setStyle(style);
 
         if (mUnreadMessages.size() > 0)

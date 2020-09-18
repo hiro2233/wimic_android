@@ -99,7 +99,8 @@ public class WimicReconnectNotification {
 
         builder.setSmallIcon(R.drawable.ic_stat_notify);
         builder.setPriority(NotificationCompat.PRIORITY_MAX);
-        builder.setDefaults(NotificationCompat.DEFAULT_VIBRATE | NotificationCompat.DEFAULT_LIGHTS);
+        builder.setDefaults(NotificationCompat.DEFAULT_LIGHTS);
+        //builder.setDefaults(NotificationCompat.DEFAULT_VIBRATE | NotificationCompat.DEFAULT_LIGHTS);
         builder.setContentTitle(mContext.getString(R.string.wimicDisconnected));
         builder.setContentText(error);
         builder.setTicker(mContext.getString(R.string.wimicDisconnected));
