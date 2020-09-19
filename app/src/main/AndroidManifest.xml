@@ -24,12 +24,16 @@
         android:xlargeScreens="true"
         android:anyDensity="true"/>
 
-    <uses-feature
-        android:name="android.hardware.microphone"
-        android:required="false" />
+    <uses-feature android:name="android.hardware.microphone" android:required="false" />
     <uses-feature android:name="android.hardware.telephony" android:required="false" />
     <uses-feature android:name="android.hardware.camera" android:required="false" />
     <uses-feature android:name="android.hardware.camera.front" android:required="false" />
+    <uses-feature android:name="android.hardware.wifi" android:required="false" />
+    <uses-feature android:name="android.hardware.touchscreen" android:required="false" />
+    <uses-feature android:name="android.hardware.touchscreen.multitouch" android:required="false" />
+    <uses-feature android:name="android.hardware.touchscreen.multitouch.distinct" android:required="false" />
+    <uses-feature android:name="android.software.vr.mode" android:required="false" />
+    <uses-feature android:name="android.software.vr.high_performance" android:required="false" />
 
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
@@ -53,6 +57,7 @@
         <activity android:name=".wizard.WizardActivity" />
         <activity
             android:name=".preference.Preferences"
+            android:hardwareAccelerated="false"
             android:parentActivityName=".app.WimicActivity" >
             <intent-filter>
                 <action android:name="bo.htakey.wimic.app.PREFS_GENERAL" />
