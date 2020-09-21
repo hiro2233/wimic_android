@@ -232,6 +232,8 @@
     <plurals name="reconnecting">
         <item quantity="other">%d 秒で、再接続中。</item>
     </plurals>
+    <string name="advanced">上級。</string>
+    <string name="advanced_sum">高度な機能モード</string>
     <!-- <plurals name="notification_unread_many">
         <item quantity="other">%d new messages</item>
     </plurals> -->

@@ -172,6 +172,9 @@ public class Settings {
     public static final String PREF_START_UP_IN_PINNED_MODE = "startUpInPinnedMode";
     public static final boolean DEFAULT_START_UP_IN_PINNED_MODE = false;
 
+    public static final String PREF_ENABLE_COMMUNICATOR_MODE = "communicator_mode";
+    public static final boolean DEFAULT_ENABLE_COMMUNICATOR_MODE = false;
+
     static {
         ARRAY_INPUT_METHODS = new HashSet<String>();
         ARRAY_INPUT_METHODS.add(ARRAY_INPUT_METHOD_VOICE);
@@ -440,6 +443,10 @@ public class Settings {
 
     public boolean shouldStayAwake() {
         return preferences.getBoolean(PREF_STAY_AWAKE, DEFAULT_STAY_AWAKE);
+    }
+
+    public boolean is_enabled_communicator_mode() {
+        return preferences.getBoolean(PREF_ENABLE_COMMUNICATOR_MODE, DEFAULT_ENABLE_COMMUNICATOR_MODE);
     }
 
     public void setDefaultCertificateId(long defaultCertificateId) {

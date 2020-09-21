@@ -61,12 +61,14 @@ import bo.htakey.rimic.util.RimicObserver;
 import bo.htakey.rimic.util.IRimicObserver;
 import bo.htakey.wimic.Constants;
 import bo.htakey.wimic.R;
+import bo.htakey.wimic.Settings;
 import bo.htakey.wimic.service.IChatMessage;
 import bo.htakey.wimic.util.RimicServiceFragment;
 import bo.htakey.wimic.util.MumbleImageGetter;
 
 public class ChannelChatFragment extends RimicServiceFragment implements ChatTargetProvider.OnChatTargetSelectedListener {
     private static final Pattern LINK_PATTERN = Pattern.compile("(https?://\\S+)");
+    private Settings vSettings;
 
     private IRimicObserver mServiceObserver = new RimicObserver() {
 
@@ -115,6 +117,7 @@ public class ChannelChatFragment extends RimicServiceFragment implements ChatTar
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
+        vSettings = Settings.getInstance(getContext());
     }
 
     @Override
@@ -143,6 +146,11 @@ public class ChannelChatFragment extends RimicServiceFragment implements ChatTar
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_chat, container, false);
+        if(vSettings.is_enabled_communicator_mode()) {
+            view.setVisibility(View.VISIBLE);
+        } else {
+            view.setVisibility(View.INVISIBLE);
+        }
         mChatList = (ListView) view.findViewById(R.id.chat_list);
         mChatTextEdit = (EditText) view.findViewById(R.id.chatTextEdit);
 

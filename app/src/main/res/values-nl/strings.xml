@@ -238,4 +238,6 @@
         <item quantity="one">%d nieuw bericht</item>
         <item quantity="other">%d nieuwe berichten</item>
     </plurals>
+    <string name="advanced_sum">Geavanceerde functiemodi</string>
+    <string name="advanced">Geavanceerd</string>
 </resources>

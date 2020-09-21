@@ -43,4 +43,9 @@
         android:summary="@string/aboutSum">
         <intent  android:action="bo.htakey.wimic.app.PREFS_ABOUT"/>
     </Preference>
+    <Preference
+        android:title="@string/advanced"
+        android:summary="@string/advanced_sum">
+        <intent  android:action="bo.htakey.wimic.app.PREFS_ADVANCED"/>
+    </Preference>
 </PreferenceScreen>

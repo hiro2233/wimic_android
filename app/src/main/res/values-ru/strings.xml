@@ -268,4 +268,6 @@
         <item quantity="few">%d новых сообщения</item>
         <item quantity="other">%d новых сообщений</item>
     </plurals>
+    <string name="advanced">Продвинутый.</string>
+    <string name="advanced_sum">Режимы расширенных функций</string>
 </resources>

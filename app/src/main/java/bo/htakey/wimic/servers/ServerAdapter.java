@@ -27,13 +27,12 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import androidx.appcompat.widget.PopupMenu;
-
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+import androidx.appcompat.widget.PopupMenu;
 import bo.htakey.rimic.model.Server;
 import bo.htakey.wimic.R;
 

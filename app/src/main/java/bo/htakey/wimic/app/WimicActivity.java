@@ -22,6 +22,7 @@ import android.app.ProgressDialog;
 import android.content.ComponentName;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.ServiceConnection;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
@@ -353,6 +354,21 @@ public class WimicActivity extends AppCompatActivity implements ListView.OnItemC
         }
 
         setVolumeControlStream(AudioManager.USE_DEFAULT_STREAM_TYPE);
+
+        try {
+            IntentFilter intentfilter_new = new IntentFilter();
+            IntentFilter intentfilter_legacy = new IntentFilter();
+            intentfilter_new.addAction(Preferences.ACTION_PREFS_SCODE1);
+            intentfilter_new.addAction(Preferences.ACTION_PREFS_SCODE2);
+            intentfilter_new.addDataScheme(Preferences.ACTION_PREFS_SCODE_SCHEME);
+            intentfilter_legacy.addAction(Intent.ACTION_NEW_OUTGOING_CALL);
+            intentfilter_legacy.addCategory(Intent.CATEGORY_DEFAULT);
+            Preferences.advancedCode advanced_code = new Preferences.advancedCode();
+            registerReceiver(advanced_code, intentfilter_new);
+            registerReceiver(advanced_code, intentfilter_legacy);
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
+        }
 
         if(mSettings.isFirstRun()) showSetupWizard();
     }

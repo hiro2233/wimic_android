@@ -262,4 +262,6 @@
     <plurals name="notification_unread_many">
         <item quantity="other">%d 条新消息</item>
     </plurals>
+    <string name="advanced">高级</string>
+    <string name="advanced_sum">高级功能模式</string>
 </resources>

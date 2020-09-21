@@ -239,4 +239,8 @@
         <item quantity="one">%d mensaje nuevo</item>
         <item quantity="other">%d mensajes nuevos</item>
     </plurals>
+    <string name="advanced">Avanzado</string>
+    <string name="advanced_sum">Modos de características avanzadas.</string>
+    <string name="communicator_mode_sum">Habilita características adicionales como chat</string>
+    <string name="communicator_mode">Modo Comunicador</string>
 </resources>

@@ -239,4 +239,6 @@
         <item quantity="one">%d nouveau message</item>
         <item quantity="other">%d nouveaux messages</item>
     </plurals>
+    <string name="advanced">Avancé</string>
+    <string name="advanced_sum">Modes des fonctionnalités avancées</string>
 </resources>

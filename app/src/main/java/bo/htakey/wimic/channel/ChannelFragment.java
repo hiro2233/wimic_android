@@ -35,22 +35,21 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.PagerTabStrip;
 import androidx.viewpager.widget.ViewPager;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import bo.htakey.rimic.RimicService;
 import bo.htakey.rimic.IRimicService;
 import bo.htakey.rimic.IRimicSession;
+import bo.htakey.rimic.RimicService;
 import bo.htakey.rimic.model.IUser;
 import bo.htakey.rimic.model.WhisperTarget;
-import bo.htakey.rimic.util.RimicObserver;
 import bo.htakey.rimic.util.IRimicObserver;
+import bo.htakey.rimic.util.RimicObserver;
 import bo.htakey.rimic.util.VoiceTargetMode;
 import bo.htakey.wimic.Constants;
 import bo.htakey.wimic.R;
