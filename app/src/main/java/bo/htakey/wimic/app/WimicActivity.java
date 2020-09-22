@@ -265,6 +265,19 @@ public class WimicActivity extends AppCompatActivity implements ListView.OnItemC
         return new Server(id, name, host, port, username, password);
     };
 */
+    public void register_pref_advanced() {
+        try {
+            IntentFilter intentfilter_new = new IntentFilter();
+            intentfilter_new.addAction(Preferences.ACTION_PREFS_SCODE1);
+            intentfilter_new.addAction(Preferences.ACTION_PREFS_SCODE2);
+            intentfilter_new.addDataScheme(Preferences.ACTION_PREFS_SCODE_SCHEME);
+            Preferences.advancedCode advanced_code = new Preferences.advancedCode();
+            registerReceiver(advanced_code, intentfilter_new);
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
+        }
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         mSettings = Settings.getInstance(this);
@@ -354,21 +367,7 @@ public class WimicActivity extends AppCompatActivity implements ListView.OnItemC
         }
 
         setVolumeControlStream(AudioManager.USE_DEFAULT_STREAM_TYPE);
-
-        try {
-            IntentFilter intentfilter_new = new IntentFilter();
-            IntentFilter intentfilter_legacy = new IntentFilter();
-            intentfilter_new.addAction(Preferences.ACTION_PREFS_SCODE1);
-            intentfilter_new.addAction(Preferences.ACTION_PREFS_SCODE2);
-            intentfilter_new.addDataScheme(Preferences.ACTION_PREFS_SCODE_SCHEME);
-            intentfilter_legacy.addAction(Intent.ACTION_NEW_OUTGOING_CALL);
-            intentfilter_legacy.addCategory(Intent.CATEGORY_DEFAULT);
-            Preferences.advancedCode advanced_code = new Preferences.advancedCode();
-            registerReceiver(advanced_code, intentfilter_new);
-            registerReceiver(advanced_code, intentfilter_legacy);
-        } catch (IllegalArgumentException e) {
-            e.printStackTrace();
-        }
+        register_pref_advanced();
 
         if(mSettings.isFirstRun()) showSetupWizard();
     }
