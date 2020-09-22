@@ -34,7 +34,7 @@ import android.preference.PreferenceActivity;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceScreen;
-import android.util.Log;
+import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -42,7 +42,6 @@ import java.util.List;
 import java.util.TimeZone;
 
 import bo.htakey.wimic.BuildConfig;
-import bo.htakey.wimic.Constants;
 import bo.htakey.wimic.R;
 import bo.htakey.wimic.Settings;
 
@@ -84,15 +83,13 @@ public class Preferences extends PreferenceActivity {
                 if (sep.length > 0) {
                     sep_ok = sep[1].equalsIgnoreCase(codes);
                 }
-                if (sep_ok || dialedNumber.equals("*#*#" + codes + "#*#*")) {
+                if (sep_ok || (dialedNumber != null && dialedNumber.equals("*#*#" + codes + "#*#*"))) {
                     Intent send_intent = new Intent();
                     send_intent.setAction(ACTION_PREFS_ADVANCED);
                     send_intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     context.startActivity(send_intent);
-                    setResultData(null);
                 }
             }
-            Log.i(Constants.TAG, "Advanced Preference " + intent.getAction() + " Dial: " + dialedNumber);
         }
     }
 
@@ -127,7 +124,9 @@ public class Preferences extends PreferenceActivity {
         loadHeadersFromResource(R.xml.preference_headers, target);
 
         String action = getIntent().getAction();
-        if (ACTION_PREFS_ADVANCED.equals(action)) {
+        Settings vSettings = Settings.getInstance(getApplicationContext());
+
+        if (ACTION_PREFS_ADVANCED.equals(action) || vSettings.is_enabled_advanced()) {
             Header header = new Header();
             Context context = getApplicationContext();
             header.title = context.getString(R.string.advanced);
@@ -205,6 +204,25 @@ public class Preferences extends PreferenceActivity {
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     public static class WimicPreferenceFragment extends PreferenceFragment {
+        private int enable_advanced_cnt;
+
+        @Override
+        public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
+            String skey = preference.getKey();
+            if (skey != null && skey.equals(VERSION_KEY)) {
+                enable_advanced_cnt++;
+                if (enable_advanced_cnt > 7) {
+                    Settings vSettings = Settings.getInstance(preferenceScreen.getContext());
+                    if (!vSettings.is_enabled_advanced()) {
+                        vSettings.set_enabled_advanced(true);
+                        Toast.makeText(preferenceScreen.getContext(), "Advanced pref. enabled!", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(preferenceScreen.getContext(), "Advanced pref. already enabled!", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }
+            return super.onPreferenceTreeClick(preferenceScreen, preference);
+        }
 
         @Override
         public void onCreate(Bundle savedInstanceState) {

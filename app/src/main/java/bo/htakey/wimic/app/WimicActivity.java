@@ -30,6 +30,7 @@ import android.content.res.Configuration;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.media.AudioManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.preference.PreferenceManager;
@@ -367,7 +368,9 @@ public class WimicActivity extends AppCompatActivity implements ListView.OnItemC
         }
 
         setVolumeControlStream(AudioManager.USE_DEFAULT_STREAM_TYPE);
-        register_pref_advanced();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+            register_pref_advanced();
+        }
 
         if(mSettings.isFirstRun()) showSetupWizard();
     }

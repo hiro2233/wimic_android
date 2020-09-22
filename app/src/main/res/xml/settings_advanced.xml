@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <SwitchPreference
+        android:checked="false"
+        android:defaultValue="false"
+        android:key="advanced_pref"
+        android:summary="@string/advanced_pref_sum"
+        android:title="@string/advanced_pref" />
     <CheckBoxPreference
         android:checked="false"
         android:defaultValue="false"

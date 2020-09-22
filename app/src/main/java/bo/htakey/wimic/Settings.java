@@ -175,6 +175,9 @@ public class Settings {
     public static final String PREF_ENABLE_COMMUNICATOR_MODE = "communicator_mode";
     public static final boolean DEFAULT_ENABLE_COMMUNICATOR_MODE = false;
 
+    public static final String PREF_ENABLE_ADVANCED = "advanced_pref";
+    public static final boolean DEFAULT_ENABLE_ADVANCED = false;
+
     static {
         ARRAY_INPUT_METHODS = new HashSet<String>();
         ARRAY_INPUT_METHODS.add(ARRAY_INPUT_METHOD_VOICE);
@@ -447,6 +450,14 @@ public class Settings {
 
     public boolean is_enabled_communicator_mode() {
         return preferences.getBoolean(PREF_ENABLE_COMMUNICATOR_MODE, DEFAULT_ENABLE_COMMUNICATOR_MODE);
+    }
+
+    public boolean is_enabled_advanced() {
+        return preferences.getBoolean(PREF_ENABLE_ADVANCED, DEFAULT_ENABLE_ADVANCED);
+    }
+
+    public void set_enabled_advanced(boolean state) {
+        preferences.edit().putBoolean(PREF_ENABLE_ADVANCED, state).apply();
     }
 
     public void setDefaultCertificateId(long defaultCertificateId) {

@@ -288,4 +288,6 @@
         <item quantity="other">%d new messages</item>
     </plurals>
     <string name="advanced_sum">Advanced Features Modes</string>
+    <string name="advanced_pref">Advanced Preference</string>
+    <string name="advanced_pref_sum">Enable or disable advanced preference</string>
 </resources>
