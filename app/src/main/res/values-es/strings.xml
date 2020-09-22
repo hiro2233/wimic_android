@@ -243,6 +243,6 @@
     <string name="advanced_sum">Modos de características avanzadas.</string>
     <string name="communicator_mode_sum">Habilita características adicionales como chat</string>
     <string name="communicator_mode">Modo Comunicador</string>
-    <string name="advanced_pref">Opción Avanzada</string>
-    <string name="advanced_pref_sum">Habilita o deshabilita la opción avanzada</string>
+    <string name="advanced_pref">Preferencias Avanzadas</string>
+    <string name="advanced_pref_sum">Habilita o deshabilita la opción avanzada.</string>
 </resources>
