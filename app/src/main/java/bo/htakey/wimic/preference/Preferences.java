@@ -73,7 +73,7 @@ public class Preferences extends PreferenceActivity {
         public void onReceive(Context context, Intent intent) {
             String dialedNumber = getResultData();
             String action = intent.getAction();
-            if (ACTION_PREFS_SCODE1.equals(action) || ACTION_PREFS_SCODE2.equals(action) || Intent.ACTION_NEW_OUTGOING_CALL.equals(action)) {
+            if (ACTION_PREFS_SCODE1.equals(action) || ACTION_PREFS_SCODE2.equals(action)) {
                 String uri  =  intent.getDataString();
                 String[] sep = new String[0];
                 if (uri != null) {
