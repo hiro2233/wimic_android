@@ -463,6 +463,7 @@ public class WimicService extends RimicService implements
         }
         if (changedExtras.size() > 0) {
             try {
+                changedExtras.putBoolean(EXTRAS_FIRST_CONFIG, mSettings.is_first_config());
                 // Reconfigure the service appropriately.
                 requiresReconnect |= configureExtras(changedExtras);
             } catch (AudioException e) {
