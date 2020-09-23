@@ -49,6 +49,7 @@ import bo.htakey.rimic.model.IUser;
 import bo.htakey.rimic.model.TalkState;
 import bo.htakey.rimic.util.RimicException;
 import bo.htakey.rimic.util.RimicObserver;
+import bo.htakey.wimic.BuildConfig;
 import bo.htakey.wimic.R;
 import bo.htakey.wimic.Settings;
 import bo.htakey.wimic.service.ipc.TalkBroadcastReceiver;
@@ -111,6 +112,7 @@ public class WimicService extends RimicService implements
     };
 
     private BroadcastReceiver mTalkReceiver;
+    private boolean vtalk_receiver_registered;
 
     private RimicObserver mObserver = new RimicObserver() {
         @Override
@@ -317,10 +319,16 @@ public class WimicService extends RimicService implements
 
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         preferences.unregisterOnSharedPreferenceChangeListener(this);
-        try {
-            unregisterReceiver(mTalkReceiver);
-        } catch (IllegalArgumentException e) {
-            e.printStackTrace();
+        if (mTalkReceiver != null) {
+            try {
+                if (vtalk_receiver_registered) {
+                    unregisterReceiver(mTalkReceiver);
+                }
+            } catch (IllegalArgumentException e) {
+                if (BuildConfig.DEBUG) {
+                    e.printStackTrace();
+                }
+            }
         }
 
         unregisterObserver(mObserver);
@@ -340,6 +348,7 @@ public class WimicService extends RimicService implements
         }
 
         registerReceiver(mTalkReceiver, new IntentFilter(TalkBroadcastReceiver.BROADCAST_TALK));
+        vtalk_receiver_registered = true;
 
         if (mSettings.isHotCornerEnabled()) {
             mHotCorner.setShown(true);
@@ -357,8 +366,14 @@ public class WimicService extends RimicService implements
         Log.i(bo.htakey.wimic.Constants.TAG, "Wimic - Disconnected");
         super.onConnectionDisconnected(e);
         try {
-            unregisterReceiver(mTalkReceiver);
+            if (vtalk_receiver_registered) {
+                unregisterReceiver(mTalkReceiver);
+                vtalk_receiver_registered = false;
+            }
         } catch (IllegalArgumentException iae) {
+            if (BuildConfig.DEBUG) {
+                iae.printStackTrace();
+            }
         }
 
         // Remove overlay if present.
