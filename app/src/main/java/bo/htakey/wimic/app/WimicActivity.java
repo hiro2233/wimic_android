@@ -350,6 +350,7 @@ public class WimicActivity extends AppCompatActivity implements ListView.OnItemC
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
                         unregister_pref_advanced();
                     }
+                    mSettings.set_first_config(false);
                 }
                 loadDrawerFragment(DrawerAdapter.ITEM_FAVOURITES);
             }
