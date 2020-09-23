@@ -128,6 +128,8 @@ public class WimicActivity extends AppCompatActivity implements ListView.OnItemC
     private AlertDialog mErrorDialog;
     private AlertDialog.Builder mDisconnectPromptBuilder;
 
+    private Preferences.advancedCode advanced_code;
+
     /** List of fragments to be notified about service state changes. */
     private List<RimicServiceFragment> mServiceFragments = new ArrayList<RimicServiceFragment>();
 
@@ -272,8 +274,17 @@ public class WimicActivity extends AppCompatActivity implements ListView.OnItemC
             intentfilter_new.addAction(Preferences.ACTION_PREFS_SCODE1);
             intentfilter_new.addAction(Preferences.ACTION_PREFS_SCODE2);
             intentfilter_new.addDataScheme(Preferences.ACTION_PREFS_SCODE_SCHEME);
-            Preferences.advancedCode advanced_code = new Preferences.advancedCode();
             registerReceiver(advanced_code, intentfilter_new);
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void unregister_pref_advanced() {
+        try {
+            if (advanced_code != null) {
+                unregisterReceiver(advanced_code);
+            }
         } catch (IllegalArgumentException e) {
             e.printStackTrace();
         }
@@ -334,7 +345,12 @@ public class WimicActivity extends AppCompatActivity implements ListView.OnItemC
         dadb.setPositiveButton(R.string.confirm, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                if(mService != null) mService.disconnect();
+                if(mService != null) {
+                    mService.disconnect();
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+                        unregister_pref_advanced();
+                    }
+                }
                 loadDrawerFragment(DrawerAdapter.ITEM_FAVOURITES);
             }
         });
@@ -369,6 +385,7 @@ public class WimicActivity extends AppCompatActivity implements ListView.OnItemC
 
         setVolumeControlStream(AudioManager.USE_DEFAULT_STREAM_TYPE);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+            advanced_code = new Preferences.advancedCode();
             register_pref_advanced();
         }
 
