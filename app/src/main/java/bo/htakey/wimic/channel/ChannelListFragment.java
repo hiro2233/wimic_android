@@ -174,11 +174,15 @@ public class ChannelListFragment extends RimicServiceFragment implements OnChann
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         registerForContextMenu(mChannelView);
+        /* TODO Hiro: Fix this shit. Already declared on:
+            @link bo.htakey.rimic.RimicService#onCreate:register_receiver */
         getActivity().registerReceiver(mBluetoothReceiver, new IntentFilter(AudioManager.ACTION_SCO_AUDIO_STATE_CHANGED));
     }
 
     @Override
     public void onDetach() {
+        /* TODO Hiro: Fix this shit. Already declared on:
+            @link bo.htakey.rimic.RimicService#onCreate:register_receiver */
         getActivity().unregisterReceiver(mBluetoothReceiver);
         super.onDetach();
     }
