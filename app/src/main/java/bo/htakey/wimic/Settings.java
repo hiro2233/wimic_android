@@ -178,6 +178,9 @@ public class Settings {
     public static final String PREF_ENABLE_ADVANCED = "advanced_pref";
     public static final boolean DEFAULT_ENABLE_ADVANCED = false;
 
+    public static final String PREF_FIRST_CONFIG = "first_config";
+    public static final Boolean DEFAULT_FIRST_CONFIG = true;
+
     static {
         ARRAY_INPUT_METHODS = new HashSet<String>();
         ARRAY_INPUT_METHODS.add(ARRAY_INPUT_METHOD_VOICE);
@@ -458,6 +461,14 @@ public class Settings {
 
     public void set_enabled_advanced(boolean state) {
         preferences.edit().putBoolean(PREF_ENABLE_ADVANCED, state).apply();
+    }
+
+    public boolean is_first_config() {
+        return preferences.getBoolean(PREF_FIRST_CONFIG, DEFAULT_FIRST_CONFIG);
+    }
+
+    public void set_first_config(boolean state) {
+        preferences.edit().putBoolean(PREF_FIRST_CONFIG, state).apply();
     }
 
     public void setDefaultCertificateId(long defaultCertificateId) {
