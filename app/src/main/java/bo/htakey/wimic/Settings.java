@@ -87,7 +87,7 @@ public class Settings {
     public static final String DEFAULT_RATE = "16000";
 
     public static final String PREF_INPUT_QUALITY = "input_bitrate";
-    public static final int DEFAULT_INPUT_QUALITY = 8000;
+    public static final int DEFAULT_INPUT_QUALITY = 16000;
 
     public static final String PREF_AMPLITUDE_BOOST = "inputVolume";
     public static final Integer DEFAULT_AMPLITUDE_BOOST = 70;
@@ -149,7 +149,7 @@ public class Settings {
     public static final boolean DEFAULT_LOAD_IMAGES = false;
 
     public static final String PREF_FRAMES_PER_PACKET = "audio_per_packet";
-    public static final String DEFAULT_FRAMES_PER_PACKET = "2";
+    public static final String DEFAULT_FRAMES_PER_PACKET = "4";
 
     public static final String PREF_HALF_DUPLEX = "half_duplex";
     public static final boolean DEFAULT_HALF_DUPLEX = false;

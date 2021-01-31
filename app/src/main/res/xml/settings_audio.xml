@@ -101,7 +101,7 @@
             max="96"
             min="8"
             multiplier="1000"
-            android:defaultValue="8"
+            android:defaultValue="16"
             android:key="input_bitrate"
             android:summary="@string/inputQualitySum"
             android:text=" bps"
@@ -111,7 +111,7 @@
             android:key="audio_per_packet"
             android:title="@string/audio_per_packet"
             android:summary="@string/audio_per_packet_sum"
-            android:defaultValue="2"
+            android:defaultValue="4"
             android:entries="@array/audio_per_packet_names"
             android:entryValues="@array/audio_per_packet_values" />
 
